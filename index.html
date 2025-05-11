@@ -276,9 +276,10 @@
 
     window.onload = () => showIcons('killers');
 
-      const script = document.createElement('script');
-  script.src = 'main.js?v=' + new Date().getTime();
-  document.head.appendChild(script);
+      if (!window.location.search.includes('nocache')) {
+    const newUrl = window.location.pathname + '?nocache=' + Date.now();
+    window.location.replace(newUrl);
+  }
   </script>
 </body>
 
