@@ -80,10 +80,10 @@
 </head>
 <body>
 
-  <!-- Suchleiste -->
+
   <input type="text" id="search" placeholder="Killer suchen..." oninput="filterIcons()">
 
-  <!-- Container für Icons -->
+
   <div class="icons-container">
 
   <div class="icon" data-name="trapper" onclick="toggleCheck(this)">
@@ -244,13 +244,13 @@
 
 
  <script>
-  // Funktion zum Umschalten des "checked"-Zustands
+
   function toggleCheck(element) {
     element.classList.toggle('checked');
     saveState();
   }
 
-  // Speichern der aktuellen Auswahl im localStorage
+
   function saveState() {
     const icons = document.querySelectorAll('.icon');
     const checkedStates = [];
