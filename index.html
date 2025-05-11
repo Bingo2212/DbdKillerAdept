@@ -273,8 +273,12 @@
       });
     }
 
-    // Show killers by default
+
     window.onload = () => showIcons('killers');
+
+      const script = document.createElement('script');
+  script.src = 'main.js?v=' + new Date().getTime();
+  document.head.appendChild(script);
   </script>
 </body>
 
