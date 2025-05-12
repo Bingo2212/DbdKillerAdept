@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DBD Killer Auswahl</title>
-  <link rel="stylesheet" href="style.css?v=1.1">
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: sans-serif;
@@ -498,52 +498,283 @@
     const survivorIcons = [
       { 
         name: "Dwight Fairfield", 
-        src: "https://deadbydaylight.wiki.gg/images/3/3d/S01_DwightFairfield_Portrait.png?d6dcf3" },
-      { name: "Meg Thomas", src: "https://deadbydaylight.wiki.gg/images/3/35/S02_MegThomas_Portrait.png?7eab9a" },
-      { name: "Claudette Morel", src: "https://deadbydaylight.wiki.gg/images/c/c2/S03_ClaudetteMorel_Portrait.png?5063f0" },
-      { name: "Jake Park", src: "https://deadbydaylight.wiki.gg/images/1/18/S04_JakePark_Portrait.png?f66ca9" },
-      { name: "Nea Karlsson", src: "https://deadbydaylight.wiki.gg/images/e/e6/S05_NeaKarlsson_Portrait.png?7ab379" },
-      { name: "Laurie Strode", src: "https://deadbydaylight.wiki.gg/images/0/04/S06_LaurieStrode_Portrait.png?cb4f55" },
-      { name: "Ace Visconti", src: "https://deadbydaylight.wiki.gg/images/b/b9/S07_AceVisconti_Portrait.png?78a415" },
-      { name: "Bill Overbeck", src: "https://deadbydaylight.wiki.gg/images/9/9c/S08_BillOverbeck_Portrait.png?ea4263" },
-      { name: "Feng Min", src: "https://deadbydaylight.wiki.gg/images/a/a3/S09_FengMin_Portrait.png?4858fc" },
-      { name: "David King", src: "https://deadbydaylight.wiki.gg/images/2/2a/S10_DavidKing_Portrait.png?6e4e99" },
-      { name: "Quentin Smith", src: "https://deadbydaylight.wiki.gg/images/4/40/S11_QuentinSmith_Portrait.png?61f716" },
-      { name: "David Tapp", src: "https://deadbydaylight.wiki.gg/images/d/d2/S12_DavidTapp_Portrait.png?451c59" },
-      { name: "Kate Denson", src: "https://deadbydaylight.wiki.gg/images/9/9c/S13_KateDenson_Portrait.png?1d9a18" },
-      { name: "Adam Francis", src: "https://deadbydaylight.wiki.gg/images/a/a5/S14_AdamFrancis_Portrait.png?41f88f" },
-      { name: "Jeff Johansen", src: "https://deadbydaylight.wiki.gg/images/8/81/S15_JeffJohansen_Portrait.png?d2bdb8" },
-      { name: "Jane Romero", src: "https://deadbydaylight.wiki.gg/images/8/80/S16_JaneRomero_Portrait.png?e2acd3" },
-      { name: "Ash Williams", src: "https://deadbydaylight.wiki.gg/images/9/91/S17_AshWilliams_Portrait.png?ece61f" },
-      { name: "Nancy Wheeler", src: "https://deadbydaylight.wiki.gg/images/7/70/S18_NancyWheeler_Portrait.png?adfa54" },
-      { name: "Steve Harrington", src: "https://deadbydaylight.wiki.gg/images/e/e8/S19_SteveHarrington_Portrait.png?9a11aa" },
-      { name: "Yui Kimura", src: "https://deadbydaylight.wiki.gg/images/1/13/S20_YuiKimura_Portrait.png?830cf2" },
-      { name: "Zarina Kassir", src: "https://deadbydaylight.wiki.gg/images/d/d9/S21_ZarinaKassir_Portrait.png?9ff369" },
-      { name: "Cheryl Mason", src: "https://deadbydaylight.wiki.gg/images/1/1d/S22_CherylMason_Portrait.png?50c77e" },
-      { name: "Felix Richter", src: "https://deadbydaylight.wiki.gg/images/9/9e/S23_FelixRichter_Portrait.png?39eafa" },
-      { name: "Elodie Rakoto", src: "https://deadbydaylight.wiki.gg/images/d/de/S24_ElodieRakoto_Portrait.png?6be1d2" },
-      { name: "Yun-Jin Lee", src: "https://deadbydaylight.wiki.gg/images/f/f7/S25_Yun-JinLee_Portrait.png?1d1ab0" },
-      { name: "Jill Valentine", src: "https://deadbydaylight.wiki.gg/images/d/db/S26_JillValentine_Portrait.png?5e137b" },
-      { name: "Leon Scott Kennedy", src: "https://deadbydaylight.wiki.gg/images/7/7d/S27_LeonScottKennedy_Portrait.png?5f9ae0" },
-      { name: "Mikaela Reid", src: "https://deadbydaylight.wiki.gg/images/3/3f/S28_MikaelaReid_Portrait.png?f67900" },
-      { name: "Jonah Vasquez", src: "https://deadbydaylight.wiki.gg/images/3/37/S29_JonahVasquez_Portrait.png?d4931a" },
-      { name: "Yoichi Asakawa", src: "https://deadbydaylight.wiki.gg/images/a/af/S30_YoichiAsakawa_Portrait.png?9d121b" },
-      { name: "Haddie Kaur", src: "https://deadbydaylight.wiki.gg/images/e/e7/S31_HaddieKaur_Portrait.png?f3b1ae" },
-      { name: "Ada Wong", src: "https://deadbydaylight.wiki.gg/images/5/5e/S32_AdaWong_Portrait.png?1073d0" },
-      { name: "Rebecca Chambers", src: "https://deadbydaylight.wiki.gg/images/f/fd/S33_RebeccaChambers_Portrait.png?d5461f" },
-      { name: "Vittorio Toscano", src: "https://deadbydaylight.wiki.gg/images/3/39/S34_VittorioToscano_Portrait.png?273309" },
-      { name: "Thalita Lyra", src: "https://deadbydaylight.wiki.gg/images/9/96/S35_ThalitaLyra_Portrait.png?fcbd38" },
-      { name: "Renato Lyra", src: "https://deadbydaylight.wiki.gg/images/6/69/S36_RenatoLyra_Portrait.png?d20521" },
-      { name: "Gabriel Soma", src: "https://deadbydaylight.wiki.gg/images/6/64/S37_GabrielSoma_Portrait.png?44827f" },
-      { name: "Nicolas Cage", src: "https://deadbydaylight.wiki.gg/images/b/b7/S38_NicolasCage_Portrait.png?756bb9" },
-      { name: "Ellen Ripley", src: "https://deadbydaylight.wiki.gg/images/1/15/S39_EllenRipley_Portrait.png?9966b6" },
-      { name: "Alan Wake", src: "https://deadbydaylight.wiki.gg/images/4/43/S40_AlanWake_Portrait.png?600f97" },
-      { name: "Sable Ward", src: "https://deadbydaylight.wiki.gg/images/9/9c/S41_SableWard_Portrait.png?78936e" },
-      { name: "The Troupe", src: "https://deadbydaylight.wiki.gg/images/e/e0/S42_TheTroupe_Portrait.png?9f592a" },
-      { name: "Lara Croft", src: "https://deadbydaylight.wiki.gg/images/6/63/S43_LaraCroft_Portrait.png?1e338f" },
-      { name: "Trevor Belmont", src: "https://deadbydaylight.wiki.gg/images/f/f8/S44_TrevorBelmont_Portrait.png?f68391" },
-      { name: "Taurie Cain", src: "https://deadbydaylight.wiki.gg/images/7/72/S45_TaurieCain_Portrait.png?44fce2" },
-      { name: "Orela Rose", src: "https://deadbydaylight.wiki.gg/images/e/ef/S46_OrelaRose_Portrait.png?c845fe" },
+        src: "https://deadbydaylight.wiki.gg/images/3/3d/S01_DwightFairfield_Portrait.png?d6dcf3",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/a/a0/IconPerks_bond.png?9a53ad", 
+          "https://deadbydaylight.wiki.gg/images/3/3d/IconPerks_leader.png?9564d9", 
+          "https://deadbydaylight.wiki.gg/images/0/0f/IconPerks_proveThyself.png?111502" 
+        ]
+      },
+      { name: "Meg Thomas", src: "https://deadbydaylight.wiki.gg/images/3/35/S02_MegThomas_Portrait.png?7eab9a",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/1/14/IconPerks_quickAndQuiet.png?8488b6", 
+          "https://deadbydaylight.wiki.gg/images/f/f7/IconPerks_adrenaline.png?9f8d2a", 
+          "https://deadbydaylight.wiki.gg/images/e/e4/IconPerks_sprintBurst.png?7d17fc" 
+        ] },
+      { name: "Claudette Morel", src: "https://deadbydaylight.wiki.gg/images/c/c2/S03_ClaudetteMorel_Portrait.png?5063f0",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/a/ae/IconPerks_empathy.png?812eb0", 
+          "https://deadbydaylight.wiki.gg/images/b/b2/IconPerks_self-Care.png?f58526", 
+          "https://deadbydaylight.wiki.gg/images/1/1e/IconPerks_botanyKnowledge.png?6bf985" 
+        ] },
+      { name: "Jake Park", src: "https://deadbydaylight.wiki.gg/images/1/18/S04_JakePark_Portrait.png?f66ca9",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/5/58/IconPerks_ironWill.png?65bc91", 
+          "https://deadbydaylight.wiki.gg/images/0/0e/IconPerks_saboteur.png?9f0313", 
+          "https://deadbydaylight.wiki.gg/images/6/6c/IconPerks_calmSpirit.png?7db2d2" 
+        ] },
+      { name: "Nea Karlsson", src: "https://deadbydaylight.wiki.gg/images/e/e6/S05_NeaKarlsson_Portrait.png?7ab379",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/5/5e/IconPerks_balancedLanding.png?6be7d6", 
+          "https://deadbydaylight.wiki.gg/images/f/ff/IconPerks_streetwise.png?2d4028", 
+          "https://deadbydaylight.wiki.gg/images/c/c7/IconPerks_urbanEvasion.png?e98ead" 
+        ] },
+      { name: "Laurie Strode", src: "https://deadbydaylight.wiki.gg/images/0/04/S06_LaurieStrode_Portrait.png?cb4f55",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/8/8e/IconPerks_soleSurvivor.png?f0b7d4", 
+          "https://deadbydaylight.wiki.gg/images/e/ee/IconPerks_decisiveStrike.png?55fc96", 
+          "https://deadbydaylight.wiki.gg/images/2/2b/IconPerks_objectOfObsession.png?3b2c26" 
+        ] },
+      { name: "Ace Visconti", src: "https://deadbydaylight.wiki.gg/images/b/b9/S07_AceVisconti_Portrait.png?78a415",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/5/5d/IconPerks_open-Handed.png?22cbcf", 
+          "https://deadbydaylight.wiki.gg/images/2/24/IconPerks_aceInTheHole.png?528a2e", 
+          "https://deadbydaylight.wiki.gg/images/a/a3/IconPerks_upTheAnte.png?f34283" 
+        ] },
+      { name: "Bill Overbeck", src: "https://deadbydaylight.wiki.gg/images/9/9c/S08_BillOverbeck_Portrait.png?ea4263",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/c/c3/IconPerks_leftBehind.png?23e038", 
+          "https://deadbydaylight.wiki.gg/images/4/4a/IconPerks_unbreakable.png?7d2266", 
+          "https://deadbydaylight.wiki.gg/images/a/a3/IconPerks_borrowedTime.png?5a951f" 
+        ] },
+      { name: "Feng Min", src: "https://deadbydaylight.wiki.gg/images/a/a3/S09_FengMin_Portrait.png?4858fc",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/6/62/IconPerks_technician.png?c3c5de", 
+          "https://deadbydaylight.wiki.gg/images/7/71/IconPerks_alert.png?e13660", 
+          "https://deadbydaylight.wiki.gg/images/c/cc/IconPerks_lithe.png?74ca81" 
+        ] },
+      { name: "David King", src: "https://deadbydaylight.wiki.gg/images/2/2a/S10_DavidKing_Portrait.png?6e4e99",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/b/b8/IconPerks_wereGonnaLiveForever.png?12c8c5", 
+          "https://deadbydaylight.wiki.gg/images/f/f5/IconPerks_noMither.png?4bea64", 
+          "https://deadbydaylight.wiki.gg/images/7/75/IconPerks_deadHard.png?48782d" 
+        ] },
+      { name: "Quentin Smith", src: "https://deadbydaylight.wiki.gg/images/4/40/S11_QuentinSmith_Portrait.png?61f716",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/f/fd/IconPerks_wakeUp.png?f96073", 
+          "https://deadbydaylight.wiki.gg/images/4/46/IconPerks_vigil.png?3fe709", 
+          "https://deadbydaylight.wiki.gg/images/f/f1/IconPerks_pharmacy.png?5abc0f" 
+        ] },
+      { name: "David Tapp", src: "https://deadbydaylight.wiki.gg/images/d/d2/S12_DavidTapp_Portrait.png?451c59",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/9/9d/IconPerks_tenacity.png?2842d0", 
+          "https://deadbydaylight.wiki.gg/images/c/cd/IconPerks_stakeOut.png?d920e9", 
+          "https://deadbydaylight.wiki.gg/images/7/7b/IconPerks_detectivesHunch.png?836ede" 
+        ] },
+      { name: "Kate Denson", src: "https://deadbydaylight.wiki.gg/images/9/9c/S13_KateDenson_Portrait.png?1d9a18",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/1/17/IconPerks_danceWithMe.png?eacd41", 
+          "https://deadbydaylight.wiki.gg/images/f/f5/IconPerks_boilOver.png?bad60a", 
+          "https://deadbydaylight.wiki.gg/images/1/17/IconPerks_windowsOfOpportunity.png?9a11a9" 
+        ] },
+      { name: "Adam Francis", src: "https://deadbydaylight.wiki.gg/images/a/a5/S14_AdamFrancis_Portrait.png?41f88f",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/a/a6/IconPerks_diversion.png?88981a", 
+          "https://deadbydaylight.wiki.gg/images/9/96/IconPerks_autodidact.png?ec9985", 
+          "https://deadbydaylight.wiki.gg/images/7/7e/IconPerks_deliverance.png?1b43e6" 
+        ] },
+      { name: "Jeff Johansen", src: "https://deadbydaylight.wiki.gg/images/8/81/S15_JeffJohansen_Portrait.png?d2bdb8",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/6/6c/IconPerks_breakdown.png?7d6823", 
+          "https://deadbydaylight.wiki.gg/images/4/41/IconPerks_distortion.png?60a80b", 
+          "https://deadbydaylight.wiki.gg/images/0/0d/IconPerks_aftercare.png?ba64f9" 
+        ] },
+      { name: "Jane Romero", src: "https://deadbydaylight.wiki.gg/images/8/80/S16_JaneRomero_Portrait.png?e2acd3",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/9/9e/IconPerks_solidarity.png?ff4662", 
+          "https://deadbydaylight.wiki.gg/images/c/cb/IconPerks_headOn.png?29e687", 
+          "https://deadbydaylight.wiki.gg/images/5/52/IconPerks_poised.png?3d5c89" 
+        ] },
+      { name: "Ash Williams", src: "https://deadbydaylight.wiki.gg/images/9/91/S17_AshWilliams_Portrait.png?ece61f",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/3/31/IconPerks_flip-Flop.png?a27724", 
+          "https://deadbydaylight.wiki.gg/images/5/52/IconPerks_mettleOfMan.png?deba27", 
+          "https://deadbydaylight.wiki.gg/images/7/74/IconPerks_buckleUp.png?5ce8dd" 
+        ] },
+      { name: "Nancy Wheeler", src: "https://deadbydaylight.wiki.gg/images/7/70/S18_NancyWheeler_Portrait.png?adfa54",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/0/02/IconPerks_betterTogether.png?3241c8", 
+          "https://deadbydaylight.wiki.gg/images/4/47/IconPerks_innerStrength.png?840b95", 
+          "https://deadbydaylight.wiki.gg/images/7/7c/IconPerks_fixated.png?c64cb2" 
+        ] },
+      { name: "Steve Harrington", src: "https://deadbydaylight.wiki.gg/images/e/e8/S19_SteveHarrington_Portrait.png?9a11aa",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/d/db/IconPerks_babysitter.png?be1f6b", 
+          "https://deadbydaylight.wiki.gg/images/9/97/IconPerks_secondWind.png?628298", 
+          "https://deadbydaylight.wiki.gg/images/1/1d/IconPerks_camaraderie.png?ca30a6" 
+        ] },
+      { name: "Yui Kimura", src: "https://deadbydaylight.wiki.gg/images/1/13/S20_YuiKimura_Portrait.png?830cf2",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/a/a7/IconPerks_luckyBreak.png?69ab01", 
+          "https://deadbydaylight.wiki.gg/images/d/d0/IconPerks_breakout.png?6efb27", 
+          "https://deadbydaylight.wiki.gg/images/7/79/IconPerks_anyMeansNecessary.png?5eb1f2" 
+        ] },
+      { name: "Zarina Kassir", src: "https://deadbydaylight.wiki.gg/images/d/d9/S21_ZarinaKassir_Portrait.png?9ff369",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/9/9e/IconPerks_offTheRecord.png?35caf8", 
+          "https://deadbydaylight.wiki.gg/images/3/31/IconPerks_forThePeople.png?dc6134", 
+          "https://deadbydaylight.wiki.gg/images/1/1c/IconPerks_redHerring.png?8db0d1" 
+        ] },
+      { name: "Cheryl Mason", src: "https://deadbydaylight.wiki.gg/images/1/1d/S22_CherylMason_Portrait.png?50c77e",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/a/a5/IconPerks_soulGuard.png?34dc60", 
+          "https://deadbydaylight.wiki.gg/images/3/31/IconPerks_repressedAlliance.png?2a696f", 
+          "https://deadbydaylight.wiki.gg/images/c/c9/IconPerks_bloodPact.png?f9c5c4" 
+        ] },
+      { name: "Felix Richter", src: "https://deadbydaylight.wiki.gg/images/9/9e/S23_FelixRichter_Portrait.png?39eafa",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/7/7c/IconPerks_visionary.png?2a48fc", 
+          "https://deadbydaylight.wiki.gg/images/3/3b/IconPerks_builtToLast.png?2f415d", 
+          "https://deadbydaylight.wiki.gg/images/8/84/IconPerks_desperateMeasures.png?b18c18" 
+        ] },
+      { name: "Elodie Rakoto", src: "https://deadbydaylight.wiki.gg/images/d/de/S24_ElodieRakoto_Portrait.png?6be1d2",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/c/c1/IconPerks_appraisal.png?1342d7", 
+          "https://deadbydaylight.wiki.gg/images/4/4b/IconPerks_powerStruggle.png?e01602", 
+          "https://deadbydaylight.wiki.gg/images/e/eb/IconPerks_deception.png?4b4f9a" 
+        ] },
+      { name: "Yun-Jin Lee", src: "https://deadbydaylight.wiki.gg/images/f/f7/S25_Yun-JinLee_Portrait.png?1d1ab0",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/7/75/IconPerks_fastTrack.png?57ee75", 
+          "https://deadbydaylight.wiki.gg/images/4/43/IconPerks_self-Preservation.png?316807", 
+          "https://deadbydaylight.wiki.gg/images/e/e0/IconPerks_smashHit.png?27f3e6" 
+        ] },
+      { name: "Jill Valentine", src: "https://deadbydaylight.wiki.gg/images/d/db/S26_JillValentine_Portrait.png?5e137b",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/d/d1/IconPerks_counterforce.png?b76d0c", 
+          "https://deadbydaylight.wiki.gg/images/1/1c/IconPerks_blastMine.png?b1a23e", 
+          "https://deadbydaylight.wiki.gg/images/f/f3/IconPerks_resurgence.png?b3bc7d" 
+        ] },
+      { name: "Leon Scott Kennedy", src: "https://deadbydaylight.wiki.gg/images/7/7d/S27_LeonScottKennedy_Portrait.png?5f9ae0",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/a/a5/IconPerks_biteTheBullet.png?910cfd", 
+          "https://deadbydaylight.wiki.gg/images/2/2f/IconPerks_rookieSpirit.png?cb2ed0", 
+          "https://deadbydaylight.wiki.gg/images/d/db/IconPerks_flashbang.png?dd91f3" 
+        ] },
+      { name: "Mikaela Reid", src: "https://deadbydaylight.wiki.gg/images/3/3f/S28_MikaelaReid_Portrait.png?f67900",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/9/91/IconPerks_clairvoyance.png?297751", 
+          "https://deadbydaylight.wiki.gg/images/c/c7/IconPerks_boonShadowStep.png?a3ecc7", 
+          "https://deadbydaylight.wiki.gg/images/5/54/IconPerks_boonCircleOfHealing.png?e36c2d" 
+        ] },
+      { name: "Jonah Vasquez", src: "https://deadbydaylight.wiki.gg/images/3/37/S29_JonahVasquez_Portrait.png?d4931a",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/8/82/IconPerks_overcome.png?ce6f96", 
+          "https://deadbydaylight.wiki.gg/images/7/76/IconPerks_boonExponential.png?fc175e", 
+          "https://deadbydaylight.wiki.gg/images/4/4f/IconPerks_correctiveAction.png?5ef598" 
+        ] },
+      { name: "Yoichi Asakawa", src: "https://deadbydaylight.wiki.gg/images/a/af/S30_YoichiAsakawa_Portrait.png?9d121b",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/4/46/IconPerks_parentalGuidance.png?62fe32", 
+          "https://deadbydaylight.wiki.gg/images/6/60/IconPerks_boonDarkTheory.png?8b62ae", 
+          "https://deadbydaylight.wiki.gg/images/1/14/IconPerks_empathicConnection.png?728368" 
+        ] },
+      { name: "Haddie Kaur", src: "https://deadbydaylight.wiki.gg/images/e/e7/S31_HaddieKaur_Portrait.png?f3b1ae",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/7/7e/IconPerks_innerFocus.png?9265f4", 
+          "https://deadbydaylight.wiki.gg/images/9/99/IconPerks_overzealous.png?edf207", 
+          "https://deadbydaylight.wiki.gg/images/d/d0/IconPerks_residualManifest.png?612bbb" 
+        ] },
+      { name: "Ada Wong", src: "https://deadbydaylight.wiki.gg/images/5/5e/S32_AdaWong_Portrait.png?1073d0",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/2/23/IconPerks_wiretap.png?a90034", 
+          "https://deadbydaylight.wiki.gg/images/f/fb/IconPerks_lowProfile.png?962be5", 
+          "https://deadbydaylight.wiki.gg/images/5/5a/IconPerks_reactiveHealing.png?349e39" 
+        ] },
+      { name: "Rebecca Chambers", src: "https://deadbydaylight.wiki.gg/images/f/fd/S33_RebeccaChambers_Portrait.png?d5461f",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/b/b1/IconPerks_betterThanNew.png?bac710", 
+          "https://deadbydaylight.wiki.gg/images/5/5d/IconPerks_hyperfocus.png?5e7d38", 
+          "https://deadbydaylight.wiki.gg/images/5/5b/IconPerks_reassurance.png?8913c9" 
+        ] },
+      { name: "Vittorio Toscano", src: "https://deadbydaylight.wiki.gg/images/3/39/S34_VittorioToscano_Portrait.png?273309",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/0/07/IconPerks_potentialEnergy.png?ca8f3c", 
+          "https://deadbydaylight.wiki.gg/images/f/f7/IconPerks_quickGambit.png?153033", 
+          "https://deadbydaylight.wiki.gg/images/9/90/IconPerks_fogwise.png?6a146b" 
+        ] },
+      { name: "Thalita Lyra", src: "https://deadbydaylight.wiki.gg/images/9/96/S35_ThalitaLyra_Portrait.png?fcbd38",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/4/4c/IconPerks_friendlyCompetition.png?78ee93", 
+          "https://deadbydaylight.wiki.gg/images/0/02/IconPerks_cutLoose.png?45851f", 
+          "https://deadbydaylight.wiki.gg/images/2/2b/IconPerks_teamworkPowerOfTwo.png?5cdb75" 
+        ] },
+      { name: "Renato Lyra", src: "https://deadbydaylight.wiki.gg/images/6/69/S36_RenatoLyra_Portrait.png?d20521",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/2/2c/IconPerks_bloodRush.png?195902", 
+          "https://deadbydaylight.wiki.gg/images/e/e8/IconPerks_backgroundPlayer.png?cdf056", 
+          "https://deadbydaylight.wiki.gg/images/a/a0/IconPerks_teamworkCollectiveStealth.png?9b3acd" 
+        ] },
+      { name: "Gabriel Soma", src: "https://deadbydaylight.wiki.gg/images/6/64/S37_GabrielSoma_Portrait.png?44827f",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/0/0d/IconPerks_troubleshooter.png?662533", 
+          "https://deadbydaylight.wiki.gg/images/c/c6/IconPerks_scavenger.png?1fc2de", 
+          "https://deadbydaylight.wiki.gg/images/c/c0/IconPerks_madeForThis.png?9e3242" 
+        ] },
+      { name: "Nicolas Cage", src: "https://deadbydaylight.wiki.gg/images/b/b7/S38_NicolasCage_Portrait.png?756bb9",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/8/85/IconPerks_dramaturgy.png?4ea20a", 
+          "https://deadbydaylight.wiki.gg/images/a/ac/IconPerks_plotTwist.png?a106be", 
+          "https://deadbydaylight.wiki.gg/images/b/b4/IconPerks_scenePartner.png?8a80ad" 
+        ] },
+      { name: "Ellen Ripley", src: "https://deadbydaylight.wiki.gg/images/1/15/S39_EllenRipley_Portrait.png?9966b6",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/9/9a/IconPerks_chemicalTrap.png?f16588", 
+          "https://deadbydaylight.wiki.gg/images/0/08/IconPerks_luckyStar.png?189218", 
+          "https://deadbydaylight.wiki.gg/images/e/e5/IconPerks_lightFooted.png?cdc815" 
+        ] },
+      { name: "Alan Wake", src: "https://deadbydaylight.wiki.gg/images/4/43/S40_AlanWake_Portrait.png?600f97",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/b/bb/IconPerks_championOfLight.png?47998c", 
+          "https://deadbydaylight.wiki.gg/images/1/1c/IconPerks_deadline.png?69d516", 
+          "https://deadbydaylight.wiki.gg/images/8/8c/IconPerks_boonIllumination.png?a90fcc" 
+        ] },
+      { name: "Sable Ward", src: "https://deadbydaylight.wiki.gg/images/9/9c/S41_SableWard_Portrait.png?78936e",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/0/07/IconPerks_invocationWeavingSpiders.png?fc3a63", 
+          "https://deadbydaylight.wiki.gg/images/8/8f/IconPerks_wicked.png?813308", 
+          "https://deadbydaylight.wiki.gg/images/e/e2/IconPerks_strengthInShadows.png?c1507c" 
+        ] },
+      { name: "The Troupe", src: "https://deadbydaylight.wiki.gg/images/e/e0/S42_TheTroupe_Portrait.png?9f592a",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/9/97/IconPerks_mirroredIllusion.png?7792d0", 
+          "https://deadbydaylight.wiki.gg/images/b/b6/IconPerks_stillSight.png?82ea5c", 
+          "https://deadbydaylight.wiki.gg/images/d/d8/IconPerks_bardicInspiration.png?bae2a8" 
+        ] },
+      { name: "Lara Croft", src: "https://deadbydaylight.wiki.gg/images/6/63/S43_LaraCroft_Portrait.png?1e338f",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/f/fc/IconPerks_finesse.png?38d700", 
+          "https://deadbydaylight.wiki.gg/images/a/ae/IconPerks_specialist.png?a611f9", 
+          "https://deadbydaylight.wiki.gg/images/f/fe/IconPerks_hardened.png?ea6976" 
+        ] },
+      { name: "Trevor Belmont", src: "https://deadbydaylight.wiki.gg/images/f/f8/S44_TrevorBelmont_Portrait.png?f68391",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/2/22/IconPerks_Exultation.png?62d4c5", 
+          "https://deadbydaylight.wiki.gg/images/2/25/IconPerks_EyesOfBelmont.png?f94e2b", 
+          "https://deadbydaylight.wiki.gg/images/9/98/IconPerks_MomentOfGlory.png?6294f9" 
+        ] },
+      { name: "Taurie Cain", src: "https://deadbydaylight.wiki.gg/images/7/72/S45_TaurieCain_Portrait.png?44fce2",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/a/a8/IconPerks_invocationTreacherousCrows.png?1e1ba8", 
+          "https://deadbydaylight.wiki.gg/images/3/3a/IconPerks_shoulderTheBurden.png?586691", 
+          "https://deadbydaylight.wiki.gg/images/b/b3/IconPerks_cleanBreak.png?5b7e94" 
+        ] },
+      { name: "Orela Rose", src: "https://deadbydaylight.wiki.gg/images/e/ef/S46_OrelaRose_Portrait.png?c845fe",
+        hoverImages: [
+          "https://deadbydaylight.wiki.gg/images/1/1e/T_UI_iconsPerks_DoNoHarm.png?2073b4", 
+          "https://deadbydaylight.wiki.gg/images/b/b0/T_UI_iconsPerks_RapidResponse.png?25c13f", 
+          "https://deadbydaylight.wiki.gg/images/2/29/T_UI_iconsPerks_DutyOfCare.png?a2c25e" 
+        ] },
 
 
    
