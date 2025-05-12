@@ -287,9 +287,9 @@
 
     window.onload = () => showIcons('killers');
 
-      const script = document.createElement('script');
-  script.src = 'main.js?v=' + new Date().getTime();
-  document.head.appendChild(script);
+window.onload = () => {
+    window.location.href = window.location.href.split('?')[0] + '?nocache';
+};
   </script>
 </body>
 
