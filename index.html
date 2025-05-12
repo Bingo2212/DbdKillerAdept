@@ -287,13 +287,9 @@
 
     window.onload = () => showIcons('killers');
 
-  function reloadPageNoCache() {
-    let currentUrl = window.location.href;
-    
-    if (currentUrl.indexOf('?nocache') === -1) {
-        window.location.href = currentUrl + (currentUrl.indexOf('?') === -1 ? '?' : '&') + 'nocache';
-
-        reloadPageNoCache();
+      const script = document.createElement('script');
+  script.src = 'main.js?v=' + new Date().getTime();
+  document.head.appendChild(script);
   </script>
 </body>
 
