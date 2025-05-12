@@ -287,9 +287,17 @@
 
     window.onload = () => showIcons('killers');
 
-      const script = document.createElement('script');
-  script.src = 'main.js?v=' + new Date().getTime();
-  document.head.appendChild(script);
+      function reloadPageNoCache() {
+            let currentUrl = window.location.href;
+
+            if (currentUrl.indexOf('?nocache') === -1) {
+                window.location.href = currentUrl + '?nocache';
+            } else {
+                window.location.reload(true);
+            }
+        }
+
+        reloadPageNoCache();
   </script>
 </body>
 
