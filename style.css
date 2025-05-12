@@ -1,0 +1,19 @@
+.image-sources {
+  position: fixed;  
+  bottom: 20px;    
+  left: 20px;      
+  font-size: 16px;
+  color: #ccc;      
+  background-color: rgba(0, 0, 0, 0.5);  
+  padding: 10px;
+  border-radius: 5px; 
+}
+
+.sources-link {
+  color: #fff;  
+  text-decoration: none;  
+}
+
+.sources-link:hover {
+  text-decoration: underline;  
+}
