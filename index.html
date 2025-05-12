@@ -104,13 +104,22 @@
   </style>
 </head>
 <body>
+  
   <div class="buttons">
     <button onclick="showIcons('killers')">Killer anzeigen</button>
     <button onclick="showIcons('survivors')">Survivor anzeigen</button>
   </div>
 
+  <div class="image-sources">
+  <span class="sources-text">Image sources:</span>
+  <a href="https://deadbydaylight.wiki.gg/" target="_blank" class="sources-link">here</a>
+</div>
+
+
   <input type="text" id="search" placeholder="Name suchen..." oninput="filterIcons()">
   <div class="icons-container" id="iconsContainer"></div>
+
+  
 
   <script>
     const killerIcons = [
@@ -277,10 +286,9 @@
 
     window.onload = () => showIcons('killers');
 
-      if (!window.location.search.includes('nocache')) {
-    const newUrl = window.location.pathname + '?nocache=' + Date.now();
-    window.location.replace(newUrl);
-  }
+      const script = document.createElement('script');
+  script.src = 'main.js?v=' + new Date().getTime();
+  document.head.appendChild(script);
   </script>
 </body>
 
