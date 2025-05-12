@@ -283,9 +283,17 @@
         icon.style.display = alt.includes(input) ? 'block' : 'none';
       });
     }
+    
+      const script = document.createElement('script');
 
+
+  script.src = 'main.js?v=' + new Date().getTime();
+
+
+  document.head.appendChild(script);
 
     window.onload = () => showIcons('killers');
+    
 };
   </script>
 </body>
