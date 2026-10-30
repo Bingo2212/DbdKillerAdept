@@ -458,7 +458,7 @@
           ],
         },
         {
-          name: "The Onryo",
+          name: "The Onryō",
           src: "https://deadbydaylight.wiki.gg/images/5/5f/K27_TheOnryo_Portrait.png?50d2b8",
           hoverImages: [
             "https://deadbydaylight.wiki.gg/images/1/1c/IconPerks_scourgeHookFloodsOfRage.png?45d664",
@@ -1210,6 +1210,329 @@
             quote:'"You\'d be suprised what tools can save a life."-Amanda Young'
           },
         },
+        "The Clown": {
+          perk1: {
+            name: "Coulrophobia",
+            description:`Survivors withing your Terror Radius:<ul><li>Heal ${tiers(20, 25, 30)}% slower.</li><li>While healing, basic Skill Checks spin <b>50</b>% faster.</li></ul>`,
+            quote: '""',
+          },
+          perk2: {
+            name: "Pop Goes The Weasel",
+            description:`Whenever you hook a Survivor, for the next ${tiers(35, 40, 45)}s, when you damage a Generator, it explodes and loses <b>15</b>% more progress.`,
+            quote:'""'
+          },
+          perk3: {
+            name: "Bamboozle",
+            description:`Whenever you vault a Window, it is blocked for Survivors for ${tiers(8, 12, 16)}s.<br><br>You basic-vault Windows ${tiers(5, 10, 15)}% faster.<br><br>Only 1 Window can be blocked at a time.`,
+            quote:'""'
+          },
+        },
+        "The Spirit": {
+          perk1: {
+            name: "Spirit Fury",
+            description:`After you break ${tiers(4, 3, 2)} Pallets, when you are Pallet-stunned, the Pallet is destroyed.`,
+            quote: '"Fury is her blood."',
+          },
+          perk2: {
+            name: "Hex: Haunted Ground",
+            description:`When the trial starts, 2 Dull Totems ignite.<br><br>When either of those Hex Totems is blessed or cleansed:<ul><li>All Survivors gain ${colorR("Exposed")} for ${tiers(40, 50, 60)}s.</li><li>The other Totem is extinguished.</li></ul>`,
+            quote:'"Her home became profane."'
+          },
+          perk3: {
+            name: "Rancor",
+            description:`Whenever a Generator is completed:<ul><li>You are alerted to the position of all Survivors for <b>3</b>s.</li><li>The Obsession sees your Aura for ${tiers(5, 4, 3)}s.</li></ul>When all Generators are completed:<ul><li>The Obsession gains ${colorR("Exposed")}.</li><li>You can Kill the Obsession</li>`,
+            quote:'""'
+          },
+        },
+        "The Legion": {
+          perk1: {
+            name: "Discordance",
+            description:`Within ${tiers(64, 96, 128)}m of you, whenever a Generator is being repaired by at least 2 Survivors, you are alerted.<br><br>While that Generator is being repaired by atleast 2 Survivors, you see its Aura. When it is no longer being repaired by at least 2 Survivors, this ends after <b>4</b>s.`,
+            quote: '"Smartasses get killed. We always see to that."-The Legion',
+          },
+          perk2: {
+            name: "Mad Grit",
+            description:`While carrying a Survivor:<ul><li>Whenever you miss a basic-attack, your cooldown is <b>100</b>% shorter.</li><li>Whenever you damage a Survivor with a basic attack, the carried Survivor gains no wiggle progress for ${tiers(2, 3, 4)}s.</li></ul>`,
+            quote:'"There\'s no getting out of this now. We\'re too good at it."-The Legion'
+          },
+          perk3: {
+            name: "Iron Maiden",
+            description:`Whenever a Survivor exits a Locker:<ul><li>They gain ${colorR("Exposed")} for <b>30</b>s.</li><li>They scream, then you are alerted to their location for <b>4</b>s.</li></ul>You open Lockers ${tiers(30, 40, 50)}% faster.`,
+            quote:'"This is no place for cowards."-The Legion'
+          },
+        },
+        "The Plague": {
+          perk1: {
+            name: "Corrupt Intervention",
+            description:`When the trial starts, the <b>3</b> farthest Generators from you are blocked for ${tiers(80, 100, 120)}s, or until you down a Survivor.`,
+            quote: '"It shall be known across the land that the Gods curse the unfaithful." (The Tablet of Adiris, 3.7.)',
+          },
+          perk2: {
+            name: "Infectious Frigt",
+            description:`Whenever a Survivor is downed, Survivors within your Terror Radius scream and you are alerted for ${tiers(4, 5, 6)}s.`,
+            quote:'"Horror overcomes the heart of infidels who cry at the feet of the fallen." (Hymn of Praise, 11.4)'
+          },
+          perk3: {
+            name: "Dark Devotion",
+            description:`Whenever the Obsession takes damage, for ${tiers(35, 40, 45)}s:<ul><li>Your Terror Radius is set to <b>40</b>m.</li><li>The Obsession has your Terror Radius.</li><li>You gain ${colorC("Undetectable.")}</li></ul>`,
+            quote:'"And terror shall take hold of a defiant non-believer, who shall falsely announce my arrival." (The Tablet of Adiris, 48.9)'
+          },
+        },
+        "The Ghost Face": {
+          perk1: {
+            name: "I\'m All Ears",
+            description:`Whenever a Survivor fast-enters or fast-exits a Locker, or medium or fast-vaults withing <b>48</b>m of you, you see their Aura for <b>8</b>s. Cooldown: ${tiers(40, 35, 30)}s.`,
+            quote: '"There is no need to worry. I\'ve been preparing my whole life for this."-The Ghost Face',
+          },
+          perk2: {
+            name: "Thrilling Tremors",
+            description:`Whenever you pick-up a Survivor, all Generators not being repaired are blocked for <b>16</b>s. Cooldown: ${tiers(40, 35, 30)}s.`,
+            quote:'"The night assists me and it\'s endless here." The Ghost Face'
+          },
+          perk3: {
+            name: "Furtive Chase",
+            description:`Whenever you hook the Obsession:<ul><li>You gain <b>10</b>% ${colorC("Haste")} for ${tiers(14, 16, 18)}s.</li><li>You gain ${colorC("Undetectable")} for ${tiers(14, 16, 18)}s.</li></ul>Whenever the Obsession is unhooked, the Survivor who unhooked them becomes the Obsession.`,
+            quote:'"You have no idea what I have planned for you. It\'ll be in the news for weeks: I\'ll make sure of it."-The Ghost Face'
+          },
+        },
+        "The Demogorgon": {
+          perk1: {
+            name: "Surge",
+            description:`Whenever you down a Survivor with a basic-attack, Generators withing <b>32</b>m:<ul><li>Explode, lose ${tiers(6, 7, 8)}% progress and start regressing.</li><li>Survivors repairing them scream.</li></ul>`,
+            quote: '"The creature appears to have some unknown influence over electricity and nearby electronics."-Hawkins National Laboratory',
+          },
+          perk2: {
+            name: "Mindbreaker",
+            description:`While Survivors are repairing a Generator:<ul><li>They gain ${colorR("Blindness")}.</li><li>They gain ${colorR("Exhausted")}.</li></ul>When they stop repairing a Generator, this ends after ${tiers(3, 4, 5)}s.`,
+            quote:'"The specimen\'s apparent telepathic ability can evoke feelings of dread and fatigue in nearby individuals."-Hawkins National Laboratory'
+          },
+          perk3: {
+            name: "Cruel Limits",
+            description:`Whenever a Generator is completed:<ul><li>You see the Auras of all Windows for ${tiers(20, 25, 30)}s.</li><li>All Windows are blocked for Survivors for ${tiers(20, 25, 30)}s.</li></ul>`,
+            quote:'"The specimen seems to be able to perform some kind of telekinesis that impacts the state of nearby objects, as if they existed in some other form withing a dimension alternate to our own."-Hawkins National Laboratory'
+          },
+        },
+        "The Oni": {
+          perk1: {
+            name: "Zanshin Tactics",
+            description:`Within <b>32</b>m, you see the Auras of Pallets and windows.<br><br>Whenever a Survivor drops a Pallet, you see their Aura for ${tiers(3, 4, 5)}s.`,
+            quote: '"Within your enemy\'s strength is weakness"-Renjirp\'s Doctrine 12:5',
+          },
+          perk2: {
+            name: "Blood Echo",
+            description:`Whenever you hook a Survivor, for ${tiers(20, 25, 30)}s, all injured Survivors:<ul><li>Gain ${colorR("Exhausted")}.</li><li>Gain ${colorR("Hemorrhage")}.</li></ul<`,
+            quote:'"Attack an enemy with precision and their allies will feel it."-Renjiro\'s Doctrine 6:3'
+          },
+          perk3: {
+            name: "Nemesis",
+            description:`Whenever a Survivor blinds you, Locker-stuns or Pallet-stuns you, they become the Obession.<br><br>Whenever a Survivor becomes the Obsession:<ul><li>They gain ${colorR("Oblivious")} for ${tiers(40, 50, 60)}s.</li><li>You see their Aura for <b>8</b>s.</li></ul>`,
+            quote:'"Only a fool would spit in a demon\'s face and declare victory."-Renjiro\'s Doctrine 4:9'
+          },
+        },
+        "The Deathslinger": {
+          perk1: {
+            name: "Gearhead",
+            description:`Whenever a Survivor takes damage, for the next <b>30</b>s, whenever a Survivor repairing a Generator hits a good basic Skill Check, you see their Aura for ${tiers(6, 7, 8)}s.`,
+            quote: '"Sometimes a man\'s best work is what puts him in the grave."-The prison warden',
+          },
+          perk2: {
+            name: "Dead Man\'s Switch",
+            description:`Whenever you hook a Survivor, the next time any Survivor stops repairing a Generator for more than <b>2</b>s, it is blocked for ${tiers(30, 35, 40)}s. Cooldown: ${tiers(30, 35, 40)}s.`,
+            quote:'"I\'ve seen the look on a man\'s face when he realizes he\'s going to die."-Caleb Quinn'
+          },
+          perk3: {
+            name: "Hex: Retribution",
+            description:`When the trial starts, a Dull Totem ignites.<br><br>Whenever a Survivor starts blessing or cleansing a Totem, they gain ${colorR("Oblivious")} for ${tiers(40, 50, 60)}}s.<br><br>Whenever a Hex Toem is blessed or cleansed, you see the Auras of all Survivors for <b>20</b>s.`,
+            quote:'"Bloody fool, you pulled the trigger on yourself."-Caleb Quinn'
+          },
+        },
+        "The Executioner": {
+          perk1: {
+            name: "Forced Penance",
+            description:`Whenever a Survivor takes a protection hit, they gain ${colorR("Broken")} for ${tiers(60, 70, 80)}s.`,
+            quote: '""',
+          },
+          perk2: {
+            name: "Trail Of Torment",
+            description:`Whenever you damage a Generator, until it stops regressing:<ul><li>You gain ${colorR("Undetectable")}.</li><li>Survivors see that Generator\'s Aura.</li>Cooldown: ${tiers(60, 45, 30)}s.</ul>`,
+            quote:'""'
+          },
+          perk3: {
+            name: "Deathbound",
+            description:`Whenever a Survivor finishes healing another, the healer screams. Then, until the healer takes damage, while they are at least ${tiers(12, 8, 4)}m away from the healed Survivor:<ul><li>The healer gains ${colorR("Oblivious")}.</li><li>The healer sees the healed Survivor\'s Aura.</li></ul>This can only apply to one Survivor at a time.`,
+            quote:'""'
+          },
+        },
+        "The Blight": {
+          perk1: {
+            name: "Dragon\'s Grip",
+            description:`Whenever you damage a Generator, for the next <b>30</b>s, the first Survivor that repairs that Generator:<ul><li>They scream, then you are alerted to their position for <b>4</b>s.</li><li>They gain ${colorR("Exposed")} for <b>60</b>s.</li>Cooldown: ${tiers(60, 45, 30)}s.</ul>`,
+            quote: '"Such potential in this compound... even the slightest trace causes unnatural effects."-Journal of Talbot Grimes',
+          },
+          perk2: {
+            name: "Hex: Undying",
+            description:`When the trial starts, a Dull Totem ignites.<br><br>When another Hex Totem is blessed or cleansed, it replaces this one and keeps any Tokens it had.<br><br>You see the Auras of Survivors within ${tiers(2, 3, 4)}m of Dull Totems.`,
+            quote:'""'
+          },
+          perk3: {
+            name: "Hex: Blood Favor",
+            description:`When the trial starts, a Dull Totem ignites.<br><br>Whenever a healthy Survivor becomes injured by your basic-attack, Upright Pallets within <b>32</b>m of them are blocked for ${tiers(13, 14, 15)}s.`,
+            quote:'"It would be no leap of the imagination to suggest that the trials are a biological response of sorts."-Journal of Talbot Grimes'
+          },
+        },
+        "The Twins": {
+          perk1: {
+            name: "Hoarder",
+            description:`When the trial starts, <b>2</b> more Chests appear.<br><br>Whenever a Survivor picks-up an Item or starts unlocking a Chest within ${tiers(32, 48, 64)}m of you, you are alerted.`,
+            quote: '""',
+          },
+          perk2: {
+            name: "Oppression",
+            description:`Whenever you damage a Generator, up to <b>4</b> other Generators start regressing. Survivors repairing them get a special Skill Check. Cooldown: ${tiers(45, 40, 35)}`,
+            quote:'""'
+          },
+          perk3: {
+            name: "Coup de Grâce",
+            description:`Whenever a Generator is completed, you earn <b>2</b> Tokens, up to <b>5</b>.<br><br>Whenever you lunge-attack, spend <b>1</b> Token to make it ${tiers(70, 75, 80)}% longer.`,
+            quote:'""'
+          },
+        },
+        "The Trickster": {
+          perk1: {
+            name: "Starstruck",
+            description:`While carrying a Survivor, Survivors within your Terror Radius gain ${colorR("Exposed")}. This ends ${tiers(26, 28, 30)}s after:<ul><li>They leave your Terror Radius.</li><li>You drop or Hook the carried Survivor.</li></ul>Cooldown: <b>60</b>s.`,
+            quote: '"Enjoy this moment, few get so close."-Hak Ji-woon',
+          },
+          perk2: {
+            name: "Hex: Crowd Control",
+            description:`The first time a Survivor medium or fast-vaults a Window, a Dull Totem Ignites.<br><br>The last ${tiers(4, 5, 6)} Windows Survivors medium or fast-vault are blocked.<br><br>You basic-vault blocked Windows <b>15</b>% faster.<br><br>You see the Auras of blocked Windows withing <b>24</b>m.`,
+            quote:'"You have no control. People like you never did."-Hak Ji-woon'
+          },
+          perk3: {
+            name: "No Way Out",
+            description:`The first time you Hook each Survivor, you earn <b>1</b> Token.<br><br>When all Generators are completed, when a Survivor starts opening an Exit Gate:<ul><li>It is blocked <b>12</b>s, plus ${tiers(6, 9, 12)}s for each Token.</li><li>You are alerted.</li></ul>`,
+            quote:'"That sound when you bleed...let me hear it again"-Hak Ji-woon'
+          },
+        },
+        "The Nemesis": {
+          perk1: {
+            name: "Lethal Pursuer",
+            description:`When the trial starts, you see the Auras of all Survivors for ${tiers(7, 8, 9)}s.<br><br>Whenever you see a Survivor\'s Aura for a duration, it is <b>2</b>s longer.`,
+            quote: '"...it knows what it wants and won\'t stop till it gets it."-Carlos Oliveira',
+          },
+          perk2: {
+            name: "Hysteria",
+            description:`Whenever a healthy Survivor becomes injured, all injured Survivors gain ${colorR("Oblivious")} for ${tiers(30, 35, 40)}s. Cooldown: <b>20</b>s.`,
+            quote:'"Sorry I got a little jumpy there. Didn\'t know quite what to expect."-Robert Kendo'
+          },
+          perk3: {
+            name: "Eruption",
+            description:`Whenever you damage a Generator, when you down a Survivor, all Generators are damaged this way:<ul><li>Explode, lose <b>10</b>% progress and start regressing.</li><li>Survivors repairing them scream, then you see their Auras for ${tiers(8, 10, 12)}s.</li></ul>Cooldown: <b>30</b>s.`,
+            quote:'"It can use weapons?"-Jill Valentine'
+          },
+        },
+        "The Cenobite": {
+          perk1: {
+            name: "Deadlock",
+            description:`Whenever a Generator is completed, the Generator with the most progress is blocked for ${tiers(15, 20, 25)}s.`,
+            quote: '""',
+          },
+          perk2: {
+            name: "Hex: Plaything",
+            description:`The first time you hook each Survivor, they are hexed and a Dull Totem ignites.<br><br>For <b>90</b>s, the Hex Totem is blocked to other Survivors.<br><br>The hexed Survivors:<ul><li>Gain ${colorR("Oblivious")}.</li><li>Within ${tiers(24, 20, 16)}m of the Hex Totem, they see its Aura.</li></ul>`,
+            quote:'""'
+          },
+          perk3: {
+            name: "Scourge Hook: Gift Of Pain",
+            description:`When the trial starts, 4 random Hooks become Scourge Hooks.<br><br>Whenever a Survivor is unhooked from a Scourge Hook:<ul><li>They gain ${colorR("Hemorrhage")} for <b>90</b>s.</li><li>They gain ${colorR("Mangled")} for <b>90</b>s.</li><li>When they are healed, until they take damage, they heal and repair ${tiers(10, 13, 16)}% slower.</li></ul>`,
+            quote:'""'
+          },
+        },
+        "The Artist": {
+          perk1: {
+            name: "Grim Embrace",
+            description:`Whenever you Hook a Survivor for the first time, earn <b>1</b> Token.<br><br>When you move <b>16</b>m away from the hooked Survivor, all Generators are blocked for ${tiers(6, 8, 10)}s.<br><br>When you have <b>4</b> Tokens, when you move <b>16</b>m away from the hooked Survivor:<ul><li>All Generators are blocked for <b>40</b>s.</li><li>You see the Obsession\'s Aura for ${tiers(6, 8, 10)}s.</li></ul>`,
+            quote: '"Are we nothing but prisoners to our sorrow?"-Carmina Mora',
+          },
+          perk2: {
+            name: "Scourge Hook: Pain Resonance",
+            description:`When the trial starts:<ul><li>4 random Hooks become Scourge Hooks.</li><You earn <b>4</b> Tokens.</li></ul>The first time each Survivor is hooked on a Scourge Hook, spend <b>1</b> Token, then the Generator with the most progress:<ul><li>Explodes, loses ${tiers(10, 15, 20)}% progress and starts regressing.</li><li>Survivors repairing it scream.</li></ul>`,
+            quote:'"The pain spills beyond flesh/darkness staining the horizon."-Girl in the Shadow by Carmina Mora'
+          },
+          perk3: {
+            name: "Hex: Pentimento",
+            description:`You see the Auras of cleansed Totems, and can rekindle each once.<br><br>Within <b>16</b>m, Survivors see the Auras of Rekindled Totems.<br><br>While a Totem is rekindled, Survivors heal and repair <b>20</b>% slower, plus ${tiers(1, 2, 3)}% for each additional Rekindled Totem<br><br>When all <b>5</b> Totems are rekindled at once, they are blocked.`,
+            quote:'"A pentimento is concealed art. There is often a desire to see that which is beyond."-A Guide to Art & Process'
+          },
+        },
+        "The Onryō": {
+          perk1: {
+            name: "Scourge Hook: Floods Of Rage",
+            description:`When the trial starts, 4 random Hooks become Scourge Hooks.<br><br>Whenever a Survivor is unhooked from a Scourge Hook, you see the Auras of other Survivors for ${tiers(5, 6, 7)}s.`,
+            quote: '""',
+          },
+          perk2: {
+            name: "Call Of Brine",
+            description:`Whenever you damage a Generator, it regresses ${tiers(30, 40, 50)}% faster for <b>90</b>s.<br><br>For that time, whenever a Survivor hits a good basic Skill Check while repairing that Generator, you are alerted.`,
+            quote:'""'
+          },
+          perk3: {
+            name: "Merciless Storm",
+            description:`The first time each Generator has <b>90</b>% progress:<br>Survivors repairing it get special Skill Checks. If they miss one of these or stop repairing, that Generator is blocked for ${tiers(16, 18, 20)}s.`,
+            quote:'""'
+          },
+        },
+        "The Dredge": {
+          perk1: {
+            name: "Dissolution",
+            description:`<b>3</b>s after a Survivor takes damage from a basic-attack, for ${tiers(13, 14, 15)}s, the next time a Survivor fast-vaults a Pallet while within your Terror Radius, it is destroyed.`,
+            quote: '"The Garden shall be a place of perfect Joy; through Joy, nothing shall stand in our way."-Otto Stamper',
+          },
+          perk2: {
+            name: "Darkness Revealed",
+            description:`Whenever you search a Locker, you see the Auras of Survivors within <b>8</b>m of Lockers for ${tiers(6, 7, 8)}s. Cooldown: <b>30</b>s.`,
+            quote:'"Stay in the light, my children. In darkness, your fear will expose you."-Otto Stamper'
+          },
+          perk3: {
+            name: "Septic Touch",
+            description:`While a Survivor withing your Terror Radius is healing:<ul><li>They gain ${colorR("Blindness")}</li><li>They gain ${colorR("Exhausted")}.</li></ul>When they stop healing, this ends after ${tiers(20, 25, 30)}s.`,
+            quote:'"Do not admit to fear, or pain, or doubt. These are the seeds from which darkness grows."-Otto Stamper'
+          },
+        },
+        "The Mastermind": {
+          perk1: {
+            name: "Superior Anatomy",
+            description:`Whenever a Survivor medium or fast-vaults within <b>12</b>m of you, the next time you basic-vault a Window, you basic-vault Windows ${tiers(30, 35, 40)}% faster for <b>10</b>s. Cooldown: <b>20</b>s.`,
+            quote: '""',
+          },
+          perk2: {
+            name: "Awakened Awareness",
+            description:`While carrying a Survivor, within ${tiers(16, 18, 20)}m of you, you see the Auras of other Survivors.`,
+            quote:'""'
+          },
+          perk3: {
+            name: "Terminus",
+            description:`When all the Generators are completed: all injured, downed, and hooked Survivors gain ${colorR("Broken")}.<br><br>When an Exit Gate is opened, this ends after ${tiers(35, 40, 45)}s.`,
+            quote:'""'
+          },
+        },
+        "The Knight": {
+          perk1: {
+            name: "Nowhere To Hide",
+            description:`Whenever you damage a Generator, for ${tiers(3, 4, 5)}s, you see the Auras of Survivors within <b>24</b>m of it.`,
+            quote: '"Out with you, cowards! Show yourselves!"-Tarhos Kovács',
+          },
+          perk2: {
+            name: "Hex: Face The Darkness",
+            description:`Whenever you damage a Survivor, they are hexed and a Dull Totem ignites.<br><br>Every ${tiers(35, 30, 25)}s, other Survivors not within your Terror Radius scream, then you see their Auras for <b>2</b>s.<br><br>When the hexed Survivor is downed or becomes healthy, the Hex Totem is extinguished.`,
+            quote:'"I shall make an example of one. These mewling worms will never know peace."-Tarhos Kovács'
+          },
+          perk3: {
+            name: "Hubris",
+            description:`Whenever you are stunned by a Survivor, they gain ${colorR("Exposed")} for ${tiers(20, 25, 30)}s. Cooldown: <b>20</b>s.`,
+            quote:'"You have made a grave mistake, standing in opposition to me this day."-Tarhos Kovács'
+          },
+        },        
       };
 
       let currentType = localStorage.getItem("currentType") || "killers";
