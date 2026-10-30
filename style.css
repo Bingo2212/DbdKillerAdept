@@ -62,3 +62,89 @@
 .icon:hover {
   transform: scale(1.05);
 }
+
+/* Tooltip Styling */
+.perk-tooltip {
+  position: fixed;
+  width: 400px;
+  background: #000;
+  color: white;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s ease, visibility 0.1s;
+  pointer-events: none;
+  will-change: transform;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.perk-tooltip h3 {
+  font-size: 24px;
+  margin: 0;
+  padding: 15px 15px 5px 15px;
+  text-transform: uppercase;
+  background: linear-gradient(to bottom, #e67e22, #d35400);
+  position: relative;
+}
+
+.perk-tooltip .divider-container {
+  background: linear-gradient(to bottom, #e67e22, #d35400);
+  padding: 0;
+}
+
+.perk-tooltip .divider {
+  height: 1px;
+  background-color: white;
+  margin: 0 auto;
+  width: calc(100% - 40px);
+}
+
+.perk-tooltip .character-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, #e67e22, #d35400);
+  padding: 5px 15px 8px 15px;
+}
+
+.perk-tooltip .character-name {
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.perk-tooltip .rarity {
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: transparent;
+  padding: 2px 0;
+}
+
+.perk-tooltip p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 15px;
+}
+
+.perk-tooltip .quote {
+  font-style: italic;
+  color: #cccccc;
+  font-size: 14px;
+  border-left: 2px solid #e67e22;
+  padding: 10px 15px;
+  margin: 0 15px 15px 15px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.perk-tooltip.visible {
+  opacity: 1;
+  visibility: visible;
+}
