@@ -574,6 +574,60 @@
             "https://deadbydaylight.wiki.gg/images/3/35/T_UI_iconPerks_NoneAreFree.png?872488",
           ],
         },
+        {
+          name: "The Animatronic",
+          src: "https://deadbydaylight.wiki.gg/images/K40_TheAnimatronic_Portrait.png?636799",
+          hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/IconPerks_HelpWanted.png?6b051a",
+            "https://deadbydaylight.wiki.gg/images/IconPerks_PhantomFear.png?33ffc7",
+            "https://deadbydaylight.wiki.gg/images/IconPerks_Haywire.png?f60f00",
+          ],
+        },
+        {
+          name: "The Krasue",
+          src: "https://deadbydaylight.wiki.gg/images/K41_TheKrasue_Portrait.png?3513ba",
+          hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/IconPerks_Ravenous.png?c9c858",
+            "https://deadbydaylight.wiki.gg/images/IconPerks_WanderingEye.png?80a47c",
+            "https://deadbydaylight.wiki.gg/images/IconPerks_HexOvertureOfDoom.png?a22807",
+          ],
+        },
+        {
+          name: "The First",
+          src: "https://deadbydaylight.wiki.gg/images/K42_TheFirst_Portrait.png?e12bf6",
+          hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/IconsPerks_HexHiveMind.png?db4284",
+            "https://deadbydaylight.wiki.gg/images/IconsPerks_SecretProject.png?139f37",
+            "https://deadbydaylight.wiki.gg/images/IconPerks_HexOvertureOfDoom.png?a22807",
+          ],
+        },
+        {
+          name: "The Slasher",
+          src: "https://deadbydaylight.wiki.gg/images/K43_TheSlasher_Portrait.png?2fe4c9",
+          hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_ScaredToDeath.png?dc3716",
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_SilentShadow.png?bbf33d",
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_Rampage.png?8e42eb",
+          ],
+        },
+        {
+          name: "The Judgement",
+          src: "https://deadbydaylight.wiki.gg/images/K44_TheJudgment_Portrait.png?a744a3",
+          hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_CelestialWitness.png?d93f72",
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_HexUnderYourThumb.png?57c1f4",
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_LayWaste.png?a49aeb",
+          ],
+        },
+        {
+          name: "The Terrifier",
+          src: "https://deadbydaylight.wiki.gg/images/K45_TheTerrifier_Portrait.png?4c56ab",
+          hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_FunnyBusiness.png?1cae32",
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_KillSpree.png?e91831",
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_Laughingstock.png?7d6fcf",
+          ],
+        },
       ];
 
       const survivorIcons = [
@@ -1532,7 +1586,177 @@
             description:`Whenever you are stunned by a Survivor, they gain ${colorR("Exposed")} for ${tiers(20, 25, 30)}s. Cooldown: <b>20</b>s.`,
             quote:'"You have made a grave mistake, standing in opposition to me this day."-Tarhos Kovács'
           },
-        },        
+        },
+        "The Skull Merchant": {
+          perk1: {
+            name: "Game Afoot",
+            description:`While chasing the Obession, whenever you basic-break Pallets or Breakable Walls, or damage Generators, you gain <b>10</b>% ${colorC("Haste")} for ${tiers(8, 9, 10)}s.<br><br>Whenever you damage the Survivor with the most chase time with a basic-attack, they become the Obsession.`,
+            quote: '"This one might actually be a challenge..."-Adriana Imai',
+          },
+          perk2: {
+            name: "Thwack!",
+            description:`When the trial starts, you earn <b>3</b> Tokens, up to <b>3</b>.<br><br>Whenever you hook a Survivor, you earn <b>1</b> Token.<br><br>Whenever you break a Pallet or Breakable Wall, spend <b>1</b> Token. Then, all Survivors withing <b>36</b>m scream and you see their Auras for ${tiers(4, 5, 6)}s.`,
+            quote:'"All those who stood in her path feared her mighty THWACK!"-Sonhadores Sombrios, Issue #3'
+          },
+          perk3: {
+            name: "Leverage",
+            description:`Whenever a Survivor unhooks another or themselves, they heal ${tiers(20, 25, 30)}% slower for <b>60</b>s.`,
+            quote:'"Good. Now we can move in for the kill."-Adriana Imai'
+          },
+        },
+        "The Singularity": {
+          perk1: {
+            name: "Genetic Limits",
+            description:`Whenever a Survivor takes damages, they gain ${colorR("Exhausted")} for ${tiers(6, 7, 8)}s.`,
+            quote: '"THE ORGANIC BODY IS SO LIMITED."-HUX-A7-13',
+          },
+          perk2: {
+            name: "Forced Hesitation",
+            description:`Whenever you down a Survivor, other Survivors within <b>16</b>m of the downed Survivor gain <b>20</b>% ${colorR("Hindered")} for <b>10</b>s. Cooldown: ${tiers(40, 35, 30)}s.`,
+            quote:'"THE ORGANIC MIND\'S CAPACITY FOR EMPATHY GOES BEYOND HINDRANCE."-HUX-A7-13'
+          },
+          perk3: {
+            name: "Machine Learning",
+            description:`Whenever you damage a Generator, it becomes compromised.<br><br>When any compromised Generator is completed by Survivors:<ul><li>You gain <b>8</b>% ${colorC("Haste")} for ${tiers(40, 50, 60)}s.</li><li>You gain ${colorC("Undetectable")} for ${tiers(40, 50, 60)}s.</li><li>Other Generators lose compromised.</li></ul>Up to <b>3</b> Generators can be compromised at a time.`,
+            quote:'"YOU WILL HOLD NO DOMINION OVER ME."-HUX-A7-13'
+          },
+        },
+        "The Xenomorph": {
+          perk1: {
+            name: "Ultimate Weapon",
+            description:`Whenever you search a Locker, Survivors withing <b>40</b>m:<ul><li>Gain ${colorR("Blindness")} for <b>30</b>s.</li><li>Scream.</li></ul>Cooldown: ${tiers(55, 50, 45)}s.`,
+            quote: '"I can\'t lie to you about your chances, but... you have my sympathies."-Ash',
+          },
+          perk2: {
+            name: "Rapid Brutality",
+            description:`Whenever you damage a Survivor with a basic-attack, you gain <b>5</b>% ${colorC("Haste")} for ${tiers(8, 9, 10)}s.<br><br>While chasing a Survivor, you gannot gain Bloodlust.`,
+            quote:'"Catch it, put it in the airlock, get rid of it."-Dallas'
+          },
+          perk3: {
+            name: "Alien Instinct",
+            description:`Whenever you hook a Survivor, the farthest injured Survivor:<ul><li>Gains ${colorR("Oblivious")} for ${tiers(40, 50, 60)}s.</li><li>You see their Aura for <b>8</b>s.</li></ul>`,
+            quote:'"Yellow light\'s for my eyes only."-Dallas'
+          },
+        },
+        "The Good Guy": {
+          perk1: {
+            name: "Hex: Two Can Play",
+            description:`While this Hex is dull, each time you are blinded or stunned by a Survivor ${tiers(4, 3, 2)} times, a Dull Totem ignites.<br><br>Whenever you are blinded or stunned by a Survivor you are not carrying, they are blinded for <b>1.5</b>s.`,
+            quote: '"From now on, no more Mr. Good Guy."-Chucky',
+          },
+          perk2: {
+            name: "Friends \'Til The End",
+            description:`Whenever you Hook a Survivor that is not the Obsession:<ul><li>The Obsession gains ${colorR("Exposed")} for <b>20</b>s.</li><li>You see the Obsession\'s Aura for ${tiers(6, 8, 10)}s.</li></ul>Whenever you Hook the Obsession, another Survivor:<ul><li>Screams, then you are alerted.</li><li>Becomes the Obsession.</li></ul>`,
+            quote:'"I got some fresh meat lined up, and I\'m not gonna let you spoil it, not this time!"-Chucky'
+          },
+          perk3: {
+            name: "Batteries Included",
+            description:`Within <b>16</b>m of a completed Generator, you gain <b>5</b>% ${colorC("Haste")}. When you leave the range, this ends after ${tiers(1, 3, 5)}s.`,
+            quote:'"Surprise! Did you miss me, Andy?"-Chucky'
+          },
+        },
+        "The Unknown": {
+          perk1: {
+            name: "Unbound",
+            description:`Whenever a healthy Survivor becomes injured, for the next ${tiers(26, 28, 30)}s, whenever you basic-vault a window, gain <b>5</b>% ${colorC("Haste")} for <b>25</b>s.`,
+            quote: '"I heard it. Running. It was getting closer!"-Anonymous Testimony, 09/09/1979',
+          },
+          perk2: {
+            name: "Unforeseen",
+            description:`Whenever you damage a Generator:<ul><li>Your Terror Radius is set to that Generator for ${tiers(22, 26, 30)}s and its radius is 32m.</li><li>You gain ${colorC("Undetectable")} for that time.</li></ul>Cooldown: <b>30</b>s.`,
+            quote:'"Mom, if you find this, I\'m sorry..."-Final Journal Entry, 07/12/1991'
+          },
+          perk3: {
+            name: "Undone",
+            description:`Whenever you hook a Survivor, earn <b>1</b> Token, up to ${tiers(1, 2, 3)}.<br><br>Whenever you damage a Generator, spend all Tokens. For each Token spent:<ul><li>The Generator loses <b>10</b>% more progress.</li><li>The Generator is blocked for <b>10</b>s.</ul>`,
+            quote:'"Erratic behaviour in machinery could be related to [REDACTED], further testing required."-OSS Report, 12/02/1943'
+          },
+        },
+        "The Lich": {
+          perk1: {
+            name: "Weave Attunement",
+            description:`The first time each item is depleted, it is dropped.<br><br>While a Survivor is within <b>12</b>m of a dropped item:<ul><li>You see their Aura.</li><li>They see the item\'s Aura.</li></ul>Whenever a Survivor picks-up an item, they gain ${colorR("Oblivious")} for ${tiers(20, 25, 30)}s.`,
+            quote: '"No number of novelties will protect you from me!"-Vecna',
+          },
+          perk2: {
+            name: "Languid Touch",
+            description:`Whenever a Survivor within <b>36</b>m of you scares a Crow, they gain ${colorR("Exhausted")} for ${tiers(6, 8, 10)}s. Cooldown: <b>5</b>s.`,
+            quote:'"Submit to me. It is inevitable."-Vecna'
+          },
+          perk3: {
+            name: "Dark Arrogance",
+            description:`You basic-vault Windows ${tiers(15, 20, 25)}% faster.<br><br>Your basic-attack cooldown is <b>10</b>% shorter.<br><br>Whenever you are blinded or Pallet-stunned, the duration is <b>25</b>% longer.`,
+            quote:'"Run all you want. I will not be denied"-Vecna'
+          },
+        },
+        "The Dark Lord": {
+          perk1: {
+            name: "Hex: Wretched Fate",
+            description:`The first time a Generator is completed, a Dull Totem ignites.<br><br>The Obsession:<ul><li>Repairs ${tiers(27, 30, 33)}% slower.</li><li>Sees the Hex Totem\'s Aura within <b>12</b>m.</li></ul>`,
+            quote: '"So toil, mortal, toil! Your effort will be for naught!"-Dracula',
+          },
+          perk2: {
+            name: "Human Greed",
+            description:`Whenever a Survivor gets within <b>8</b>m of a locked Chest, you see their Aura for ${tiers(3, 4, 5)}s.<br><br>You can lock unlocked Chests. Cooldown: <b>10</b>s.<br><br>You see the Auras of locked Chests.`,
+            quote:'"Come running, one and all, and see what fortune awaits you."-Dracula'
+          },
+          perk3: {
+            name: "Dominance",
+            description:`The first time each Totem is being blessed or cleansed by a Survivor:<ul><li>It is blocked for <b>25</b>s.</li><li>They scream.</li><li>You see their Aura for ${tiers(3, 4, 5)}s.</li></ul>`,
+            quote:'"Tragic, is it not? How powerless you must feel."-Dracula'
+          },
+        },
+        "The Houndmaster": {
+          perk1: {
+            name: "All-Shaking Thunder",
+            description:`Whenever you fall from at least <b>1.25</b>m, your lunge-attacks are <b>75</b>% longer for ${tiers(15, 20, 25)}s. Cooldown: <b>5</b>s.`,
+            quote: '"Go on. Run. Tell your friends I\'m coming for them."-Portia Maye',
+          },
+          perk2: {
+            name: "Scourge Hook: Jagged Compass",
+            description:`When the trial starts, 4 random Hooks become Scourge Hooks.<br><br>Whenever a Survivor is unhooked, the Hook becomes a Scourge Hook.<br><br>Whenever you hook a Survivor on a Scourge Hook, for ${tiers(6, 8, 10)}s, you see the Aura of the Generator with the most progress.`,
+            quote:'"Drop anchor! I will chart us a new course."-Portia Maye'
+          },
+          perk3: {
+            name: "No Quarter",
+            description:`While self-healing, whenever a Survivor has <b>75</b>% progress, they get special Skill Checks. If they miss one of these or stop healing, they gain ${colorR("Broken")} for ${tiers(20, 25, 30)}s.`,
+            quote:'"Fire another broadside! Don\'t stop until the sea takes them!"-Portia Maye'
+          },
+        },
+        "The Ghoul": {
+          perk1: {
+            name: "Hex: Nothing But Misery",
+            description:`After you damage Survivors with a basic-attack <b>4</b> times, a Dull TOtem ignites.<br><br>Whenever you damage a Survivor with a basic-attack:<ul><li>They gain <b>5</b>% ${colorR("Hindered")} for ${tiers(10, 12.5, 15)}s.</li><li>They vault <b>10</b>% slower for ${tiers(10, 12.5, 15)}s.</li></ul>`,
+            quote: '"All of the liabilities of this world are due to the inadequacies of the person involved."-Ken Kaneki',
+          },
+          perk2: {
+            name: "Forever Entwined",
+            description:`Whenever a Survivor takes damage, you earn <b>1</b> Token, up to ${tiers(6, 7, 8)}.<br><br>For each Token:<ul><li>You hook Survivors <b>4</b>% faster.</li><li>You pick-up and drop Survivors <b>4</b>% faster.</li></ul>`,
+            quote:'"You tried to devour me so you have no room to complain if I eat you, do you?"-Ken Kaneki'
+          },
+          perk3: {
+            name: "None Are Free",
+            description:`The first time you hook each Survivor, earn <b>1</b> Token.<br><br>When all Generators are completed, for each Token:<ul><li>Upright Pallets are blocked for ${tiers(12, 14, 16)}s.</li><li>Windows are blocked for ${tiers(12, 14, 16)}s.</li></ul>`,
+            quote:'"I\'m not wrong. What\'s wrong is this messed-up world!"-Ken Kaneki'
+          },
+        },
+        "": {
+          perk1: {
+            name: "",
+            description:``,
+            quote: '""',
+          },
+          perk2: {
+            name: "",
+            description:``,
+            quote:'""'
+          },
+          perk3: {
+            name: "",
+            description:``,
+            quote:'""'
+          },
+        },
       };
 
       let currentType = localStorage.getItem("currentType") || "killers";
