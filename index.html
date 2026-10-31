@@ -1740,21 +1740,89 @@
             quote:'"I\'m not wrong. What\'s wrong is this messed-up world!"-Ken Kaneki'
           },
         },
-        "": {
+        "The Animatronic": {
           perk1: {
-            name: "",
-            description:``,
-            quote: '""',
+            name: "Help Wanted",
+            description:`Whenever you damage a Generator, it is compromised.<br><br>When any compromised Generator is completed by Survivors:<ul><li>Your successful basic-attack cooldowns are <b>25</b>% shorter for ${tiers(70, 80, 90)}s.</li><li>Generators not being repaired regress at <b>150</b>% speed for ${tiers(70, 80, 90)}s.</li><li>Other Generators lose compromised.</li></ul>Up to <b>3</b> Generators can be compromised at a time.`,
+            quote: '"You only think you are in control..."-Springtrap',
           },
           perk2: {
-            name: "",
-            description:``,
-            quote:'""'
+            name: "Phantom Fear",
+            description:`Whenever a Survivor within your Terror Radius looks at you, they scream, then you see their Aura for <b>2</b>s. Cooldown: ${tiers(80, 70, 60)}s.`,
+            quote:'"Excellent. Your screams please me."-Springtrap'
           },
           perk3: {
-            name: "",
-            description:``,
-            quote:'""'
+            name: "Haywire",
+            description:`Exit Gate Switches with at least <b>80</b>% progress regress at ${tiers(80, 90, 100)}% speed.<br><br>While they are regressing, Survivors see the Exit Gate Lights flicker randomly.`,
+            quote:'"There will be no redemption for you."-Springtrap',
+          },
+        },
+        "The Krasue": {
+          perk1: {
+            name: "Ravenous",
+            description:`The first time you hook each Survivor, you earn <b>1</b> Token. For each Token:<ul><li>Gain <b>4</b>% ${colorC("Haste")} while carrying a Survivor.</li><li>Hook Survivors <b>4</b>% faster.</li></ul>When you have <b>4</b> Tokens, all Survivors:<ul><li>Scream.</li><li>Gain ${colorR("Exposed")} for ${tiers(80, 85, 90)}s.</li></ul>`,
+            quote: '"Weeping Givenra\'s blood streams/The devil smells the weak."-FAbbro Barone\'s Ginevra',
+          },
+          perk2: {
+            name: "Wandering Eye",
+            description:`Whenever you start chasing a Survivor, for the next <b>5</b>s, you see the Auras of all other injured Survivors within <b>20</b>m. Cooldown: ${tiers(40, 35, 30)}s.`,
+            quote:'"A drop does not satiate/when a river is needed."-Elliot Campbell\'s Grandeur of Samuel'
+          },
+          perk3: {
+            name: "Hex: Overture Of Doom",
+            description:`When the trial starts, a Dull Totem ignites and hexes the farthest Generator from it.<br><br>After a Survivor repairs the hexed Generator for <b>5</b> seconds:<ul><li>You gain ${colorC("Undetectable")} for ${tiers(20, 25, 30)}s.</li><li>For that time, your Terror Radius is set to that Generator.</li></ul>When the hexed Generator is repaired, the next farthest Generator is hexed.`,
+            quote:'"From salvation\'s ruin, be warned/death comes from all around."-Giovanni Serrata\'s Fog Hill'
+          },
+        },
+        "The First": {
+          perk1: {
+            name: "Turn Back The Clock",
+            description:`After hooking a Survivor, for the next ${tiers(40, 50, 60)}s, use <b>E</b> to make target Generator you can see within <b>20</b>m to explode, lose <b>10</b>% progress and start regressing.`,
+            quote: '"Nothing will happen to you... Nothing that you don\'t deserve!"-Henry Creel',
+          },
+          perk2: {
+            name: "Secret Project",
+            description:`Whenever a Totem is blessed or cleansed, a random unblocked Generator is blocked for ${tiers(20, 25, 30)}s.<br><br>Whenever 1 or more Generators are blocked, you gain ${colorC("Undetectable")} for <b>30</b>s.`,
+            quote:'"You are a prisoner here, just like me."-Henry Creel'
+          },
+          perk3: {
+            name: "Hex: Hive Mind",
+            description:`The first time you hook a Survivor, a Dull Totem ignites.<br><br>The Auras of Generators show their progress.<br><br>When <b>1</b> Generator remains:<ul><li>All Generators explode, lose ${tiers(6, 8, 10)}% progress and start regressing.</li><li>The Hex Totem is extinguished.</li></ul>`,
+            quote:'"You... let us in. And now, you are going to have to let us stay."-Henry Creel'
+          },
+        },
+        "The Slasher": {
+          perk1: {
+            name: "Hex: Scared To Death",
+            description:`After you hook <b>3</b> different Survivors, a Dull Totem ignites.<br><br>While chasing a Survivor, whenever you basic-break a Pallet, Survivors within <b>13</b>m:<ul><li>Scream</li><li>Gain ${tiers(11, 12, 13)}% ${colorR("Hindered")} for <b>3</b>s.</li></ul>`,
+            quote: '"There was a scream from the forest. Like someone was attacking her."-Mount Ormond Missing Person Report',
+          },
+          perk2: {
+            name: "Silent Shadow",
+            description:`Whenever you hook a Survivor, you gain ${colorC("Undetectable")} for ${tiers(11, 12, 13)}s.<br><br>When all Generators are completed, you gain ${colorC("Undetectable")}.`,
+            quote:'"Did you see him or not? I can\'t put out an APB for a bad feeling."-Sgt. Reyes, Greenville Police'
+          },
+          perk3: {
+            name: "Rampage",
+            description:`Whenever you basic-break a Pallet or Breakable Wall, you earn <b>1</b> Token, up to <b>13</b>.<br><br>Whenever you are blinded or Pallet-stunned, for the next <b>13</b>s you gain <b>1</b>% ${colorC("Haste")} for each Token.<br>Cooldown: ${tiers(30, 25, 20)}`,
+            quote:'"Signs of a pursuit led deep into the woods where the victim\'s body was found."-Port Henly Herald'
+          },
+        },
+        "The Judgement": {
+          perk1: {
+            name: "Celestial Witness",
+            description:`Every <b>30</b>s, if the Obsession is at least <b>40</b>m away from you, you see their Aura for ${tiers(2, 2.5, 3)}s. Otherwise, the farthest Survivor becomes the Obsession.`,
+            quote: '"And so the heretics huddled, cowardly, in the night; but upon Judgement\'s arrival, It saw them all, and punished them." (Witness to Koenrad, ch. 32)',
+          },
+          perk2: {
+            name: "Hex: Under Your Thumb",
+            description:`The first time a Survivor gains a Hook State, a Dull Totem ignites.<br><br>Whenever a running Survivor gains ${colorC("Haste")} within <b>32</b>m of you, you are alerted.<br><br>Running Survivors cannot gain more than ${tiers(25, 20, 15)}% ${colorC("Haste")} at a time.`,
+            quote:'"They will run, but Judgement will make the very ground they tread turn to ash and smoke." (Visions of Gerhardt, ch. 1)'
+          },
+          perk3: {
+            name: "Lay Waste",
+            description:`Whenever you damage a Generator, for each Charge it has, it regresses <b>2</b>% faster. Cooldown: ${tiers(55, 50, 45)}s.`,
+            quote:'"They built hypercomputers and skyscrapers and quantum networks, but all of those things trembled and fell under the power of Judgement]\'s light." (Witness to Koenrad, ch. 8)'
           },
         },
       };
