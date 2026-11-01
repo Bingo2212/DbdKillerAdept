@@ -1,21 +1,21 @@
 .image-sources {
-  position: fixed;  
-  bottom: 20px;    
-  left: 20px;      
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
   font-size: 16px;
-  color: #ccc;      
-  background-color: rgba(0, 0, 0, 0.5);  
+  color: #ccc;
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 
 .sources-link {
-  color: #fff;  
-  text-decoration: none;  
+  color: #fff;
+  text-decoration: none;
 }
 
 .sources-link:hover {
-  text-decoration: underline;  
+  text-decoration: underline;
 }
 
 .icon-images {
@@ -75,7 +75,9 @@
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.1s ease, visibility 0.1s;
+  transition:
+    opacity 0.1s ease,
+    visibility 0.1s;
   pointer-events: none;
   will-change: transform;
   overflow: hidden;
@@ -147,4 +149,9 @@
 .perk-tooltip.visible {
   opacity: 1;
   visibility: visible;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 1em;
 }

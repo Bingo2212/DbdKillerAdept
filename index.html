@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DBD Killer Auswahl</title>
+    <title>DBD Adept Tracker</title>
+    <link rel="stylesheet" href="style.css?v=0.1">
+    <script src="killers.js"></script>
+    <script src="survivors.js"></script>
+    <script src="killerPerks.js"></script>
+    <script src="survivorPerks.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const link = document.createElement("link");
@@ -199,8 +204,8 @@
   </head>
   <body>
     <div class="buttons">
-      <button onclick="showIcons('killers')">Killer anzeigen</button>
-      <button onclick="showIcons('survivors')">Survivor anzeigen</button>
+      <button onclick="showIcons('killers')">Killers</button>
+      <button onclick="showIcons('survivors')">Survivors</button>
     </div>
 
     <div class="image-sources">
@@ -216,7 +221,7 @@
     <input
       type="text"
       id="search"
-      placeholder="Name suchen..."
+      placeholder="Search..."
       oninput="filterIcons()"
     />
     <div class="icons-container" id="iconsContainer"></div>
@@ -644,8 +649,8 @@
           name: "Meg Thomas",
           src: "https://deadbydaylight.wiki.gg/images/3/35/S02_MegThomas_Portrait.png?7eab9a",
           hoverImages: [
-            "https://deadbydaylight.wiki.gg/images/1/14/IconPerks_quickAndQuiet.png?8488b6",
             "https://deadbydaylight.wiki.gg/images/f/f7/IconPerks_adrenaline.png?9f8d2a",
+            "https://deadbydaylight.wiki.gg/images/1/14/IconPerks_quickAndQuiet.png?8488b6",
             "https://deadbydaylight.wiki.gg/images/e/e4/IconPerks_sprintBurst.png?7d17fc",
           ],
         },
@@ -653,18 +658,18 @@
           name: "Claudette Morel",
           src: "https://deadbydaylight.wiki.gg/images/c/c2/S03_ClaudetteMorel_Portrait.png?5063f0",
           hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/1/1e/IconPerks_botanyKnowledge.png?6bf985",
             "https://deadbydaylight.wiki.gg/images/a/ae/IconPerks_empathy.png?812eb0",
             "https://deadbydaylight.wiki.gg/images/b/b2/IconPerks_self-Care.png?f58526",
-            "https://deadbydaylight.wiki.gg/images/1/1e/IconPerks_botanyKnowledge.png?6bf985",
           ],
         },
         {
           name: "Jake Park",
           src: "https://deadbydaylight.wiki.gg/images/1/18/S04_JakePark_Portrait.png?f66ca9",
           hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/6/6c/IconPerks_calmSpirit.png?7db2d2",
             "https://deadbydaylight.wiki.gg/images/5/58/IconPerks_ironWill.png?65bc91",
             "https://deadbydaylight.wiki.gg/images/0/0e/IconPerks_saboteur.png?9f0313",
-            "https://deadbydaylight.wiki.gg/images/6/6c/IconPerks_calmSpirit.png?7db2d2",
           ],
         },
         {
@@ -672,8 +677,8 @@
           src: "https://deadbydaylight.wiki.gg/images/e/e6/S05_NeaKarlsson_Portrait.png?7ab379",
           hoverImages: [
             "https://deadbydaylight.wiki.gg/images/5/5e/IconPerks_balancedLanding.png?6be7d6",
-            "https://deadbydaylight.wiki.gg/images/f/ff/IconPerks_streetwise.png?2d4028",
             "https://deadbydaylight.wiki.gg/images/c/c7/IconPerks_urbanEvasion.png?e98ead",
+            "https://deadbydaylight.wiki.gg/images/f/ff/IconPerks_streetwise.png?2d4028",
           ],
         },
         {
@@ -722,6 +727,15 @@
           ],
         },
         {
+          name: "Kate Denson",
+          src: "https://deadbydaylight.wiki.gg/images/9/9c/S13_KateDenson_Portrait.png?1d9a18",
+          hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/1/17/IconPerks_danceWithMe.png?eacd41",
+            "https://deadbydaylight.wiki.gg/images/f/f5/IconPerks_boilOver.png?bad60a",
+            "https://deadbydaylight.wiki.gg/images/1/17/IconPerks_windowsOfOpportunity.png?9a11a9",
+          ],
+        },
+        {
           name: "Quentin Smith",
           src: "https://deadbydaylight.wiki.gg/images/4/40/S11_QuentinSmith_Portrait.png?61f716",
           hoverImages: [
@@ -737,15 +751,6 @@
             "https://deadbydaylight.wiki.gg/images/9/9d/IconPerks_tenacity.png?2842d0",
             "https://deadbydaylight.wiki.gg/images/c/cd/IconPerks_stakeOut.png?d920e9",
             "https://deadbydaylight.wiki.gg/images/7/7b/IconPerks_detectivesHunch.png?836ede",
-          ],
-        },
-        {
-          name: "Kate Denson",
-          src: "https://deadbydaylight.wiki.gg/images/9/9c/S13_KateDenson_Portrait.png?1d9a18",
-          hoverImages: [
-            "https://deadbydaylight.wiki.gg/images/1/17/IconPerks_danceWithMe.png?eacd41",
-            "https://deadbydaylight.wiki.gg/images/f/f5/IconPerks_boilOver.png?bad60a",
-            "https://deadbydaylight.wiki.gg/images/1/17/IconPerks_windowsOfOpportunity.png?9a11a9",
           ],
         },
         {
@@ -848,8 +853,8 @@
           ],
         },
         {
-          name: "Yun-Jin Lee",
-          src: "https://deadbydaylight.wiki.gg/images/f/f7/S25_Yun-JinLee_Portrait.png?1d1ab0",
+          name: "Lee Yun-Jin",
+          src: "https://deadbydaylight.wiki.gg/images/S25_LeeYun-jin_Portrait.png?1d1ab0",
           hoverImages: [
             "https://deadbydaylight.wiki.gg/images/7/75/IconPerks_fastTrack.png?57ee75",
             "https://deadbydaylight.wiki.gg/images/4/43/IconPerks_self-Preservation.png?316807",
@@ -1043,6 +1048,87 @@
             "https://deadbydaylight.wiki.gg/images/1/1e/T_UI_iconsPerks_DoNoHarm.png?2073b4",
             "https://deadbydaylight.wiki.gg/images/b/b0/T_UI_iconsPerks_RapidResponse.png?25c13f",
             "https://deadbydaylight.wiki.gg/images/2/29/T_UI_iconsPerks_DutyOfCare.png?a2c25e",
+          ],
+        },
+        {
+          name: "Rick Grimes",
+          src: "https://deadbydaylight.wiki.gg/images/S47_RickGrimes_Portrait.png?7a0363",
+          hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/IconPerks_apocalypticIngenuity.png?271ffd",
+            "https://deadbydaylight.wiki.gg/images/IconPerks_comeAndGetMe.png?f4490c",
+            "https://deadbydaylight.wiki.gg/images/IconPerks_teamworkToughenUp.png?f0b7f2",
+          ],
+        },
+        {
+          name: "Michonne Grimes",
+          src: "https://deadbydaylight.wiki.gg/images/S48_MichonneGrimes_Portrait.png?388e9f",
+          hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/IconPerks_conviction.png?ad7956",
+            "https://deadbydaylight.wiki.gg/images/IconPerks_lastStand.png?cb8a9f",
+            "https://deadbydaylight.wiki.gg/images/IconPerks_teamworkThrowDown.png?69a5fd",
+          ],
+        },
+        {
+          name: "Vee Boonyasak",
+          src: "https://deadbydaylight.wiki.gg/images/S49_VeeBoonyasak_Portrait.png?b7d2d9",
+          hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/IconPerks_RoadLife.png?e0ae39",
+            "https://deadbydaylight.wiki.gg/images/IconPerks_OneTwoThreeFour.png?bc3808",
+            "https://deadbydaylight.wiki.gg/images/IconPerks_GhostNotes.png?92b28f",
+          ],
+        },
+        {
+          name: "Dustin Henderson",
+          src: "https://deadbydaylight.wiki.gg/images/S50_DustinHenderson_Portrait.png?4e9836",
+          hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/IconsPerks_BadaBadaBoom.png?7a75d9",
+            "https://deadbydaylight.wiki.gg/images/IconsPerks_ChangeOfPlan.png?86afb8",
+            "https://deadbydaylight.wiki.gg/images/IconsPerks_TeamworkFullCircuit.png?33a898",
+          ],
+        },
+        {
+          name: "Eleven",
+          src: "https://deadbydaylight.wiki.gg/images/S51_Eleven_Portrait.png?f6af5a",
+          hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/IconsPerks_ExtrasensoryPerception.png?2084c6",
+            "https://deadbydaylight.wiki.gg/images/IconsPerks_WeSeeYou.png?f6308b",
+            "https://deadbydaylight.wiki.gg/images/IconsPerks_TeamworkSoftSpoken.png?67d34c",
+          ],
+        },
+        {
+          name: "Kwon Tae-young",
+          src: "https://deadbydaylight.wiki.gg/images/S52_KwonTae-young_Portrait.png?d6bd6f",
+          hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/IconsPerks_FlowState.png?62d1bc",
+            "https://deadbydaylight.wiki.gg/images/IconsPerks_aPlaceForUs.png?5441f7",
+            "https://deadbydaylight.wiki.gg/images/IconsPerks_FiveMovesAhead.png?57a099",
+          ],
+        },
+        {
+          name: "Shane Wiigwaas",
+          src: "https://deadbydaylight.wiki.gg/images/S53_ShaneWiigwaas_Portrait.png?373921",
+          hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_WideOpenThrottle.png?6c3bef",
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_LendaHand.png?ebfa9c",
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_CrossExamination.png?2dfe77",
+          ],
+        },
+        {
+          name: "Aurora Stardotter",
+          src: "https://deadbydaylight.wiki.gg/images/S54_AuroraStardotter_Portrait.png?570493",
+          hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_FruitsOfYourLabor.png?6e8560",
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_SalvationsCry.png?697de7",
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_BoonSteadfast.png?69ff59",
+          ],
+        },
+        {
+          name: "Sienna Shaw",
+          src: "https://deadbydaylight.wiki.gg/images/S55_SiennaShaw_Portrait.png?a390c7",
+          hoverImages: [
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_BestGiftEver.png?dcd771",
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_SharedTrauma.png?fe92e2",
+            "https://deadbydaylight.wiki.gg/images/T_UI_iconsPerks_ValkyriesRage.png?22165a",
           ],
         },
       ];
@@ -1825,6 +1911,91 @@
             quote:'"They built hypercomputers and skyscrapers and quantum networks, but all of those things trembled and fell under the power of Judgement]\'s light." (Witness to Koenrad, ch. 8)'
           },
         },
+        "Dwight Fairfield": {
+          perk1: {
+            name: "Bond",
+            description:`Within ${tiers(20, 28, 36)}m, you see other Survivor\'s Auras.`,
+            quote: '"We have to work as a team, I need you to survive so that I can survive!"-Dwight',
+          },
+          perk2: {
+            name: "Leader",
+            description:`Within <b>10</b>m of you, other Survivors:<ul><li>Cleanse Totems ${tiers(20, 25, 30)}% faster.</li><li>Heal ${tiers(20, 25, 30)}% faster.</li><li>Open Exit Gates ${tiers(20, 25, 30)}% faster.</li><li>Sabotage Hooks ${tiers(20, 25, 30)}% faster.</li><li>Unhook Survivors ${tiers(20, 25, 30)}% faster.</li><li>Unlock Chests ${tiers(20, 25, 30)}% faster.</li></ul>After they leave your range, this ends after <b>20</b>s.`,
+            quote:'""'
+          },
+          perk3: {
+            name: "Prove Thyself",
+            description:`For each other Survivor within <b>4</b>m of you, all Survivors repair ${tiers(6, 8, 10)}% faster.`,
+            quote:'"Show me what you can do!"-Dwight'
+          },
+        },
+        "Meg Thomas": {
+          perk1: {
+            name: "Adrenaline",
+            description:`When all Generators are completed, if you are downed or injured, heal instantly. Then, ignoring ${colorR("Exhausted")}:<ul><li>You gain <b>50</b>% ${colorC("Haste")} for <b>4</b>s.</li><li>You gain ${colorR("Exhausted")} for ${tiers(60, 50, 40)}s.</li></ul>`,
+            quote: '""',
+          },
+          perk2: {
+            name: "Quick & Quiet",
+            description:`You hide in Lockers and vault silently. The Killer is not alerted. Cooldown: ${tiers(25, 20, 15)}s.`,
+            quote:'""'
+          },
+          perk3: {
+            name: "Sprint Burst",
+            description:`Whenever you start running:<ul><li>You gain <b>50</b>% ${colorC("Haste")} for <b>2</b>s.</li><li>You gain ${colorR("Exhausted")} for ${tiers(60, 50, 40)}s.</li></ul>`,
+            quote:'""'
+          },
+        },
+        "Claudette Morel": {
+          perk1: {
+            name: "Botany Knowledge",
+            description:`You heal ${tiers(30, 40, 50)}% faster.`,
+            quote: '"Basic botany knowledge could save your life someday."-Claudette Morel',
+          },
+          perk2: {
+            name: "Empathy",
+            description:`Within ${tiers(64, 96, 128)}m, you see the Auras of injured Survivors.`,
+            quote:'""'
+          },
+          perk3: {
+            name: "Self-Care",
+            description:`You can heal yourself, but ${tiers(75, 70, 65)}% slower.`,
+            quote:'""'
+          },
+        },
+        "Jake Park": {
+          perk1: {
+            name: "Calm Spirit",
+            description:`You do not scare Crows or scream.<br><br>You bless and cleanse Totems, and unlock Chests silently, and ${tiers(8, 9, 10)}% faster.`,
+            quote: '""',
+          },
+          perk2: {
+            name: "Iron Will",
+            description:`While injured and not ${colorR("Exhausted")}, your Grunts of Pain are ${tiers(80, 90, 100)}% quieter.`,
+            quote:'""'
+          },
+          perk3: {
+            name: "Saboteur",
+            description:`Within <b>56</b>m of where another Survivor was picked-up by the Killer and is being carried, you see the Auras of Hooks and Scourge Hooks.<br><br>You can sabotage Hooks. Cooldown: ${tiers(70, 65, 60)}s.`,
+            quote:'""'
+          },
+        },
+        "Nea Karlsson": {
+          perk1: {
+            name: "Balanced Landing",
+            description:`Whenever you fall from at least <b>1.25</b>m:<ul><li>You gain <b>50</b>% ${colorC("Haste")} for <b>3</b>s.</li><li>You gain ${colorR("Exhausted")} for ${tiers(60, 50, 40)}s.</li><li>Your stagger is <b>75</b>% shorter.</li><li>Your Grunts from falling are <b>100</b>% quieter.</li></ul>`,
+            quote: '"I\'ve jumped from higher places"-Nea',
+          },
+          perk2: {
+            name: "Urban Evasion",
+            description:`While crouched, you gain ${tiers(90, 95, 100)}% ${colorC("Haste")}.`,
+            quote:'"The paint is still fresh but I\'m long gone."-Nea'
+          },
+          perk3: {
+            name: "Streetwise",
+            description:`The first time you deplete an item\'s Charges, you see the Killer\'s Aura for <b>8</b>s.<br><br>Whenever you loot an item from a Chest, it has ${tiers(60, 70, 80)}% more Charges.`,
+            quote:'"You\'re doing it wrong! Let me show you how it\'s done."-Nea'
+          },
+        },
       };
 
       let currentType = localStorage.getItem("currentType") || "killers";
@@ -1900,10 +2071,14 @@
               description.innerHTML = getPerkDescription(icon.name, i + 1);
               tooltip.appendChild(description);
 
-              const quote = document.createElement("div");
-              quote.className = "quote";
-              quote.textContent = getPerkQuote(icon.name, i + 1);
-              tooltip.appendChild(quote);
+              const quoteText = getPerkQuote(icon.name, i + 1);
+
+                if (quoteText && quoteText.trim() !== '""') {
+                    const quote = document.createElement("div");
+                    quote.className = "quote";
+                    quote.textContent = quoteText;
+                    tooltip.appendChild(quote);
+                }
 
               document.body.appendChild(tooltip);
               imagesContainer.appendChild(img);
@@ -2025,6 +2200,6 @@
       const script = document.createElement("script");
       script.src = "main.js?v=" + new Date().getTime();
       document.head.appendChild(script);
-    </script>
+    </script></script>
   </body>
 </html>
