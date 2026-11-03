@@ -2805,9 +2805,9 @@ function createIcons(type) {
         img.src = src;
         img.alt = `${icon.name} - Hover ${i + 1}`;
 
-        if (i === 2) {
-          img.className = "bottom-img";
-        }
+        const wrapper = document.createElement("div");
+        wrapper.className = "img-wrapper perk-bg" + (i === 2 ? " bottom-img" : "");
+        wrapper.appendChild(img);
 
         const tooltip = document.createElement("div");
         tooltip.className = "perk-tooltip";
@@ -2854,7 +2854,7 @@ function createIcons(type) {
         }
 
         document.body.appendChild(tooltip);
-        imagesContainer.appendChild(img);
+        imagesContainer.appendChild(wrapper);
 
         img.addEventListener("mouseenter", (e) => {
           const rect = img.getBoundingClientRect();
