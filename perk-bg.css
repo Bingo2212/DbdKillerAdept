@@ -9,6 +9,15 @@
 
 .perk-bg {
   position: relative;
+  transition: transform 0.3s ease;
+}
+
+.perk-bg:hover {
+  transform: scale(1.05);
+}
+
+.icon-images .perk-bg img:hover {
+  transform: none;
 }
 
 .perk-bg::before,
