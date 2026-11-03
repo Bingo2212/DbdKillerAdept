@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&display=swap");
+
 body {
   font-family: sans-serif;
   background-color: #1a1a1a;
@@ -12,12 +14,32 @@ body {
 }
 
 #search {
-  padding: 10px;
+  box-sizing: border-box;
   width: 300px;
+  padding: 11px 16px 11px 44px;
   margin-bottom: 20px;
-  border-radius: 5px;
-  font-size: 16px;
   flex-shrink: 0;
+  font-family: inherit;
+  font-size: 16px;
+  color: #eee;
+  background-color: #101010;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round'><circle cx='11' cy='11' r='7'/><line x1='16.5' y1='16.5' x2='21' y2='21'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 16px center;
+  background-size: 18px;
+  border: 1px solid #333;
+  border-radius: 999px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#search::placeholder {
+  color: #777;
+}
+
+#search:focus {
+  border-color: #f5c542;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23f5c542' stroke-width='2' stroke-linecap='round'><circle cx='11' cy='11' r='7'/><line x1='16.5' y1='16.5' x2='21' y2='21'/></svg>");
 }
 
 .icons-container {
@@ -68,6 +90,8 @@ body {
 
 .icon-overlay span {
   margin-bottom: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .icon-images {
@@ -139,46 +163,124 @@ body {
   opacity: 1;
 }
 
-.icon.checked::after {
-  content: "✔";
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 24px;
-  color: lime;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  padding: 4px;
+@property --adept-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes adeptSpin {
+  to {
+    --adept-angle: 360deg;
+  }
 }
 
 .icon.checked {
-  opacity: 0.5;
+  opacity: 1;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#1a1a1a, #1a1a1a) padding-box,
+    conic-gradient(
+        from var(--adept-angle),
+        #6b4a0a,
+        #f5c542,
+        #fff3b0,
+        #f5c542,
+        #6b4a0a
+      )
+      border-box;
+  box-shadow: 0 0 14px rgba(245, 197, 66, 0.3);
+  animation: adeptSpin 5s linear infinite;
+}
+
+.icon.checked::after {
+  content: "ADEPT";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-indent: 4px;
+  color: #2b1d00;
+  background: linear-gradient(
+    90deg,
+    #9a6f0b,
+    #f5c542 30%,
+    #fff0a8 50%,
+    #f5c542 70%,
+    #9a6f0b
+  );
+}
+
+.progress {
+  width: 300px;
+  margin-bottom: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.progress-text {
+  font-size: 15px;
+  color: #ccc;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  height: 6px;
+  background: #2a2a2a;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #9a6f0b, #f5c542, #fff0a8);
+  transition: width 0.4s ease;
 }
 
 .buttons {
   display: flex;
-  gap: 20px;
+  gap: 4px;
+  padding: 4px;
   margin-bottom: 20px;
+  background: #101010;
+  border: 1px solid #333;
+  border-radius: 999px;
 }
 
 .buttons button {
-  padding: 12px 24px;
-  font-size: 18px;
+  padding: 10px 28px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   border: none;
-  background-color: #2a2a2a;
-  color: white;
+  background: transparent;
+  color: #aaa;
   cursor: pointer;
-  border-radius: 8px;
-  transition: background-color 0.3s;
+  border-radius: 999px;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .buttons button:hover {
-  background-color: #3a3a3a;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
 }
 
 .buttons button.active {
-  background-color: #aaa;
-  color: black;
+  background: linear-gradient(90deg, #b8860b, #f5c542, #e0b030);
+  color: #2b1d00;
 }
 
 .image-sources {
@@ -239,28 +341,66 @@ body {
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .icon:hover {
   transform: scale(1.05);
 }
 
+.icon:not(.checked):hover {
+  border-color: #8b1a1a;
+  box-shadow:
+    0 0 16px rgba(190, 40, 40, 0.45),
+    0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
+.icon::before {
+  content: attr(data-name);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 36px 10px 10px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.icon:hover::before {
+  opacity: 0;
+}
+
+.icon.checked::before {
+  bottom: 26px;
+  padding: 30px 10px 8px;
+}
+
 /* Tooltip Styling */
 .perk-tooltip {
   position: fixed;
   width: 400px;
-  background: #000;
+  background: linear-gradient(to bottom, #121212, #050505);
   color: white;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0;
   outline: none;
-  box-shadow: none;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.7);
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
   transition:
-    opacity 0.1s ease,
-    visibility 0.1s;
+    opacity 0.15s ease,
+    visibility 0.15s;
   pointer-events: none;
   will-change: transform;
   overflow: hidden;
@@ -269,72 +409,107 @@ body {
 }
 
 .perk-tooltip h3 {
-  font-size: 24px;
+  letter-spacing: 0.5px;
+  font-size: 25px;
+  font-weight: 700;
   margin: 0;
-  padding: 15px 15px 5px 15px;
+  padding: 14px 16px 4px 16px;
   text-transform: uppercase;
-  background: linear-gradient(to bottom, #e67e22, #d35400);
+  background: linear-gradient(to bottom, #e07a1f, #d9650a);
   position: relative;
 }
 
+.perk-tooltip h3,
+.perk-tooltip .character-name,
+.perk-tooltip .rarity {
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
 .perk-tooltip .divider-container {
-  background: linear-gradient(to bottom, #e67e22, #d35400);
+  background: #d9650a;
   padding: 0;
 }
 
 .perk-tooltip .divider {
   height: 1px;
-  background-color: white;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.85),
+    transparent
+  );
   margin: 0 auto;
-  width: calc(100% - 40px);
+  width: calc(100% - 30px);
 }
 
 .perk-tooltip .character-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, #e67e22, #d35400);
-  padding: 5px 15px 8px 15px;
+  background: #d9650a;
+  padding: 6px 16px 10px 16px;
 }
 
 .perk-tooltip .character-name {
-  font-size: 14px;
-  color: #fff;
+  letter-spacing: 1px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.92);
   text-transform: uppercase;
 }
 
 .perk-tooltip .rarity {
+  letter-spacing: 1.5px;
   font-size: 14px;
   color: #fff;
-  font-weight: bold;
+  font-weight: 600;
   text-transform: uppercase;
   background: transparent;
   padding: 2px 0;
 }
 
 .perk-tooltip p {
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #e6e6e6;
   margin: 0;
-  padding: 15px;
+  padding: 16px;
 }
 
 .perk-tooltip .quote {
   font-style: italic;
-  color: #cccccc;
+  color: #bdbdbd;
   font-size: 14px;
-  border-left: 2px solid #e67e22;
+  border-left: 3px solid #e67e22;
+  border-radius: 0;
   padding: 10px 15px;
-  margin: 0 15px 15px 15px;
-  background: rgba(255, 255, 255, 0.05);
+  margin: 0 16px 16px 16px;
+  background: linear-gradient(
+    to right,
+    rgba(230, 126, 34, 0.14),
+    rgba(255, 255, 255, 0.02)
+  );
 }
 
 .perk-tooltip.visible {
   opacity: 1;
   visibility: visible;
+  animation: tooltipIn 0.18s ease-out;
+}
+
+@keyframes tooltipIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
 }
 
 ul {
   margin-top: 0;
   margin-bottom: 1em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon.checked {
+    animation: none;
+  }
 }
