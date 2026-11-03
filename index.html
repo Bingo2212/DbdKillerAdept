@@ -4,14 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DBD Adept Tracker</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="perk-bg.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="adept.css" />
+    <script src="progress.js" defer></script>
+    <link rel="stylesheet" href="perk-bg.css" />
     <script src="script.js"></script>
   </head>
   <body>
     <div class="buttons">
       <button onclick="createIcons('killers')">Killers</button>
       <button onclick="createIcons('survivors')">Survivors</button>
+    </div>
+
+    <div class="progress">
+      <div class="progress-text" id="progressText"></div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
     </div>
 
     <div class="image-sources">
