@@ -2653,7 +2653,7 @@ const perkData = {
     },
     perk3: {
       name: "Teamwork: Soft-Spoken",
-      description: `For each other Survivor repairing a Generator with tou, the range of Generator repair noises is ${tiers(15, 20, 25)}% smaller.<br><br>While repairing with at least 1 other Survivor, you repair <b>5</b>% faster.`,
+      description: `For each other Survivor repairing a Generator with you, the range of Generator repair noises is ${tiers(15, 20, 25)}% smaller.<br><br>While repairing with at least 1 other Survivor, you repair <b>5</b>% faster.`,
       quote: '"I make my own rules."-Eleven',
     },
   },
@@ -2806,7 +2806,8 @@ function createIcons(type) {
         img.alt = `${icon.name} - Hover ${i + 1}`;
 
         const wrapper = document.createElement("div");
-        wrapper.className = "img-wrapper perk-bg" + (i === 2 ? " bottom-img" : "");
+        wrapper.className =
+          "img-wrapper perk-bg" + (i === 2 ? " bottom-img" : "");
         wrapper.appendChild(img);
 
         const tooltip = document.createElement("div");
