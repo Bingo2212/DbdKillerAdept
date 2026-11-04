@@ -411,7 +411,7 @@ body {
 .perk-tooltip h3 {
   letter-spacing: 0.5px;
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
   padding: 14px 16px 4px 16px;
   text-transform: uppercase;
@@ -468,7 +468,7 @@ body {
 }
 
 .perk-tooltip p {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.55;
   color: #e6e6e6;
   margin: 0;
@@ -478,7 +478,7 @@ body {
 .perk-tooltip .quote {
   font-style: italic;
   color: #bdbdbd;
-  font-size: 14px;
+  font-size: 15px;
   border-left: 3px solid #e67e22;
   border-radius: 0;
   padding: 10px 15px;
