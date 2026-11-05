@@ -2767,10 +2767,15 @@ function getPerkQuote(iconName, perkNumber) {
   return killerData[perkKey]?.quote || '"Perk quote goes here."';
 }
 
+/* -------------------------------------------------------------------------- */
+/*                           Killer Biography / Info                          */
+/* -------------------------------------------------------------------------- */
+
 const killerInfo = {
   "The Trapper": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Bear Trap",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_trap.png?92a28e",
     ability: "",
     lore: "",
   },

@@ -685,18 +685,15 @@ body.info-open {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  overflow: hidden;
-  background: #0d0d0d;
-  border: 2px solid #444;
-  border-radius: 10px;
+  background-image: var(--ability-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
   cursor: help;
-  transition:
-    border-color 0.2s ease,
-    transform 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .info-ability-icon:hover {
-  border-color: #f5c542;
   transform: scale(1.05);
 }
 
