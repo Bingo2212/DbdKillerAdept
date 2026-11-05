@@ -2780,266 +2780,310 @@ const killerInfo = {
     lore: "",
   },
   "The Wraith": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Wailing Bell",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_bell.png?f41f73",
     ability: "",
     lore: "",
   },
   "The Hillbilly": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Chainsaw",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_chainsaw.png?2bc887",
     ability: "",
     lore: "",
   },
   "The Nurse": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Spencer's last breath",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_breath.png?b0b418",
     ability: "",
     lore: "",
   },
   "The Shape": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Evil Within",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/T_UI_iconPowers_stalker.png?fefb60",
     ability: "",
     lore: "",
   },
   "The Hag": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Blackened Catalyst",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_blackenedCatalyst.png?8f4139",
     ability: "",
     lore: "",
   },
   "The Doctor": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Carter's spark",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_cartersSpark.png?d59eae",
     ability: "",
     lore: "",
   },
   "The Cannibal": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Bubba's chainsaw",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_bubbasChainsaw.png?75f47c",
     ability: "",
     lore: "",
   },
   "The Huntress": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Hunting Hatchets",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_huntingHatchets.png?ec4916",
     ability: "",
     lore: "",
   },
   "The Nightmare": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Dream Demon",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_dreamDemon.png?b3ac73",
     ability: "",
     lore: "",
   },
   "The Pig": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Jigsaw's Baptism",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_jigsawsBaptism.png?bd9025",
     ability: "",
     lore: "",
   },
   "The Clown": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "The Afterpiece Tonic",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_gasBomb.png?26e31a",
     ability: "",
     lore: "",
   },
   "The Spirit": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Yamaoka's haunting",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_yamaokasHaunting.png?d72f14",
     ability: "",
     lore: "",
   },
   "The Legion": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Feral Frenzy",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_feralFrenzy.png?ab63cd",
     ability: "",
     lore: "",
   },
   "The Plague": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Vile Purge",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_vilePurge.png?b301ba",
     ability: "",
     lore: "",
   },
   "The Ghost Face": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Night Shroud",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_nightShroud.png?8851c4",
     ability: "",
     lore: "",
   },
   "The Demogorgon": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Of The Abyss",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_ofTheAbyss.png?f1782d",
     ability: "",
     lore: "",
   },
   "The Oni": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Yamaoka's Wrath",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_yamaokasWrath_demon.png?47cb83",
     ability: "",
     lore: "",
   },
   "The Deathslinger": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "The Redeemer",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_theRedeemer.png?e8f8ed",
     ability: "",
     lore: "",
   },
   "The Executioner": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Rites Of Judgement",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_ritesOfJudgement.png?12ce9c",
     ability: "",
     lore: "",
   },
   "The Blight": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Blighted Corruption",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_blightedCorruption.png?93948c",
     ability: "",
     lore: "",
   },
   "The Twins": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Blood Bond",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_bloodBond.png?6b01e5",
     ability: "",
     lore: "",
   },
   "The Trickster": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Showstopper",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_showstopper.png?30b22f",
     ability: "",
     lore: "",
   },
   "The Nemesis": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "T-Virus",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_t-Virus_MR1.png?d2707e",
     ability: "",
     lore: "",
   },
   "The Cenobite": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Summons Of Pain",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_summonsOfPain.png?7b47f5",
     ability: "",
     lore: "",
   },
   "The Artist": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Birds Of Torment",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_birdsOfTorment.png?5735bd",
     ability: "",
     lore: "",
   },
   "The Onryō": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Deluge Of Fear",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_delugeOfFear_demanifested.png?5598e6",
     ability: "",
     lore: "",
   },
   "The Dredge": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Reign Of Darkness",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_reignOfDarkness.png?c8df78",
     ability: "",
     lore: "",
   },
   "The Mastermind": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Virulent Bound",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_virulentBound.png?c28241",
     ability: "",
     lore: "",
   },
   "The Knight": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Guardia Compagnia",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_guardiaCompagnia_Carnifex.png?cf455e",
     ability: "",
     lore: "",
   },
   "The Skull Merchant": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Eyes In The Sky",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_eyesInTheSky.png?8ecf7a",
     ability: "",
     lore: "",
   },
   "The Singularity": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Quantum Instantiation",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_quantumInstantiation.png?c3694c",
     ability: "",
     lore: "",
   },
   "The Xenomorph": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Hidden Pursuit",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_hiddenPursuit.png?80a567",
     ability: "",
     lore: "",
   },
   "The Good Guy": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Playtime's Over",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_playtimesOver.png?384ad2",
     ability: "",
     lore: "",
   },
   "The Unknown": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "UVX",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_ChargeUVX_K35.png?444e23",
     ability: "",
     lore: "",
   },
   "The Lich": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Vile Darkness",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_VileDarkness.png?fc4bc6",
     ability: "",
     lore: "",
   },
   "The Dark Lord": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Vampiric Shift",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_K37_Shapeshift.png?cdbcf7",
     ability: "",
     lore: "",
   },
   "The Houndmaster": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Scent Of Blood",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_K38_dashCommand.png?67dcf3",
     ability: "",
     lore: "",
   },
   "The Ghoul": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "One-Eyed Terror",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_AimKaguneLeap_K39.png?dd7362",
     ability: "",
     lore: "",
   },
   "The Animatronic": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Fazbear's Fright",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_throw.png?d55ba5",
     ability: "",
     lore: "",
   },
   "The Krasue": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Unbodied Flesh",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_HeadForm_K41.png?e5446f",
     ability: "",
     lore: "",
   },
   "The First": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Test Subject \#001",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/T_UI_iconPowers_EnterUpsideDown.png?150c19",
     ability: "",
     lore: "",
   },
   "The Slasher": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Omnipresent Evil",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/T_UI_iconPowers_DramaticEntrance.png?e7518b",
     ability: "",
     lore: "",
   },
   "The Judgement": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Will Of The Gods",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/T_UI_iconPowers_ChargeRay.png?699453",
     ability: "",
     lore: "",
   },
   "The Terrifier": {
-    abilityName: "",
-    abilityImage: "",
+    abilityName: "Bag Of Toys",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/T_UI_iconPowers_GarbageBag.png?493af4",
     ability: "",
     lore: "",
   },
