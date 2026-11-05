@@ -2653,7 +2653,7 @@ const perkData = {
     },
     perk3: {
       name: "Teamwork: Soft-Spoken",
-      description: `For each other Survivor repairing a Generator with you, the range of Generator repair noises is ${tiers(15, 20, 25)}% smaller.<br><br>While repairing with at least 1 other Survivor, you repair <b>5</b>% faster.`,
+      description: `For each other Survivor repairing a Generator with tou, the range of Generator repair noises is ${tiers(15, 20, 25)}% smaller.<br><br>While repairing with at least 1 other Survivor, you repair <b>5</b>% faster.`,
       quote: '"I make my own rules."-Eleven',
     },
   },
@@ -2767,11 +2767,479 @@ function getPerkQuote(iconName, perkNumber) {
   return killerData[perkKey]?.quote || '"Perk quote goes here."';
 }
 
+const killerInfo = {
+  "The Trapper": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Wraith": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Hillbilly": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Nurse": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Shape": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Hag": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Doctor": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Cannibal": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Huntress": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Nightmare": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Pig": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Clown": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Spirit": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Legion": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Plague": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Ghost Face": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Demogorgon": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Oni": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Deathslinger": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Executioner": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Blight": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Twins": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Trickster": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Nemesis": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Cenobite": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Artist": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Onryō": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Dredge": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Mastermind": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Knight": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Skull Merchant": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Singularity": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Xenomorph": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Good Guy": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Unknown": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Lich": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Dark Lord": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Houndmaster": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Ghoul": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Animatronic": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Krasue": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The First": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Slasher": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Judgement": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+  "The Terrifier": {
+    abilityName: "",
+    abilityImage: "",
+    ability: "",
+    lore: "",
+  },
+};
+
+function getKillerInfo(name) {
+  const info = killerInfo[name] || {};
+  return {
+    abilityName: info.abilityName || "Ability",
+    abilityImage: info.abilityImage || "",
+    ability: info.ability || "Ability description goes here.",
+    lore: info.lore || "Lore goes here.",
+  };
+}
+
+const perkTooltips = {};
+
+function attachPerkTooltip(target, tooltip) {
+  target.addEventListener("mouseenter", () => {
+    const rect = target.getBoundingClientRect();
+
+    tooltip.style.left = rect.right + 10 + "px";
+    tooltip.style.top = rect.top + "px";
+
+    const tooltipRect = tooltip.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    if (tooltipRect.right > viewportWidth) {
+      tooltip.style.left = rect.left - tooltipRect.width - 10 + "px";
+    }
+
+    if (tooltipRect.bottom > viewportHeight) {
+      tooltip.style.top = viewportHeight - tooltipRect.height - 10 + "px";
+    }
+
+    tooltip.classList.add("visible");
+  });
+
+  target.addEventListener("mouseleave", () => {
+    tooltip.classList.remove("visible");
+  });
+}
+
+let infoModal = null;
+let abilityTooltip = null;
+
+function ensureInfoModal() {
+  if (infoModal) return infoModal;
+
+  infoModal = document.createElement("div");
+  infoModal.className = "info-modal";
+  infoModal.innerHTML = `
+    <div class="info-panel" role="dialog" aria-modal="true">
+      <button class="info-close" type="button" aria-label="Close">&times;</button>
+      <h2 class="info-name"></h2>
+      <div class="info-top">
+        <div class="info-portrait"><img alt="" /></div>
+        <div class="info-power">
+          <div class="info-ability-icon"><img alt="" /></div>
+          <span class="info-ability-label"></span>
+        </div>
+        <div class="info-perks"></div>
+      </div>
+      <div class="info-section">
+        <h3>Lore</h3>
+        <p class="info-lore"></p>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(infoModal);
+
+  abilityTooltip = document.createElement("div");
+  abilityTooltip.className = "perk-tooltip";
+  abilityTooltip.innerHTML = `
+    <h3 class="power-name"></h3>
+    <div class="divider-container"><div class="divider"></div></div>
+    <div class="character-info">
+      <div class="character-name"></div>
+      <div class="rarity">POWER</div>
+    </div>
+    <p class="power-description"></p>
+  `;
+  document.body.appendChild(abilityTooltip);
+  attachPerkTooltip(
+    infoModal.querySelector(".info-ability-icon"),
+    abilityTooltip,
+  );
+
+  infoModal.addEventListener("click", (e) => {
+    if (e.target === infoModal) closeKillerInfo();
+  });
+  infoModal.querySelector(".info-close").onclick = closeKillerInfo;
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeKillerInfo();
+  });
+
+  return infoModal;
+}
+
+function openKillerInfo(icon) {
+  const modal = ensureInfoModal();
+  const info = getKillerInfo(icon.name);
+
+  const portrait = modal.querySelector(".info-portrait img");
+  portrait.src = icon.src;
+  portrait.alt = icon.name;
+
+  modal.querySelector(".info-name").textContent = icon.name;
+  modal.querySelector(".info-lore").innerHTML = info.lore;
+
+  const abilityIcon = modal.querySelector(".info-ability-icon");
+  const abilityImg = abilityIcon.querySelector("img");
+  if (info.abilityImage) {
+    abilityImg.src = info.abilityImage;
+    abilityImg.alt = info.abilityName;
+    abilityIcon.classList.remove("empty");
+  } else {
+    abilityImg.removeAttribute("src");
+    abilityIcon.classList.add("empty");
+  }
+  modal.querySelector(".info-ability-label").textContent = info.abilityName;
+
+  abilityTooltip.querySelector(".power-name").textContent = info.abilityName;
+  abilityTooltip.querySelector(".character-name").textContent = icon.name;
+  abilityTooltip.querySelector(".power-description").innerHTML = info.ability;
+
+  const perks = modal.querySelector(".info-perks");
+  perks.innerHTML = "";
+
+  (icon.hoverImages || []).forEach((src, i) => {
+    const perkName = getPerkName(icon.name, i + 1);
+
+    const perk = document.createElement("div");
+    perk.className = "info-perk";
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "img-wrapper perk-bg";
+
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = perkName;
+    wrapper.appendChild(img);
+
+    const label = document.createElement("span");
+    label.textContent = perkName;
+
+    perk.appendChild(wrapper);
+    perk.appendChild(label);
+    perks.appendChild(perk);
+
+    const tooltip = perkTooltips[icon.name]?.[i];
+    if (tooltip) attachPerkTooltip(img, tooltip);
+  });
+
+  modal.classList.add("open");
+  document.body.classList.add("info-open");
+}
+
+function closeKillerInfo() {
+  if (!infoModal) return;
+  infoModal.classList.remove("open");
+  document.body.classList.remove("info-open");
+  document
+    .querySelectorAll(".perk-tooltip.visible")
+    .forEach((tooltip) => tooltip.classList.remove("visible"));
+}
+
 let currentType = localStorage.getItem("currentType") || "killers";
 
 /* -------------------------------------------------------------------------- */
 /*                           HTML Building Functions                          */
 /* -------------------------------------------------------------------------- */
+
+(function () {
+  const container = document.getElementById("iconsContainer");
+  const text = document.getElementById("progressText");
+  const fill = document.getElementById("progressFill");
+  if (!container || !text || !fill) return;
+
+  function update() {
+    const total = container.querySelectorAll(".icon").length;
+    const done = container.querySelectorAll(".icon.checked").length;
+    const type = localStorage.getItem("currentType") || "killers";
+    const label = type === "killers" ? "Killer" : "Survivor";
+    text.textContent = `${done} / ${total} ${label} Adepts`;
+    fill.style.width = total ? (done / total) * 100 + "%" : "0%";
+
+    document.querySelectorAll(".buttons button").forEach((button) => {
+      button.classList.toggle(
+        "active",
+        button.textContent.trim().toLowerCase() === type,
+      );
+    });
+  }
+
+  new MutationObserver(update).observe(container, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+
+  update();
+})();
 
 function createIcons(type) {
   const container = document.getElementById("iconsContainer");
@@ -2798,6 +3266,8 @@ function createIcons(type) {
 
     const imagesContainer = document.createElement("div");
     imagesContainer.className = "icon-images";
+
+    perkTooltips[icon.name] = [];
 
     if (icon.hoverImages && icon.hoverImages.length === 3) {
       icon.hoverImages.forEach((src, i) => {
@@ -2855,37 +3325,31 @@ function createIcons(type) {
         }
 
         document.body.appendChild(tooltip);
+        perkTooltips[icon.name].push(tooltip);
         imagesContainer.appendChild(wrapper);
 
-        img.addEventListener("mouseenter", (e) => {
-          const rect = img.getBoundingClientRect();
-
-          tooltip.style.left = rect.right + 10 + "px";
-          tooltip.style.top = rect.top + "px";
-
-          const tooltipRect = tooltip.getBoundingClientRect();
-          const viewportWidth = window.innerWidth;
-          const viewportHeight = window.innerHeight;
-
-          if (tooltipRect.right > viewportWidth) {
-            tooltip.style.left = rect.left - tooltipRect.width - 10 + "px";
-          }
-
-          if (tooltipRect.bottom > viewportHeight) {
-            tooltip.style.top = viewportHeight - tooltipRect.height - 10 + "px";
-          }
-
-          tooltip.classList.add("visible");
-        });
-
-        img.addEventListener("mouseleave", () => {
-          tooltip.classList.remove("visible");
-        });
+        attachPerkTooltip(img, tooltip);
       });
     }
 
     overlay.appendChild(imagesContainer);
     div.appendChild(overlay);
+
+    if (type === "killers") {
+      div.classList.add("has-info");
+
+      const infoBtn = document.createElement("button");
+      infoBtn.className = "info-btn";
+      infoBtn.type = "button";
+      infoBtn.textContent = "i";
+      infoBtn.setAttribute("aria-label", `Info about ${icon.name}`);
+      infoBtn.onclick = (e) => {
+        e.stopPropagation();
+        openKillerInfo(icon);
+      };
+      div.appendChild(infoBtn);
+    }
+
     container.appendChild(div);
   });
 
