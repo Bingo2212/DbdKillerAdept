@@ -3099,6 +3099,181 @@ function getKillerInfo(name) {
   };
 }
 
+const survivorInfo = {
+  "Dwight Fairfield": {
+    lore: "Dwight was geeky and scrawny through high school. He always wanted to be one of the cool kids, but somehow never had the charisma. He tried out for the football team but was cut, the basketball team didn't even take a look, and his grades were distinctly below average.\n\nOne weekend, on a team-building exercise from his dead-end job, Dwight's boss led them deep into the woods before breaking out his family recipe moonshine. Dwight remembered taking the first sip before waking up late the next morning all alone.\n\nDuring the night, the others had abandoned him. Once again, the laughing stock of the community Dwight tried to hike his way out of the woods. That was the last anyone ever heard of Dwight Fairfield.",
+  },
+  "Meg Thomas": {
+    lore: "Perhaps it was her mother that had instilled the fierce streak in her or maybe it was her father that left them when she was a baby.\n\nMeg excelled at schoolwork but she was off the rails. Fortunately, an athletics coach encouraged her to channel her misspent energy on the track. She motivated herself into becoming a high school star and earned a scholarship to college. When her mother fell ill, Meg decided to give up her chance at college to care for the woman who had raised her.\n\nOne summer’s day, on a long run deep in the woods, Meg vanished. Search as they did, they never found her body.",
+  },
+  "Claudette Morel": {
+    lore: "From the day that her parents gave Claudette her first science kit, she loved experiments. Her single-minded pursuit lead to an early scholarship at a great college. It was a huge decision to leave Montreal, but the chance was too good to pass up.\n\nHer introverted nature means that chat rooms and forums are now her best source of social interaction. Her new favourite activity is to answer botany questions for others under her new moniker of Science Girl.\n\nOne evening, during a long bus ride back from the city, Claudette took a stroll that would change her life. It only took a minute for her to get completely disoriented in the thick woods. She never found her way back. Her forum only started to wonder where she was a week after she stopped posting.",
+  },
+  "Jake Park": {
+    lore: "Growing up the son of a wealthy CEO was always going to put pressure on Jake Park. When his brother graduated with honours from Yale, the pressure on Jake intensified. Jake just wasn't the academic type, but his father never really understood his refusal to embrace the expensive education he lavished upon him. Eventually, Jake rebelled by dropping out of school entirely.\n\nNow, Jake lives off the grid on the edge of the woods. It's been years since he spoke to his father but his mother checks in once in a while. It was she, who eventually called the police.\n\nThe cops said he got lost in the woods and a search party looked for days, but gave up as bad weather rolled in. Despite passionate pleas from his mother, they never resumed the search and Jake went down in history as another casualty of the woods.",
+  },
+  "Nea Karlsson": {
+    lore: 'Nea grew up in the small town of Hjo in Sweden. She had a happy childhood even though her mom and dad worked hard. As the opportunity to move to the US became a reality, she started acting out. Nea was forced to leave her friends and life behind.\n\nNea shied away from what her parents considered "normal". Instead she took refuge in skate parks, and her tag "Mashtyx" was seen more or less all over her new hometown.\n\nNea made a sport out of tagging government buildings, avoiding the fuzz and any other danger with her nimble cat-like abilities. FInally Nea\'s parents became used to her disappearing for a few days on end. She may have gone too far when her friends dared her to tag the old Crotus Prenn Asylum one moonless night, as she was never seen again.',
+  },
+  "Laurie Strode": {
+    lore: "You never know what really matters in life until you've realised it might end soon. Laurie is one of those who just wants a quiet life in the suburbs, hanging out with friends, family and maybe go on a date or two. Laurie is a typical teenager. You could pass her on the street and not think twice. She does her homework and is liked by her friends, teachers and family.\n\nA simple night of babysitting turns into something that will forever change the course of her young life. A knife swooshing through the air. Screams from afar. Noises that plays tricks with her mind. But not Laurie, she’s made of something stronger. Something that won't give up.",
+  },
+  "Ace Visconti": {
+    lore: "Ace Visconti is one charming guy. With his sharp Italian looks, grey-streaked hair and silver tongue, he could pass for an ageing 50's movies star.\n\nHis heart has always belonged to the cards. From his roots as a poor boy in Argentina, he gambled, scammed, seduced and smooth-talked his way to a life of luxury as a high roller in the land of opportunity. Despite money always having a way of slipping through his fingers, Ace always figured he could win more.\n\nHe never fulfilled that ambition; eventually he racked up too many debts with the wrong kind of people. And when they finally came to collect, Ace was nowhere to be found. No one knew who tipped him off or where he fled to, but anyone who knew Ace Visconti can agree on one thing. He will survive: against all odds.",
+  },
+  "Bill Overbeck": {
+    lore: 'It took two tours in Vietnam, a handful of medals, a knee full of shrapnel, and an honourable discharge to get William "Bill" Overbeck to stop fighting and try to live a peaceful life. He hated it.\n\nAfter decades spent drifting aimlessly through dead end jobs, Bill went in for a routine surgery and woke up to find the world he knew was gone. A plague was turning normal people into mindless killing machines. Naturally, the first thing he did was fight his way home and put on his uniform. Making his way through rural ghost towns and pitch-black forests, he found other Survivors, and together they fled from the infected hordes. In the end, Bill sacrificed himself to ensure their safety. His body was never found. Bill was left for dead. No one knows that he still has the only thing he ever wanted: an enemy to fight.',
+  },
+  "Feng Min": {
+    lore: "Feng Min was a young girl when she first picked up computer games, and she was instantly hooked. The brand new worlds enchanted her with colours, sounds and explosions – a chance to be somewhere else, or someone else. Her parents saw no wrong with a few minutes in front of the screen, but as minutes turned into hours and sometimes days, they finally decided to pull the plug and force Feng Min to put more efforts into her studies.\n\nShe felt smothered by parents, so she left home and spent her time in internet cafés and LAN parties where the old rules didn't apply. She spent hours playing, streaming, competing to rise to the top. In the gaming word, she finally found respect. Nicknamed the \"Shining Lion\", she was invited to join a prestigious e-sports team where she found a sanctuary free of the misconceptions and prejudice she had felt from her parents and the non-gaming world.\n\nFeng Min pushed her limits to prove she was the best. Sleep was less important to her than training. She pushed herself too far, slept too little, and her performance began to slip. She started to lose. At night, she would stay up, tormented by the thought of disappointing her parents... and her fans. She spiraled out of control and fell into a pattern of self-destruction. She started wandering the streets and visiting bars, waking up in places she didn't remember. One day she woke up somewhere completely different...",
+  },
+  "David King": {
+    lore: "",
+  },
+  "Kate Denson": {
+    lore: "",
+  },
+  "Quentin Smith": {
+    lore: "",
+  },
+  "David Tapp": {
+    lore: "",
+  },
+  "Adam Francis": {
+    lore: "",
+  },
+  "Jeff Johansen": {
+    lore: "",
+  },
+  "Jane Romero": {
+    lore: "",
+  },
+  "Ashley J. Williams": {
+    lore: "",
+  },
+  "Nancy Wheeler": {
+    lore: "",
+  },
+  "Steve Harrington": {
+    lore: "",
+  },
+  "Yui Kimura": {
+    lore: "",
+  },
+  "Zarina Kassir": {
+    lore: "",
+  },
+  "Cheryl Mason": {
+    lore: "",
+  },
+  "Felix Richter": {
+    lore: "",
+  },
+  "Élodie Rakoto": {
+    lore: "",
+  },
+  "Lee Yun-Jin": {
+    lore: "",
+  },
+  "Jill Valentine": {
+    lore: "",
+  },
+  "Leon Scott Kennedy": {
+    lore: "",
+  },
+  "Mikaela Reid": {
+    lore: "",
+  },
+  "Jonah Vasquez": {
+    lore: "",
+  },
+  "Yoichi Asakawa": {
+    lore: "",
+  },
+  "Haddie Kaur": {
+    lore: "",
+  },
+  "Ada Wong": {
+    lore: "",
+  },
+  "Rebecca Chambers": {
+    lore: "",
+  },
+  "Vittorio Toscano": {
+    lore: "",
+  },
+  "Thalita Lyra": {
+    lore: "",
+  },
+  "Renato Lyra": {
+    lore: "",
+  },
+  "Gabriel Soma": {
+    lore: "",
+  },
+  "Nicolas Cage": {
+    lore: "",
+  },
+  "Ellen Ripley": {
+    lore: "",
+  },
+  "Alan Wake": {
+    lore: "",
+  },
+  "Sable Ward": {
+    lore: "",
+  },
+  "The Troupe": {
+    lore: "",
+  },
+  "Lara Croft": {
+    lore: "",
+  },
+  "Trevor Belmont": {
+    lore: "",
+  },
+  "Taurie Cain": {
+    lore: "",
+  },
+  "Orela Rose": {
+    lore: "",
+  },
+  "Rick Grimes": {
+    lore: "",
+  },
+  "Michonne Grimes": {
+    lore: "",
+  },
+  "Vee Boonyasak": {
+    lore: "",
+  },
+  "Dustin Henderson": {
+    lore: "",
+  },
+  Eleven: {
+    lore: "",
+  },
+  "Kwon Tae-young": {
+    lore: "",
+  },
+  "Shane Wiigwaas": {
+    lore: "",
+  },
+  "Aurora Stardotter": {
+    lore: "",
+  },
+  "Sienna Shaw": {
+    lore: "",
+  },
+};
+
+function getSurvivorInfo(name) {
+  const info = survivorInfo[name] || {};
+  return {
+    lore: info.lore || "Lore goes here.",
+  };
+}
+
 const perkTooltips = {};
 
 function attachPerkTooltip(target, tooltip) {
@@ -3184,9 +3359,12 @@ function ensureInfoModal() {
   return infoModal;
 }
 
-function openKillerInfo(icon) {
+function openCharacterInfo(icon, type) {
   const modal = ensureInfoModal();
-  const info = getKillerInfo(icon.name);
+  const isKiller = type === "killers";
+  const info = isKiller ? getKillerInfo(icon.name) : getSurvivorInfo(icon.name);
+
+  modal.querySelector(".info-panel").classList.toggle("is-survivor", !isKiller);
 
   const portrait = modal.querySelector(".info-portrait img");
   portrait.src = icon.src;
@@ -3195,21 +3373,23 @@ function openKillerInfo(icon) {
   modal.querySelector(".info-name").textContent = icon.name;
   modal.querySelector(".info-lore").innerHTML = info.lore;
 
-  const abilityIcon = modal.querySelector(".info-ability-icon");
-  const abilityImg = abilityIcon.querySelector("img");
-  if (info.abilityImage) {
-    abilityImg.src = info.abilityImage;
-    abilityImg.alt = info.abilityName;
-    abilityIcon.classList.remove("empty");
-  } else {
-    abilityImg.removeAttribute("src");
-    abilityIcon.classList.add("empty");
-  }
-  modal.querySelector(".info-ability-label").textContent = info.abilityName;
+  if (isKiller) {
+    const abilityIcon = modal.querySelector(".info-ability-icon");
+    const abilityImg = abilityIcon.querySelector("img");
+    if (info.abilityImage) {
+      abilityImg.src = info.abilityImage;
+      abilityImg.alt = info.abilityName;
+      abilityIcon.classList.remove("empty");
+    } else {
+      abilityImg.removeAttribute("src");
+      abilityIcon.classList.add("empty");
+    }
+    modal.querySelector(".info-ability-label").textContent = info.abilityName;
 
-  abilityTooltip.querySelector(".power-name").textContent = info.abilityName;
-  abilityTooltip.querySelector(".character-name").textContent = icon.name;
-  abilityTooltip.querySelector(".power-description").innerHTML = info.ability;
+    abilityTooltip.querySelector(".power-name").textContent = info.abilityName;
+    abilityTooltip.querySelector(".character-name").textContent = icon.name;
+    abilityTooltip.querySelector(".power-description").innerHTML = info.ability;
+  }
 
   const perks = modal.querySelector(".info-perks");
   perks.innerHTML = "";
@@ -3251,6 +3431,30 @@ function closeKillerInfo() {
     .querySelectorAll(".perk-tooltip.visible")
     .forEach((tooltip) => tooltip.classList.remove("visible"));
 }
+
+const BLANK_IMG =
+  "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
+const FALLBACK_IMG =
+  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><rect width='100' height='100' fill='%23222'/><text x='50' y='64' font-size='48' text-anchor='middle' fill='%23666' font-family='sans-serif'>?</text></svg>";
+
+function loadPerkImages(card) {
+  card.querySelectorAll("img[data-src]").forEach((img) => {
+    img.src = img.dataset.src;
+    delete img.dataset.src;
+  });
+}
+
+document.addEventListener(
+  "error",
+  (e) => {
+    const img = e.target;
+    if (!(img instanceof HTMLImageElement)) return;
+    if (img.src.startsWith("data:")) return;
+    img.src = FALLBACK_IMG;
+  },
+  true,
+);
 
 let currentType = localStorage.getItem("currentType") || "killers";
 
@@ -3301,8 +3505,13 @@ function createIcons(type) {
     div.className = "icon";
     div.dataset.name = icon.name;
     div.onclick = () => toggleCheck(div, index);
+    div.addEventListener("pointerenter", () => loadPerkImages(div), {
+      once: true,
+    });
 
     const img = document.createElement("img");
+    img.loading = "lazy";
+    img.decoding = "async";
     img.src = icon.src;
     img.alt = icon.name;
     div.appendChild(img);
@@ -3321,7 +3530,8 @@ function createIcons(type) {
     if (icon.hoverImages && icon.hoverImages.length === 3) {
       icon.hoverImages.forEach((src, i) => {
         const img = document.createElement("img");
-        img.src = src;
+        img.src = BLANK_IMG;
+        img.dataset.src = src;
         img.alt = `${icon.name} - Hover ${i + 1}`;
 
         const wrapper = document.createElement("div");
@@ -3384,20 +3594,18 @@ function createIcons(type) {
     overlay.appendChild(imagesContainer);
     div.appendChild(overlay);
 
-    if (type === "killers") {
-      div.classList.add("has-info");
+    div.classList.add("has-info");
 
-      const infoBtn = document.createElement("button");
-      infoBtn.className = "info-btn";
-      infoBtn.type = "button";
-      infoBtn.textContent = "i";
-      infoBtn.setAttribute("aria-label", `Info about ${icon.name}`);
-      infoBtn.onclick = (e) => {
-        e.stopPropagation();
-        openKillerInfo(icon);
-      };
-      div.appendChild(infoBtn);
-    }
+    const infoBtn = document.createElement("button");
+    infoBtn.className = "info-btn";
+    infoBtn.type = "button";
+    infoBtn.textContent = "i";
+    infoBtn.setAttribute("aria-label", `Info about ${icon.name}`);
+    infoBtn.onclick = (e) => {
+      e.stopPropagation();
+      openCharacterInfo(icon, type);
+    };
+    div.appendChild(infoBtn);
 
     container.appendChild(div);
   });

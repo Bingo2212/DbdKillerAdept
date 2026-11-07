@@ -9,7 +9,8 @@ body {
   align-items: center;
   padding: 20px;
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
+  box-sizing: border-box;
   justify-content: flex-start;
 }
 
@@ -667,6 +668,18 @@ body.info-open {
   border-radius: 10px;
 }
 
+.info-panel.is-survivor {
+  --info-size: 200px;
+}
+
+.info-panel.is-survivor .info-portrait {
+  flex-basis: calc(var(--info-size) * 0.8);
+}
+
+.info-panel.is-survivor .info-power {
+  display: none;
+}
+
 .info-power {
   flex: 0 0 var(--info-size);
   display: flex;
@@ -771,11 +784,19 @@ body.info-open {
   .info-panel {
     --info-size: 120px;
   }
+
+  .info-panel.is-survivor {
+    --info-size: 150px;
+  }
 }
 
 @media (max-width: 860px) {
   .info-panel {
     --info-size: 100px;
+  }
+
+  .info-panel.is-survivor {
+    --info-size: 120px;
   }
 }
 
@@ -791,4 +812,94 @@ body.info-open {
     padding-left: 0;
     border-left: none;
   }
+}
+
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  align-self: stretch;
+  margin: -20px -20px 0;
+  padding: 16px 20px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 24px;
+  background: rgba(26, 26, 26, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.top-bar .buttons,
+.top-bar #search {
+  margin-bottom: 0;
+}
+
+.top-bar .progress {
+  flex: 0 0 100%;
+  width: auto;
+  margin: 0;
+}
+
+.top-bar .progress-text {
+  margin-bottom: 6px;
+}
+
+.top-bar .progress-bar {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: #101010;
+  border: 1px solid #333;
+  border-radius: 999px;
+}
+
+.filter-buttons button {
+  padding: 8px 18px;
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #aaa;
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.filter-buttons button:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.filter-buttons button.active {
+  color: #f5c542;
+  background-color: rgba(245, 197, 66, 0.18);
+}
+
+.filter-count {
+  margin-left: 4px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.icons-container[data-filter="owned"] .icon:not(.checked),
+.icons-container[data-filter="missing"] .icon.checked {
+  display: none !important;
+}
+
+.no-results {
+  margin: 40px 0 0;
+  font-size: 18px;
+  color: #888;
+  text-align: center;
 }
