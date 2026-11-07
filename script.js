@@ -3095,9 +3095,15 @@ function getKillerInfo(name) {
     abilityName: info.abilityName || "Ability",
     abilityImage: info.abilityImage || "",
     ability: info.ability || "Ability description goes here.",
-    lore: info.lore || "Lore goes here.",
+    lore:
+      info.lore ||
+      "these are way too fucking long, im happy if i get it done by 2028 (not the actual lore) (not the actual lore)",
   };
 }
+
+/* -------------------------------------------------------------------------- */
+/*                          Survivor Biography / Info                         */
+/* -------------------------------------------------------------------------- */
 
 const survivorInfo = {
   "Dwight Fairfield": {
@@ -3125,16 +3131,16 @@ const survivorInfo = {
     lore: 'It took two tours in Vietnam, a handful of medals, a knee full of shrapnel, and an honourable discharge to get William "Bill" Overbeck to stop fighting and try to live a peaceful life. He hated it.\n\nAfter decades spent drifting aimlessly through dead end jobs, Bill went in for a routine surgery and woke up to find the world he knew was gone. A plague was turning normal people into mindless killing machines. Naturally, the first thing he did was fight his way home and put on his uniform. Making his way through rural ghost towns and pitch-black forests, he found other Survivors, and together they fled from the infected hordes. In the end, Bill sacrificed himself to ensure their safety. His body was never found. Bill was left for dead. No one knows that he still has the only thing he ever wanted: an enemy to fight.',
   },
   "Feng Min": {
-    lore: "Feng Min was a young girl when she first picked up computer games, and she was instantly hooked. The brand new worlds enchanted her with colours, sounds and explosions – a chance to be somewhere else, or someone else. Her parents saw no wrong with a few minutes in front of the screen, but as minutes turned into hours and sometimes days, they finally decided to pull the plug and force Feng Min to put more efforts into her studies.\n\nShe felt smothered by parents, so she left home and spent her time in internet cafés and LAN parties where the old rules didn't apply. She spent hours playing, streaming, competing to rise to the top. In the gaming word, she finally found respect. Nicknamed the \"Shining Lion\", she was invited to join a prestigious e-sports team where she found a sanctuary free of the misconceptions and prejudice she had felt from her parents and the non-gaming world.\n\nFeng Min pushed her limits to prove she was the best. Sleep was less important to her than training. She pushed herself too far, slept too little, and her performance began to slip. She started to lose. At night, she would stay up, tormented by the thought of disappointing her parents... and her fans. She spiraled out of control and fell into a pattern of self-destruction. She started wandering the streets and visiting bars, waking up in places she didn't remember. One day she woke up somewhere completely different...",
+    lore: "Feng Min was a young girl when she first picked up computer games, and she was instantly hooked. Her parents saw no wrong with a few minutes in front of the screen, but as minutes turned into hours and sometimes days, they finally decided to pull the plug and force Feng Min to put more efforts into her studies.\n\nShe felt smothered by parents, so she left home and spent her time in internet cafés and LAN parties where the old rules didn’t apply. She spent hours playing, streaming, competing to rise to the top. In the gaming world, she finally found respect. Nicknamed the “Shining Lion,” she was invited to join a prestigious e-sports team where she found a sanctuary free of the misconceptions and prejudice she had felt from her parents and the non-gaming world.\n\nFeng Min pushed her limits to prove she was the best. Sleep was less important to her than training. She pushed herself too far, slept too little, and her performance began to slip. She started to lose. At night, she would stay up, tormented by the thought of disappointing her parents... and her fans. She spiraled out of control and fell into a pattern of self-destruction. She-started wandering the streets and visiting bars, waking up in-places she didn’t remember. One day she woke up somewhere completely different...",
   },
   "David King": {
-    lore: "",
+    lore: "The single child of a wealthy family, David King seemed destined for Greatness. While growing up in Manchester, he demonstrated serious potential in both sports and academics, and with his family connections, all doors were open to him. He could have succeeded at anything, if it weren't for his combative nature. David lived for the adrenaline rush of a good fight and would go out of his way to get into one.\n\nHis robustness and athletic abilities led him to rugby, where he could cut loose and really cause a ruckus. King excelled and gained a reputation as a promising, if somewhat reckless, rookie. His meteoric rise came to an abrupt end when he lost his temper and assaulted a referee, earning himself a lifetime ban from the league and cutting short what most people assumed was going to be a long, successful career. King was unconcerned; money was no issue, so he took it as an early retirement and focused on other fun things to do.\n\nFree from the constraints of a career and enabled by the wealth of his family, David King spent most of his time at the pub, drinking, watching games, and getting into fights. Some might say he was wasting his life away. Not many people knew that he was an occasional \"debt collector\” or that he fought in clandestine bare-knuckle fight clubs.\n\nWhen David King stopped showing up at the pub, the few friends he still had were not surprised. They figured he had finally picked a fight with someone stronger than he was. In a way, they were right.",
   },
   "Kate Denson": {
-    lore: "",
+    lore: "One of Kate Denson’s earliest memories was standing in front of her family, singing a song that she’d learned that morning at school, and watching smiles spread across their faces. Seeing how something as simple as a song could make people so happy was the moment when she knew what she wanted to do with her life.\n\nShe practised, learned the guitar as soon as she was big enough to reach over it, and was performing in front of crowds by the time she was eight years old. Her mother did everything she could to fulfil Kate’s dreams, taking her all over home state of Pennsylvania, then across the South, and even to Nashville itself.\n\nKate won folk music competitions and talent shows whenever she participated, but for her to win others had to lose, and that wasn't in her nature. She only wanted an outlet, a way to touch people's lives. To make them forget the worries of the world and just enjoy themselves, if only for a while.\n\nWith age came a new-found freedom. She bought a battered old Chevy truck and was able to travel around by herself, meeting fans and making new friends wherever she stopped. Hers wasn't a story of rock excess though: just the road, her guitar and maybe a good bourbon to end the day.\n\nFrom sun-baked festivals to dark and cosy bars, people flocked to her voice and her self-penned songs of friendship, family, love and home.\n\nThese sentiments weren't just lip-service: she made sure to return home as often as she could, to help out in her community and entertain the local children with her tales of the wider world. She saw it as a way of giving back, of supporting others in the same way she had.\n\nIt was home where she found most of her inspiration as well. She had always loved to take long walks in the woods around her town, exploring off the beaten track, finding a quiet spot to play and write her songs. She had a favorite location she returned to time and again, a natural hollow, encircled by trees, that looked almost as if it had been blasted out of the rocks thousands of years ago.\n\nHere she felt a strong connection to nature, and to the Earth itself. She let her mind be enveloped by the forest and it rewarded her with constant inspiration.\n\nShe picked up her guitar and played, her fingers dancing across the fretboard. The music that she made this time was unlike her usual uplifting tunes, being much more melancholy, even dark. Still, something compelled her to continue, to finish the song.\n\nAround her, the leaves vibrated in unison with the guitar strings and the boughs of the trees lengthened, coalescing into a living form. Spider-like legs descended from the canopy above, grasping for her. Regaining her senses, she grabbed a rock and tried to beat them back, but their skin was as hard as iron and the rock simply bounced off and skittered away.\n\nThe legs coiled like tendrils around her limbs and lifted her towards the darkness overhead. Fog rolled across the clearing, bscuring both Kate and the creature of nightmares that drew her up towards itself.\n\nWhen the fog cleared, there was no sign of any struggle, or of life. Just an acoustic guitar, the scratch plate engraved with flowers; as well as the initials KD, inlaid in mother of pearl.",
   },
   "Quentin Smith": {
-    lore: "",
+    lore: ``,
   },
   "David Tapp": {
     lore: "",
@@ -3270,7 +3276,9 @@ const survivorInfo = {
 function getSurvivorInfo(name) {
   const info = survivorInfo[name] || {};
   return {
-    lore: info.lore || "Lore goes here.",
+    lore:
+      info.lore ||
+      "these are way too fucking long, im happy if i get it done by 2028 (not the actual lore)",
   };
 }
 
