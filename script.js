@@ -2653,7 +2653,7 @@ const perkData = {
     },
     perk3: {
       name: "Teamwork: Soft-Spoken",
-      description: `For each other Survivor repairing a Generator with you, the range of Generator repair noises is ${tiers(15, 20, 25)}% smaller.<br><br>While repairing with at least 1 other Survivor, you repair <b>5</b>% faster.`,
+      description: `For each other Survivor repairing a Generator with tou, the range of Generator repair noises is ${tiers(15, 20, 25)}% smaller.<br><br>While repairing with at least 1 other Survivor, you repair <b>5</b>% faster.`,
       quote: '"I make my own rules."-Eleven',
     },
   },
@@ -2767,11 +2767,740 @@ function getPerkQuote(iconName, perkNumber) {
   return killerData[perkKey]?.quote || '"Perk quote goes here."';
 }
 
+/* -------------------------------------------------------------------------- */
+/*                           Killer Biography / Info                          */
+/* -------------------------------------------------------------------------- */
+
+const killerInfo = {
+  "The Trapper": {
+    abilityName: "Bear Trap",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_trap.png?92a28e",
+    ability: "",
+    lore: "",
+  },
+  "The Wraith": {
+    abilityName: "Wailing Bell",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_bell.png?f41f73",
+    ability: "",
+    lore: "",
+  },
+  "The Hillbilly": {
+    abilityName: "Chainsaw",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_chainsaw.png?2bc887",
+    ability: "",
+    lore: "",
+  },
+  "The Nurse": {
+    abilityName: "Spencer's last breath",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_breath.png?b0b418",
+    ability: "",
+    lore: "",
+  },
+  "The Shape": {
+    abilityName: "Evil Within",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/T_UI_iconPowers_stalker.png?fefb60",
+    ability: "",
+    lore: "",
+  },
+  "The Hag": {
+    abilityName: "Blackened Catalyst",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_blackenedCatalyst.png?8f4139",
+    ability: "",
+    lore: "",
+  },
+  "The Doctor": {
+    abilityName: "Carter's spark",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_cartersSpark.png?d59eae",
+    ability: "",
+    lore: "",
+  },
+  "The Cannibal": {
+    abilityName: "Bubba's chainsaw",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_bubbasChainsaw.png?75f47c",
+    ability: "",
+    lore: "",
+  },
+  "The Huntress": {
+    abilityName: "Hunting Hatchets",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_huntingHatchets.png?ec4916",
+    ability: "",
+    lore: "",
+  },
+  "The Nightmare": {
+    abilityName: "Dream Demon",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_dreamDemon.png?b3ac73",
+    ability: "",
+    lore: "",
+  },
+  "The Pig": {
+    abilityName: "Jigsaw's Baptism",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_jigsawsBaptism.png?bd9025",
+    ability: "",
+    lore: "",
+  },
+  "The Clown": {
+    abilityName: "The Afterpiece Tonic",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_gasBomb.png?26e31a",
+    ability: "",
+    lore: "",
+  },
+  "The Spirit": {
+    abilityName: "Yamaoka's haunting",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_yamaokasHaunting.png?d72f14",
+    ability: "",
+    lore: "",
+  },
+  "The Legion": {
+    abilityName: "Feral Frenzy",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_feralFrenzy.png?ab63cd",
+    ability: "",
+    lore: "",
+  },
+  "The Plague": {
+    abilityName: "Vile Purge",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_vilePurge.png?b301ba",
+    ability: "",
+    lore: "",
+  },
+  "The Ghost Face": {
+    abilityName: "Night Shroud",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_nightShroud.png?8851c4",
+    ability: "",
+    lore: "",
+  },
+  "The Demogorgon": {
+    abilityName: "Of The Abyss",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_ofTheAbyss.png?f1782d",
+    ability: "",
+    lore: "",
+  },
+  "The Oni": {
+    abilityName: "Yamaoka's Wrath",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_yamaokasWrath_demon.png?47cb83",
+    ability: "",
+    lore: "",
+  },
+  "The Deathslinger": {
+    abilityName: "The Redeemer",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_theRedeemer.png?e8f8ed",
+    ability: "",
+    lore: "",
+  },
+  "The Executioner": {
+    abilityName: "Rites Of Judgement",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_ritesOfJudgement.png?12ce9c",
+    ability: "",
+    lore: "",
+  },
+  "The Blight": {
+    abilityName: "Blighted Corruption",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_blightedCorruption.png?93948c",
+    ability: "",
+    lore: "",
+  },
+  "The Twins": {
+    abilityName: "Blood Bond",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_bloodBond.png?6b01e5",
+    ability: "",
+    lore: "",
+  },
+  "The Trickster": {
+    abilityName: "Showstopper",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_showstopper.png?30b22f",
+    ability: "",
+    lore: "",
+  },
+  "The Nemesis": {
+    abilityName: "T-Virus",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_t-Virus_MR1.png?d2707e",
+    ability: "",
+    lore: "",
+  },
+  "The Cenobite": {
+    abilityName: "Summons Of Pain",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_summonsOfPain.png?7b47f5",
+    ability: "",
+    lore: "",
+  },
+  "The Artist": {
+    abilityName: "Birds Of Torment",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_birdsOfTorment.png?5735bd",
+    ability: "",
+    lore: "",
+  },
+  "The Onryō": {
+    abilityName: "Deluge Of Fear",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_delugeOfFear_demanifested.png?5598e6",
+    ability: "",
+    lore: "",
+  },
+  "The Dredge": {
+    abilityName: "Reign Of Darkness",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_reignOfDarkness.png?c8df78",
+    ability: "",
+    lore: "",
+  },
+  "The Mastermind": {
+    abilityName: "Virulent Bound",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_virulentBound.png?c28241",
+    ability: "",
+    lore: "",
+  },
+  "The Knight": {
+    abilityName: "Guardia Compagnia",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_guardiaCompagnia_Carnifex.png?cf455e",
+    ability: "",
+    lore: "",
+  },
+  "The Skull Merchant": {
+    abilityName: "Eyes In The Sky",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_eyesInTheSky.png?8ecf7a",
+    ability: "",
+    lore: "",
+  },
+  "The Singularity": {
+    abilityName: "Quantum Instantiation",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_quantumInstantiation.png?c3694c",
+    ability: "",
+    lore: "",
+  },
+  "The Xenomorph": {
+    abilityName: "Hidden Pursuit",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_hiddenPursuit.png?80a567",
+    ability: "",
+    lore: "",
+  },
+  "The Good Guy": {
+    abilityName: "Playtime's Over",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_playtimesOver.png?384ad2",
+    ability: "",
+    lore: "",
+  },
+  "The Unknown": {
+    abilityName: "UVX",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_ChargeUVX_K35.png?444e23",
+    ability: "",
+    lore: "",
+  },
+  "The Lich": {
+    abilityName: "Vile Darkness",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_VileDarkness.png?fc4bc6",
+    ability: "",
+    lore: "",
+  },
+  "The Dark Lord": {
+    abilityName: "Vampiric Shift",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_K37_Shapeshift.png?cdbcf7",
+    ability: "",
+    lore: "",
+  },
+  "The Houndmaster": {
+    abilityName: "Scent Of Blood",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_K38_dashCommand.png?67dcf3",
+    ability: "",
+    lore: "",
+  },
+  "The Ghoul": {
+    abilityName: "One-Eyed Terror",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_AimKaguneLeap_K39.png?dd7362",
+    ability: "",
+    lore: "",
+  },
+  "The Animatronic": {
+    abilityName: "Fazbear's Fright",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_throw.png?d55ba5",
+    ability: "",
+    lore: "",
+  },
+  "The Krasue": {
+    abilityName: "Unbodied Flesh",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/IconPowers_HeadForm_K41.png?e5446f",
+    ability: "",
+    lore: "",
+  },
+  "The First": {
+    abilityName: "Test Subject \#001",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/T_UI_iconPowers_EnterUpsideDown.png?150c19",
+    ability: "",
+    lore: "",
+  },
+  "The Slasher": {
+    abilityName: "Omnipresent Evil",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/T_UI_iconPowers_DramaticEntrance.png?e7518b",
+    ability: "",
+    lore: "",
+  },
+  "The Judgement": {
+    abilityName: "Will Of The Gods",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/T_UI_iconPowers_ChargeRay.png?699453",
+    ability: "",
+    lore: "",
+  },
+  "The Terrifier": {
+    abilityName: "Bag Of Toys",
+    abilityImage:
+      "https://deadbydaylight.wiki.gg/images/T_UI_iconPowers_GarbageBag.png?493af4",
+    ability: "",
+    lore: "",
+  },
+};
+
+function getKillerInfo(name) {
+  const info = killerInfo[name] || {};
+  return {
+    abilityName: info.abilityName || "Ability",
+    abilityImage: info.abilityImage || "",
+    ability: info.ability || "Ability description goes here.",
+    lore:
+      info.lore ||
+      "these are way too fucking long, im happy if i get it done by 2028 (not the actual lore) (not the actual lore)",
+  };
+}
+
+/* -------------------------------------------------------------------------- */
+/*                          Survivor Biography / Info                         */
+/* -------------------------------------------------------------------------- */
+
+const survivorInfo = {
+  "Dwight Fairfield": {
+    lore: "Dwight was geeky and scrawny through high school. He always wanted to be one of the cool kids, but somehow never had the charisma. He tried out for the football team but was cut, the basketball team didn't even take a look, and his grades were distinctly below average.\n\nOne weekend, on a team-building exercise from his dead-end job, Dwight's boss led them deep into the woods before breaking out his family recipe moonshine. Dwight remembered taking the first sip before waking up late the next morning all alone.\n\nDuring the night, the others had abandoned him. Once again, the laughing stock of the community Dwight tried to hike his way out of the woods. That was the last anyone ever heard of Dwight Fairfield.",
+  },
+  "Meg Thomas": {
+    lore: "Perhaps it was her mother that had instilled the fierce streak in her or maybe it was her father that left them when she was a baby.\n\nMeg excelled at schoolwork but she was off the rails. Fortunately, an athletics coach encouraged her to channel her misspent energy on the track. She motivated herself into becoming a high school star and earned a scholarship to college. When her mother fell ill, Meg decided to give up her chance at college to care for the woman who had raised her.\n\nOne summer’s day, on a long run deep in the woods, Meg vanished. Search as they did, they never found her body.",
+  },
+  "Claudette Morel": {
+    lore: "From the day that her parents gave Claudette her first science kit, she loved experiments. Her single-minded pursuit lead to an early scholarship at a great college. It was a huge decision to leave Montreal, but the chance was too good to pass up.\n\nHer introverted nature means that chat rooms and forums are now her best source of social interaction. Her new favourite activity is to answer botany questions for others under her new moniker of Science Girl.\n\nOne evening, during a long bus ride back from the city, Claudette took a stroll that would change her life. It only took a minute for her to get completely disoriented in the thick woods. She never found her way back. Her forum only started to wonder where she was a week after she stopped posting.",
+  },
+  "Jake Park": {
+    lore: "Growing up the son of a wealthy CEO was always going to put pressure on Jake Park. When his brother graduated with honours from Yale, the pressure on Jake intensified. Jake just wasn't the academic type, but his father never really understood his refusal to embrace the expensive education he lavished upon him. Eventually, Jake rebelled by dropping out of school entirely.\n\nNow, Jake lives off the grid on the edge of the woods. It's been years since he spoke to his father but his mother checks in once in a while. It was she, who eventually called the police.\n\nThe cops said he got lost in the woods and a search party looked for days, but gave up as bad weather rolled in. Despite passionate pleas from his mother, they never resumed the search and Jake went down in history as another casualty of the woods.",
+  },
+  "Nea Karlsson": {
+    lore: 'Nea grew up in the small town of Hjo in Sweden. She had a happy childhood even though her mom and dad worked hard. As the opportunity to move to the US became a reality, she started acting out. Nea was forced to leave her friends and life behind.\n\nNea shied away from what her parents considered "normal". Instead she took refuge in skate parks, and her tag "Mashtyx" was seen more or less all over her new hometown.\n\nNea made a sport out of tagging government buildings, avoiding the fuzz and any other danger with her nimble cat-like abilities. FInally Nea\'s parents became used to her disappearing for a few days on end. She may have gone too far when her friends dared her to tag the old Crotus Prenn Asylum one moonless night, as she was never seen again.',
+  },
+  "Laurie Strode": {
+    lore: "You never know what really matters in life until you've realised it might end soon. Laurie is one of those who just wants a quiet life in the suburbs, hanging out with friends, family and maybe go on a date or two. Laurie is a typical teenager. You could pass her on the street and not think twice. She does her homework and is liked by her friends, teachers and family.\n\nA simple night of babysitting turns into something that will forever change the course of her young life. A knife swooshing through the air. Screams from afar. Noises that plays tricks with her mind. But not Laurie, she’s made of something stronger. Something that won't give up.",
+  },
+  "Ace Visconti": {
+    lore: "Ace Visconti is one charming guy. With his sharp Italian looks, grey-streaked hair and silver tongue, he could pass for an ageing 50's movies star.\n\nHis heart has always belonged to the cards. From his roots as a poor boy in Argentina, he gambled, scammed, seduced and smooth-talked his way to a life of luxury as a high roller in the land of opportunity. Despite money always having a way of slipping through his fingers, Ace always figured he could win more.\n\nHe never fulfilled that ambition; eventually he racked up too many debts with the wrong kind of people. And when they finally came to collect, Ace was nowhere to be found. No one knew who tipped him off or where he fled to, but anyone who knew Ace Visconti can agree on one thing. He will survive: against all odds.",
+  },
+  "Bill Overbeck": {
+    lore: 'It took two tours in Vietnam, a handful of medals, a knee full of shrapnel, and an honourable discharge to get William "Bill" Overbeck to stop fighting and try to live a peaceful life. He hated it.\n\nAfter decades spent drifting aimlessly through dead end jobs, Bill went in for a routine surgery and woke up to find the world he knew was gone. A plague was turning normal people into mindless killing machines. Naturally, the first thing he did was fight his way home and put on his uniform. Making his way through rural ghost towns and pitch-black forests, he found other Survivors, and together they fled from the infected hordes. In the end, Bill sacrificed himself to ensure their safety. His body was never found. Bill was left for dead. No one knows that he still has the only thing he ever wanted: an enemy to fight.',
+  },
+  "Feng Min": {
+    lore: "Feng Min was a young girl when she first picked up computer games, and she was instantly hooked. Her parents saw no wrong with a few minutes in front of the screen, but as minutes turned into hours and sometimes days, they finally decided to pull the plug and force Feng Min to put more efforts into her studies.\n\nShe felt smothered by parents, so she left home and spent her time in internet cafés and LAN parties where the old rules didn’t apply. She spent hours playing, streaming, competing to rise to the top. In the gaming world, she finally found respect. Nicknamed the “Shining Lion,” she was invited to join a prestigious e-sports team where she found a sanctuary free of the misconceptions and prejudice she had felt from her parents and the non-gaming world.\n\nFeng Min pushed her limits to prove she was the best. Sleep was less important to her than training. She pushed herself too far, slept too little, and her performance began to slip. She started to lose. At night, she would stay up, tormented by the thought of disappointing her parents... and her fans. She spiraled out of control and fell into a pattern of self-destruction. She-started wandering the streets and visiting bars, waking up in-places she didn’t remember. One day she woke up somewhere completely different...",
+  },
+  "David King": {
+    lore: "The single child of a wealthy family, David King seemed destined for Greatness. While growing up in Manchester, he demonstrated serious potential in both sports and academics, and with his family connections, all doors were open to him. He could have succeeded at anything, if it weren't for his combative nature. David lived for the adrenaline rush of a good fight and would go out of his way to get into one.\n\nHis robustness and athletic abilities led him to rugby, where he could cut loose and really cause a ruckus. King excelled and gained a reputation as a promising, if somewhat reckless, rookie. His meteoric rise came to an abrupt end when he lost his temper and assaulted a referee, earning himself a lifetime ban from the league and cutting short what most people assumed was going to be a long, successful career. King was unconcerned; money was no issue, so he took it as an early retirement and focused on other fun things to do.\n\nFree from the constraints of a career and enabled by the wealth of his family, David King spent most of his time at the pub, drinking, watching games, and getting into fights. Some might say he was wasting his life away. Not many people knew that he was an occasional \"debt collector\” or that he fought in clandestine bare-knuckle fight clubs.\n\nWhen David King stopped showing up at the pub, the few friends he still had were not surprised. They figured he had finally picked a fight with someone stronger than he was. In a way, they were right.",
+  },
+  "Kate Denson": {
+    lore: "One of Kate Denson’s earliest memories was standing in front of her family, singing a song that she’d learned that morning at school, and watching smiles spread across their faces. Seeing how something as simple as a song could make people so happy was the moment when she knew what she wanted to do with her life.\n\nShe practised, learned the guitar as soon as she was big enough to reach over it, and was performing in front of crowds by the time she was eight years old. Her mother did everything she could to fulfil Kate’s dreams, taking her all over home state of Pennsylvania, then across the South, and even to Nashville itself.\n\nKate won folk music competitions and talent shows whenever she participated, but for her to win others had to lose, and that wasn't in her nature. She only wanted an outlet, a way to touch people's lives. To make them forget the worries of the world and just enjoy themselves, if only for a while.\n\nWith age came a new-found freedom. She bought a battered old Chevy truck and was able to travel around by herself, meeting fans and making new friends wherever she stopped. Hers wasn't a story of rock excess though: just the road, her guitar and maybe a good bourbon to end the day.\n\nFrom sun-baked festivals to dark and cosy bars, people flocked to her voice and her self-penned songs of friendship, family, love and home.\n\nThese sentiments weren't just lip-service: she made sure to return home as often as she could, to help out in her community and entertain the local children with her tales of the wider world. She saw it as a way of giving back, of supporting others in the same way she had.\n\nIt was home where she found most of her inspiration as well. She had always loved to take long walks in the woods around her town, exploring off the beaten track, finding a quiet spot to play and write her songs. She had a favorite location she returned to time and again, a natural hollow, encircled by trees, that looked almost as if it had been blasted out of the rocks thousands of years ago.\n\nHere she felt a strong connection to nature, and to the Earth itself. She let her mind be enveloped by the forest and it rewarded her with constant inspiration.\n\nShe picked up her guitar and played, her fingers dancing across the fretboard. The music that she made this time was unlike her usual uplifting tunes, being much more melancholy, even dark. Still, something compelled her to continue, to finish the song.\n\nAround her, the leaves vibrated in unison with the guitar strings and the boughs of the trees lengthened, coalescing into a living form. Spider-like legs descended from the canopy above, grasping for her. Regaining her senses, she grabbed a rock and tried to beat them back, but their skin was as hard as iron and the rock simply bounced off and skittered away.\n\nThe legs coiled like tendrils around her limbs and lifted her towards the darkness overhead. Fog rolled across the clearing, bscuring both Kate and the creature of nightmares that drew her up towards itself.\n\nWhen the fog cleared, there was no sign of any struggle, or of life. Just an acoustic guitar, the scratch plate engraved with flowers; as well as the initials KD, inlaid in mother of pearl.",
+  },
+  "Quentin Smith": {
+    lore: "When he heard that Nancy's mother had disappeared, Quentin Smith knew instantly that their success had been short-lived. lthough their plan had seemed to work flawlessly, Freddy Krueger had beaten death yet again.\n\nBut Quentin wasn’t about to give up. It might take many attempts, but he vowed that somehow he would find a way to beat Freddy, once and for all. If he didn't, it would only be a matter of time before Freddy would win and Nancy was lost.\n\nSomeone like Quentin never attracted attention in a library, no matter how strange the texts he requested were. He devoured all the information he could, on shared dream worlds, lucid dreaming, and the methods to control the dream space. Forcing himself to stay awake, via a steady diet of pills and energy drinks, he searched through dusty volumes, finding myths about the demons that live in dreams, trapping their victims in limbo and feeding off their terror.\n\nHe worked quickly as he knew that Freddy would soon be coming for him.\n\nIt wasn't long before that moment arrived and Freddy began appearing in his dreams. He stayed at the periphery at first, taunting Quentin, seemingly hoping to tire him out. Using all that he had learned, Quentin was able to see flaws in the dream; cracks where escape routes could be formed. He tested this skill carefully, not wanting to show his hand, hoping that it would give him some kind of advantage that he could use to defeat Freddy.\n\nThen, one night, he found himself in the familiar environment of Badham Preschool. Freddy had tired of the taunting and had finally decided to gut him.\n\nQuentin ran through the school, his quick eyes scanning for something useful in the maze of rooms. He found a can of paint thinner and quickly formulated a plan.\n\nOnce the trap was set, he waited, acting as the lure to draw Freddy into the right position. And there he was, claws scraping on metal as he closed in for the kill.\n\nQuentin allowed himself time to enjoy the surprise on Freddy's face as the corridor ignited and then he was away, running through the building, heading for the exit that he knew existed. If he harried Freddy, weakening him and then escaping the dream to safety, surely that would defeat him over time?\n\nBefore his eyes, the cracks in the dream closed and his escape route was blocked. He was in Freddy’s secret room again, and there was nowhere to run.\n\nAs Freddy closed in, a broad grin spreading across his ruined face, Quentin was consumed by a need to see this man finally obliterated. He wished it had been him, not his father, who threw the gas can that ended Krueger's life, that it had been him who cut Freddy's throat. Perhaps that desire would be enough? This was a realm of the mind after all.\n\nHe let it consume him, concentrating all his thoughts on wishing Freddy gone.\n\nHis vision was obscured with roiling tendrils of fog and, when it cleared, he was somewhere else. In another dream? If so, it wasn't his; it felt cold and unfamiliar.\n\nA flickering drew his attention and he realized he was by a campfire, and he wasn't alone. Other people were trapped here too, and they needed his help.",
+  },
+  "David Tapp": {
+    lore: "Detective David Tapp was one of the good guys. His determination to see Killers brought to justice and their victims avenged had led him through a long and respected career.\n\nWhen he first saw the details of the Jigsaw case, it seemed like many others. More grisly and macabre, sure, but just another lunatic with a penchant for the over-dramatic, who would soon be behind bars.\n\nA stroke of insight brought Tapp, and his partner Detective Stephen Sing, to an abandoned mannequin factory, where they discovered Jigsaw's lair. They apprehended the man but he managed to escape before being unmasked, slashing Tapp’s throat as he did so.\n\nLeaving his partner, Sing went in pursuit, but fell victim to a booby trap.\n\nTapp had failed to go by the book on this one occasion, entering the lair without a warrant, and it had resulted in a Detective’s death. He was discharged from the force and left with a ruined throat and crippling guilt.\n\nHe channeled that guilt into an obsession: he would find the Killer, stop the murders, vindicate himself, and avenge his friend and colleague. Following the evidence trail brought him to Dr Lawrence Gordon and he staked out the doctor's apartment, sure that he would find some evidence of guilt.\n\nThen he saw a stranger at Gordon’s window, and heard gunshots. Tapp confronted him and the man fled, with the pursuit leading to an industrial building.\n\nTapp’s age caught up with him, A fight that he would easily have won in his younger days ended with Tapp taking a bullet to the chest. Slumping to the floor, he saw only failure. He had failed his partner, and the other victims. Whoever the Killer was, Tapp had been unable to stop him. More would die and it would be his fault.\n\nHe let the rage and guilt consume him and closed his eyes for the final time. Beneath him, the concrete floor softened. He dug his fingers into the ground, feeling dirt and leaves. Where his chest had been wet with blood, the shirt was now dry and the pain had gone. His eyes opened onto a darkened sky and the jagged, searching fingers of branches.\n\nScreams echoed through the forest and a new determination filled him. His mind was clear for the first time in months. Victims needed to be avenged, Killers thwarted. He didn’t know what this place was, but he was still a cop, and he always would be. He had a job to do.",
+  },
+  "Adam Francis": {
+    lore: "Adam was born in Rollington Town in Kingston, Jamaica. His father died in a car accident when he was two, and his uncle took him in. His uncle was a strict, but fair man, who raised him to value education.\n\nAt Kingston College, Adam discovered his father’s published works, which triggered his passion for literature. His campus, however, was known for its focus on athletics. As a shy teenager with his nose stuck in books, he was the perfect prey for bullies. What he lacked in sports, he made up in grit. He learned to defend himself in the thick of it.\n\nIt’s during his years in college that he started to imagine his life elsewhere. While his close friends orbited the music industry, he followed a surer path. His grades granted him admission to higher education, and there was a demand for teachers abroad.\n\nAfter graduating university, he taught extra classes to afford applying fees overseas. He had a steady diet of long commutes, grading piles, nightly lesson plans, and early classes. After a year, he managed to apply for a position abroad. His first plane ride took him to Southern Japan for a new start.\n\nHis life in Kagoshima was hectic. There was little time to do everything he took for granted back home. His Japanese was elementary at best, which slowed him down. Buying groceries took hours, long commutes had to be planned, and lesson plans relied on Japanese notions, which he had to learn.\n\nBut after a few months, he found his rhythm. He reflected on it one morning while riding the train to work. He no longer had to study the kanji characters filling the map. He knew his way. His language skills had improved, he felt connected to his students, and he'd treat himself to luxurious restaurants on weekends. He even had his first vacation planned.\n\nWithin seconds, Adam's world was brought down to a slow motion. Rails hissed, bags came pouring down, and the floor trembled before the hit: Adam crashed forward as the train flipped upside down. He landed on a window pane as an unhinged door came flying at a passenger. He rolled over so that the door would hit him instead of the girl. He shut his eyes as he braced for impact, but nothing happened.\n\nHe squinted one eye open and he saw nothing but darkness. A heavy Fog had taken over the train. lce seemed to flow through his body, reaching his lips first, then the tip of his fingers before spreading to his legs. Lulled by the warm hum of the dark whisper, he closed his eyes, drifting.\n\nNo one truly knows what happened to Adam Francis. The school teachers imagined the worst when they watched the train derailment on the news and saw he was missing. Their fears seemed to be confirmed when Adam's bag was recovered from the crash site, but his body was never found. To this day, his uncle believes that Adam took off after the train crash, alive still, somewhere out there.",
+  },
+  "Jeff Johansen": {
+    lore: "Jeff Johansen was born and raised in Ormond, Alberta. He grew up as a quiet, only child with an aversion for large crowds. During high school, his anxious nature was mislabelled as shyness, which he covered up with a tough, stoic persona that intimidated bullies and teachers alike. At home, he discovered an interest for heavy metal and started a vinyl collection. The evocative symbolism on the covers inspired him to make some art of his own, which helped him cope with his parents’ constant fighting.\n\nTo escape his parents’ increasingly recurrent blow-ups, Jeff started working at a video store. Few customers passed by, so he had a lot of free time to draw. A late-night regular noticed his sketches and asked him to do some artwork for his gang at the abandoned lodge up Mount Ormond. Jeff accepted the challenge and painted a large mural depicting “The Legion” in runny, bloody letters. He was given a fifty-dollar bill and a 12- pack for his hard work. It was his first paid commission, a milestone to be proud of.\n\nAfter his parents’ divorce, Jeff was forced to move with his mother to Winkler, Manitoba, which was miles away from his hometown—and his dad. In Winkler, Jeff was more isolated than ever, except for art and music. His solace came shortly after graduating high school when he started working at a local bar with live music performances. He found a roadie gig shortly after, leaving Winkler behind.\n\nA few years later, Jeff got injured after getting involved in a fight during a concert. He was told he could lose part of his eyesight, so his doctor asked him to stay in town in order to monitor him. It was a difficult time during which Jeff reassessed his life choices.\n\nHe went back to school—art school. His eyesight slowly returned, but he had to be careful. He took a few courses, experimenting with a wide range of mediums, ultimately choosing oil painting and digital art, the latter of which offered paid internships. He took up a desk job and found his calling in designing labels for microbreweries. He led a quiet, simple life: he brewed beer, took-in a rescue dog, designed tattoos, and freelanced album covers for bands he liked. All until one morning, when he got a phone call from Ormond saying that his",
+  },
+  "Jane Romero": {
+    lore: "Jane Romero was the daughter of famous actress, Loretta Lawrence, of whom she had no memory. Her parents had separated when she was still a baby, mainly since her mother was often away filming. Jane was raised by her father, a struggling visual artist. She grew up torn between resenting her mother’s absence from her life and admiring her presence on screen,\n\nAs a teenager, Jane secretly wished to emulate her mother’s talent. She would direct and perform in plays, audition for TV commercials and help her father at his studio. During her senior year, she entered a national oratory contest and won first prize. Her performance attracted the attention of a radio-station that contacted her for an interview. During the live show, her natural charm and repartee impressed the staff, who offered her a part-time job at the station.\n\nAfter graduating college in Communication, she quit her job at the station to work for a trendy variety show. But her frank delivery and ad-libs were not appreciated by the show’s executives, who fired her after five months. Desperate for another opportunity, Jane pitched a show at the radio-station she used to work at, only to be turned down, her proposal being too risky.\n\nFour months later, she received a phone call from a producer who had seen reruns of the show. He was looking for a co-host to spark up the failing show, Quick Talk.\n\nLive television meant long hours, a low salary, and no stability, but it also offered a platform to broadcast her views. She disputed the crude inflammatory tone of Quick Talk and pushed for a relatable coverage of personal issues. Her honest delivery resonated with her audience and within weeks, the show's viewership was steadily growing.\n\nAfter two years, she launched a full-hour segment called The Jane Romero Show, which was broadcast nationally and covered tabooed topics, including her personal struggle with abandonment. Her show broke records and her initials JR. became synonymous with products ranging from beauty creams to fashion accessories.\n\nBut Jane needed more; she wanted others to follow in her footsteps. She published a memoir that covered her childhood with an absent mother. Her book was an instant best seller but was reviewed harshly. Critics called it a serving of sad anecdotes seasoned with bland, generic self-help tips. Jane took this criticism to heart, since despite her success, a voice in the back of her mind was starting to doubt her achievements. Her success also generated an increasingly demanding schedule and a growing pressure to entertain constantly. During a particularly tense week, she canned an episode and instead launched a two-hour-long special on divorce. Her stress peaked when she learned that her mother had agreed to star in her show.\n\nJane put on a brave face and began the show. Most of it went without a hitch, but when her mother walked on set, smiling warmly at the audience, Jane’s stomach lurched unpleasantly. She was consumed by a violent envy that had been festering. Yet she carried on with a strained smile, until Loretta interrupted her, saying that they were not actually related. The interview went haywire after that.\n\nAfter the show, Jane was driving to her father’s house in New Jersey. She needed to talk things over with him; she had not been feeling like herself lately. She turned on a freeway along the coast to avoid major congestion and popped some pain killers to numb the throbbing pain in her temples, which had been nagging her all day. Then she started to relax and turned on the radio; classical music was playing. The drive was slow. Black ice covered the highway, which was packed with cars on their way back home. Night fell. A darkness began to blur the corners of her vision and turned the headlights into swirls of red. Jane blinked to sharpen their outlines, but each time she closed her eyes, her eyelids became heavier and slower, until they remained shut, for a moment too long.\n\nThe following morning, authorities were fishing out Jane’s car from the water. Despite leading a meticulous search for weeks, they were unable to retrieve her body.\n\nThe airing and production of The Jane Romero Show was suspended until after her funeral, which her father and mother attended.\n\nAs the public grieved for Jane, there was a surge of orders for J.R. products and all her episodes were re-released a month later, with an opening credit that wished her eternal peace.",
+  },
+  "Ashley J. Williams": {
+    lore: "During a weekend at a cabin with friends, Ashley J. Williams uncovered the Necronomicon Ex-Mortis (the Book of the Dead) and awoke something dark in the woods. Evil possessed his friends, whom he was forced to kill, and his right hand, which he sawed off. For the next thirty years, Ash ran from his past, working at a Value Stop department store and seducing women in dive bars. But he screwed up one night while being high, when he read from the Necronomicon to impress a woman. Evil found him once more, wrecking the life of those around him. But his coworkers, Pablo who was raised by a shaman and Kelly who was orphaned by the Deadites, helped him put up a fight. While battling Evil, Ash was reunited with his long-lost daughter Brandy, who encouraged him to embrace his role as savior of humanity. After a terrible fight with a fully formed demon, Ash, drawing his last breath, was taken by the Knights of Sumeria and transported into the future.\n\nAsh awakened to a voice, his head throbbing. Since defeating a gang of Deadites a week ago, he had been in a perpetual state of hangover. He heard the voice once more; a woman singing, sensual and inviting.\n\nStepping into the corridor in his boxers, he strode toward the voice, which lead to the public locker room. As Ash pushed open the door, the singing stopped. There was a rustling of curtains. He called out, entering the change room. His voice reverberated on the moldy tiled walls. He pressed on, reaching a shower that was still dripping wet. Cold, humid fingers ran down his bare back. He turned around.\n\nA woman stood naked, her skin glistening in the morning light that streamed in from high windows. Ash recognized her instantly: Linda Emery, one of his former high school flings. They had gotten back together thirty years later, while saving their hometown from Evil. He had ended their relationship soon afterward, preferring to indulge freely in his new-found popularity.\n\nLinda winked at Ash, who closed the distance between them. He caressed her cheek wistfully: What was she doing here? Did she know anything about the whereabouts of his daughter? And Pablo and Kelly?\n\nA sharp blade dug into his hand, making him jump back. Linda slid a finger across the edge of her blade, collecting Ash’s blood on her fingertip. She smiled, and her skin shriveled, her hair faded, her shoulders stooped, and her curves sagged, aging decades older in a matter of seconds. She attacked Ash, who poorly managed to block, being half-naked.\n\nEvery blow she delivered earned him a new wound. She slashed his bad knee and he fell to the floor. As she jumped on top of him, Ash shrieked in disgust, knocking the knife out of her grasp. Her varicose hands wrapped around his neck, strangling him. Gasping, he outstretched his arm, hand landing on a soap dispenser. He spurted out some liquid on his fingers and poked her in the eyes. The elderly woman winced, weakening her hold, and Ash elbowed her in the face, knocking her back. He rolled over and grabbed the knife on the floor. Just as he was about to plant it in her chest, he stopped. There was something else he wanted more.\n\nHe pressed the blade against her throat. Let’s make a deal, demon. In exchange for not killing you, you portal me back to my friends. The demon agreed.\n\nShe began reciting the incantation, instructing Ash to repeat after her, which he failed to manage. When nothing happened, Ash threatened the demon, who argued back, blaming his poor pronunciation. Their combined exchange of Sumerian words triggered a hiss from the showers behind them. The wet tiled floor darkened, and the pipes burst. A whirlpool of dirty water, shower curtains, and used toilet paper swallowed the demon, while Ash held onto a locker door, which slowly slipped from his fingers.\n\nFFFUUUC—\n\nAsh landed flat on his chest in the realm of The Entity, sputtering grass. He got up, brushing off the dry clothes he suddenly had on. Then he looked around and his grin fell. It was the kind of place that made two things obvious: one, there wasn't any bar for miles, and two, he was going to need his shotgun and chainsaw, both of which he lacked. As he started to walk toward a glinting light ahead, a scream rippled through the trees.\n\nGroovy.",
+  },
+  "Nancy Wheeler": {
+    lore: "Studious and rebellious, Nancy Wheeler is a stubborn investigator with an instinct for a good story. When her closest friend, Barb went missing, she did everything she could to unravel the truth and secure justice. A brilliant journalist, she chases stories and follows leads despite the inequality and chauvinism she encounters at the workplace. Pursuing a lead one evening, she fearlessly approaches the Hawkins National Laboratory before suddenly losing consciousness. A moment later she awakens in a strange misty realm with the sound of a familiar roar echoing through the air.",
+  },
+  "Steve Harrington": {
+    lore: "Popular and arrogant, yet compassionate, Steve Harrington is an unlikely mentor and leader. He often acts as a surrogate big brother to a younger boy named Dustin. He even helped him find his slimy inter-dimensional pet Demogorgon, D’Artagnan. His reputation as a protector grew and he soon became a sort of ‘babysitter’ for a group of kids in Hawkins with a knack for messing around with strange and dangerous things. His courage is unmatched so that he was even able to fend off a Demogorgon when it threatened his friends. One evening he received a call for assistance from his friend Nancy Wheeler. He drove all the way to the Hawkins National Laboratory to see if she was okay. He searched the area but only found her notebook. Before he realized what was happening the ground opened up and a swirl of black mist filled his eyes. When he awakened he was in a strange place that seemed familiar but unfamiliar at the same time.",
+  },
+  "Yui Kimura": {
+    lore: "Despite her traditional upbringing, Yui Kimura raced scooters in her hometown of Hida where she earned the reputation of being able to do the impossible with very little. Her father did his best to steer her away from what he believed to be masculine pursuits, but her grandmother secretly shared her grandfather's engineer manuals and notes on car and motorcycle engines. Yui read her grandfather's manuals and learned fast. She was able to not only maintain her scooter, but she modified the engine so that she could compete with older boys on motor crosses. With her grandfathers ‘good luck hachimaki’ wrapped around her arm, she raced local boys who, unable to keep up with her, worked together to orchestrate her defeat. No luck for them. Yui outmaneuvered them at every turn and became a sensation to all her friends. When it came time to apply tor school, Yui gathered her courage and confessed her ambition to race motorcycles to her father. An altercation ensued and when Yui refused to apply for a proper education, her father felt a great shame and told her she was no longer welcome in their home. With a heavy heart, Yui left for Nagoya with the blessings and savings of her grandmother.\n\nNagoya was not what Yui expected. She could only find low grade clerical work or minor jobs as a hostess. With the last of the money her grandmother gave her, she purchased a racing bike and entered illegal street races where she won more money than she had ever seen. Rumors of her courage and quick reflexes spread like wildfire. Soon she had an unofficial retinue of women motorcyclists wearing Yui’s signature pink. Along with a gang following her, Yui realized she had a stalker following her in the shadows. When Yui realized her lucky handkerchief had been stolen from her apartment, she took her concerns to the police who laughed and dismissed her, saying her stalker was probably a nice guy and that she would probably marry him in the near future.\n\nOne evening Yui returned home to find the stalker in her apartment going through her things. He hadn't seen her, and she wasn't sure what she should do. But the sight of him goinc through her clothes was too much to bear. She yelled for him t: leave. The stalker turned to her with a knife. He lunged at her. She evaded his attack, and he hit the wall and dropped hi: knife. Without hesitation, Yui tackled him. They rolled over the ground exchanging desperate blows. Yui took more blows thar she had ever experienced racing scooters in Shirakawa. With a surge of adrenaline, she managed to overpower her stalker, snatching the knife from the floor and holding the razor-sharp blade to his neck.\n\nWhen the police reached her apartment, they took him away and rushed Yui to the hospital for trauma. X-rays revealed she had broken her arm and foot in several places. It wasn’t long before her gang showed up one by one and together they helped her pay her medical bills. Rehabilitation was difficult but Yui never gave up and with the support of her gang she was ready for the races. Yui’s first race after the attack her gang presented her with a new pink hachimaki with their signatures and good luck messages written all over it. Yui vowed she would help other women with her winnings and influence. True to her word, her gang became known as the Sakura 7 Gang and they wore pink hachimakis as a symbol of unity and support for women needing help from stalkers and abusers.\n\nThe Sakura 7 grew beyond the 7 members and Yui’s signature pink became synonymous with women’s empowerment. At street races women would line up in droves to support her. After winning seven straight races in a row, she attracted the attention of a sponsor. She not only earned a spot at the All-Japan Moto Championship but was the youngest woman to race and win in the prestigious event. Her sponsorship soon tripled. So, too, did her gang. But everything came to a staggering halt at the illegal TK3 (Tokyo Kick 3000) street races. Yui was leading the race until she entered an unnatural fog that seemed to have appeared from nowhere. Baffled and confused, she stopped her bike and dismounted. It wasn’t long before she realized she wasn't in Tokyo anymore.",
+  },
+  "Zarina Kassir": {
+    lore: "Growing up in a Lebanese household in Brooklyn, Zarina struggled with two unique cultural identities. She felt this cultural difference painted a target on her back. To avoid ridicule and bullies, she observed what popular kids liked and learned to project the image they preferred. At school, she would go by the name \"Karina,\" dye her hair lighter, and trash her “foreign” lunches.\n\nAt home, the news channel was always on. Urgent reports of injustice captivated Zarina, inspiring her to produce her own stories. When she was a teenager, she embraced her real name and roots and borrowed her father’s digital camera to interview members of her community in Bay Ridge. By posting her content online, she slowly built a loyal following. Each week, she picked a new issue and challenged people to speak their mind on camera.\n\nWhen she heard a rumor that a fast-food restaurant owner was exploiting workers, she decided to go undercover and produce a hard-hitting film. She modified her look, faked an accent, and secured a waitress position at the restaurant. After three weeks of unpaid work, she was fired for demanding her paycheck. To retaliate, she posted clips of the restaurant owner's abusive behavior and within hours the news had picked up her story, but somehow spun it to create sympathy for the restaurant owner.\n\nEmbittered by the experience, Zarina committed to become an independent producer and filmmaker. Her first feature film was for a competition at school inspired by an English class poem about Sacco and Vanzetti, two Italian migrants controversially executed for murder. Her film won first prize and launched her as an uncompromising documentary filmmaker.\n\nMonths later, her world turned upside down. A public video surveillance camera filmed her father carrying two coffees at a street corner a few blocks from home. A tall, hooded man stood behind him. The man shouted something at her father who took a step back, startled. Suddenly and unexpectedly, the man pushed him in the street as a car sped by.\n\nHis death sent a shockwave of anger and pain that left Zarina in pieces.\n\nThe perpetrator—Clark Stevenson—was soon arrested and incarcerated for manslaughter.\n\nZarina became obsessed with Clark—his gang “IR-28”, his short prison sentence, his apparent lack of remorse. A year went by and she had uncovered enough about Clark to shed more light on his crime. With the last of her inheritance she bought a new camera and a plane ticket to Nebraska and bribed the warden at Hellshire Penitentiary to let her interview Clark.\n\nShe filmed their first meeting and asked him about her father and his gang and his violent tendencies. Clark refused to talk; but, in the weeks that followed, she used her research to push his buttons and finally got a confession of a pre-meditated crime.\n\nZarina’s film became a tribute to her father and the trail of blood left by gang violence. When the news finally picked up the story, it was because the film had gained international acclaim.\n\nSome inmates contacted her when they heard about her documentary. Most of them shared eccentric anecdotes in hopes of being filmed, but one story stood out from the rest: an entire wing in Hellshire Penitentiary was sealed off because of the “Mad Mick Massacre.” The official story was an Irish outlaw had heartlessly slaughtered the warden and his guards.\n\nFrom working on her Sacco and Vanzetti film, Zarina knew that the ‘official’ story wasn't always the ‘true’ story. She investigated Hellshire’s records and found an Irish-American inmate sentenced to twenty years for assault in 1860. According to the penitentiary’s blueprint, the sealed off wing was part of Hellshire’s original infrastructure. If she reached that sealed off section, she could shed some light on the Mad Mick story. All she needed was a way in.\n\nNext morning, she was joining the Hellshire Penitentiary walking tour. She blended in the crowd of jet-lagged tourists and veered off when they headed toward the kitchen. She’d memorized the blueprint and knew exactly where to go and how to avoid surveyance cameras. An unexpected security detail nearly cut her investigation short, but she was able to hide under an old, dusty prison bed. When the guards disappeared, she continued her search and finally found Mick’s cell.\n\nEntering the dark, dilapidated cell, Zarina ran her hand across the old brick wall. Her fingers felt a marking and traced the letters: DEATH TO BAYSHORE. A loose brick fell, revealing a gap.\n\nShe inserted her hand. Fingers landed on a piece of cold, cracked metal. She fished it out... an old, rusty wrench. A damp chill ran down her spine and she looked down; a man lay at her feet, bleeding, his limbs contorted and his eyes, dark and terrified—her father’s eyes. A pool of crimson blood on black pavement. Paralyzed, black fog filled the cell and she shut her eyes to push these nightmarish visions out of her mind.",
+  },
+  "Cheryl Mason": {
+    lore: "Caring and impulsive, Cheryl Mason, previously known as Heather, attempted to rebuild her life after the tragic death of her adoptive father, Harry Mason. While she had freed herself from the religious cult that pursued her since birth, she was shackled by the guilt of her father's death. A darkness punished her every night under the guise of abominable nightmares.\n\nTo ease her conscience, she volunteered at a crisis intervention center for troubled youth. Three months later, she aced training and could answer the crisis line without supervision. Yet little could have prepared her for the first call. All she heard was static. The air thickened as black fumes rose from the ground and suddenly she heard the voice of a woman—someone she thought she'd never hear from again. Why do you cling to this corrupt world? You know that only God can save us.\n\nIt couldn't be her—Claudia was dead. Suddenly, the world spun and she dropped on her knees, nauseous. Hot bile traveled up her throat and she retched warm blood on the floor. Then the spinning stopped as swiftly as it began. Cheryl looked up and saw she was somewhere else. A cold, hopeless place.",
+  },
+  "Felix Richter": {
+    lore: "",
+  },
+  "Élodie Rakoto": {
+    lore: "",
+  },
+  "Lee Yun-Jin": {
+    lore: "",
+  },
+  "Jill Valentine": {
+    lore: "",
+  },
+  "Leon Scott Kennedy": {
+    lore: "",
+  },
+  "Mikaela Reid": {
+    lore: "",
+  },
+  "Jonah Vasquez": {
+    lore: "",
+  },
+  "Yoichi Asakawa": {
+    lore: "",
+  },
+  "Haddie Kaur": {
+    lore: "",
+  },
+  "Ada Wong": {
+    lore: "",
+  },
+  "Rebecca Chambers": {
+    lore: "",
+  },
+  "Vittorio Toscano": {
+    lore: "",
+  },
+  "Thalita Lyra": {
+    lore: "",
+  },
+  "Renato Lyra": {
+    lore: "",
+  },
+  "Gabriel Soma": {
+    lore: "",
+  },
+  "Nicolas Cage": {
+    lore: "",
+  },
+  "Ellen Ripley": {
+    lore: "",
+  },
+  "Alan Wake": {
+    lore: "",
+  },
+  "Sable Ward": {
+    lore: "",
+  },
+  "The Troupe": {
+    lore: "",
+  },
+  "Lara Croft": {
+    lore: "",
+  },
+  "Trevor Belmont": {
+    lore: "",
+  },
+  "Taurie Cain": {
+    lore: "",
+  },
+  "Orela Rose": {
+    lore: "",
+  },
+  "Rick Grimes": {
+    lore: "",
+  },
+  "Michonne Grimes": {
+    lore: "",
+  },
+  "Vee Boonyasak": {
+    lore: "",
+  },
+  "Dustin Henderson": {
+    lore: "",
+  },
+  Eleven: {
+    lore: "",
+  },
+  "Kwon Tae-young": {
+    lore: "",
+  },
+  "Shane Wiigwaas": {
+    lore: "",
+  },
+  "Aurora Stardotter": {
+    lore: "",
+  },
+  "Sienna Shaw": {
+    lore: "",
+  },
+};
+
+function getSurvivorInfo(name) {
+  const info = survivorInfo[name] || {};
+  return {
+    lore:
+      info.lore ||
+      "these are way too fucking long, im happy if i get it done by 2028 (not the actual lore)",
+  };
+}
+
+const perkTooltips = {};
+
+function attachPerkTooltip(target, tooltip) {
+  target.addEventListener("mouseenter", () => {
+    const rect = target.getBoundingClientRect();
+
+    tooltip.style.left = rect.right + 10 + "px";
+    tooltip.style.top = rect.top + "px";
+
+    const tooltipRect = tooltip.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    if (tooltipRect.right > viewportWidth) {
+      tooltip.style.left = rect.left - tooltipRect.width - 10 + "px";
+    }
+
+    if (tooltipRect.bottom > viewportHeight) {
+      tooltip.style.top = viewportHeight - tooltipRect.height - 10 + "px";
+    }
+
+    tooltip.classList.add("visible");
+  });
+
+  target.addEventListener("mouseleave", () => {
+    tooltip.classList.remove("visible");
+  });
+}
+
+let infoModal = null;
+let abilityTooltip = null;
+
+function ensureInfoModal() {
+  if (infoModal) return infoModal;
+
+  infoModal = document.createElement("div");
+  infoModal.className = "info-modal";
+  infoModal.innerHTML = `
+    <div class="info-panel" role="dialog" aria-modal="true">
+      <button class="info-close" type="button" aria-label="Close">&times;</button>
+      <h2 class="info-name"></h2>
+      <div class="info-top">
+        <div class="info-portrait"><img alt="" /></div>
+        <div class="info-power">
+          <div class="info-ability-icon"><img alt="" /></div>
+          <span class="info-ability-label"></span>
+        </div>
+        <div class="info-perks"></div>
+      </div>
+      <div class="info-section">
+        <h3>Lore</h3>
+        <p class="info-lore"></p>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(infoModal);
+
+  abilityTooltip = document.createElement("div");
+  abilityTooltip.className = "perk-tooltip";
+  abilityTooltip.innerHTML = `
+    <h3 class="power-name"></h3>
+    <div class="divider-container"><div class="divider"></div></div>
+    <div class="character-info">
+      <div class="character-name"></div>
+      <div class="rarity">POWER</div>
+    </div>
+    <p class="power-description"></p>
+  `;
+  document.body.appendChild(abilityTooltip);
+  attachPerkTooltip(
+    infoModal.querySelector(".info-ability-icon"),
+    abilityTooltip,
+  );
+
+  infoModal.addEventListener("click", (e) => {
+    if (e.target === infoModal) closeKillerInfo();
+  });
+  infoModal.querySelector(".info-close").onclick = closeKillerInfo;
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeKillerInfo();
+  });
+
+  return infoModal;
+}
+
+function openCharacterInfo(icon, type) {
+  const modal = ensureInfoModal();
+  const isKiller = type === "killers";
+  const info = isKiller ? getKillerInfo(icon.name) : getSurvivorInfo(icon.name);
+
+  modal.querySelector(".info-panel").classList.toggle("is-survivor", !isKiller);
+
+  const portrait = modal.querySelector(".info-portrait img");
+  portrait.src = icon.src;
+  portrait.alt = icon.name;
+
+  modal.querySelector(".info-name").textContent = icon.name;
+  modal.querySelector(".info-lore").innerHTML = info.lore;
+
+  if (isKiller) {
+    const abilityIcon = modal.querySelector(".info-ability-icon");
+    const abilityImg = abilityIcon.querySelector("img");
+    if (info.abilityImage) {
+      abilityImg.src = info.abilityImage;
+      abilityImg.alt = info.abilityName;
+      abilityIcon.classList.remove("empty");
+    } else {
+      abilityImg.removeAttribute("src");
+      abilityIcon.classList.add("empty");
+    }
+    modal.querySelector(".info-ability-label").textContent = info.abilityName;
+
+    abilityTooltip.querySelector(".power-name").textContent = info.abilityName;
+    abilityTooltip.querySelector(".character-name").textContent = icon.name;
+    abilityTooltip.querySelector(".power-description").innerHTML = info.ability;
+  }
+
+  const perks = modal.querySelector(".info-perks");
+  perks.innerHTML = "";
+
+  (icon.hoverImages || []).forEach((src, i) => {
+    const perkName = getPerkName(icon.name, i + 1);
+
+    const perk = document.createElement("div");
+    perk.className = "info-perk";
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "img-wrapper perk-bg";
+
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = perkName;
+    wrapper.appendChild(img);
+
+    const label = document.createElement("span");
+    label.textContent = perkName;
+
+    perk.appendChild(wrapper);
+    perk.appendChild(label);
+    perks.appendChild(perk);
+
+    const tooltip = perkTooltips[icon.name]?.[i];
+    if (tooltip) attachPerkTooltip(img, tooltip);
+  });
+
+  modal.classList.add("open");
+  document.body.classList.add("info-open");
+}
+
+function closeKillerInfo() {
+  if (!infoModal) return;
+  infoModal.classList.remove("open");
+  document.body.classList.remove("info-open");
+  document
+    .querySelectorAll(".perk-tooltip.visible")
+    .forEach((tooltip) => tooltip.classList.remove("visible"));
+}
+
+const BLANK_IMG =
+  "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
+const FALLBACK_IMG =
+  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><rect width='100' height='100' fill='%23222'/><text x='50' y='64' font-size='48' text-anchor='middle' fill='%23666' font-family='sans-serif'>?</text></svg>";
+
+function loadPerkImages(card) {
+  card.querySelectorAll("img[data-src]").forEach((img) => {
+    img.src = img.dataset.src;
+    delete img.dataset.src;
+  });
+}
+
+document.addEventListener(
+  "error",
+  (e) => {
+    const img = e.target;
+    if (!(img instanceof HTMLImageElement)) return;
+    if (img.src.startsWith("data:")) return;
+    img.src = FALLBACK_IMG;
+  },
+  true,
+);
+
 let currentType = localStorage.getItem("currentType") || "killers";
 
 /* -------------------------------------------------------------------------- */
 /*                           HTML Building Functions                          */
 /* -------------------------------------------------------------------------- */
+
+(function () {
+  const container = document.getElementById("iconsContainer");
+  const text = document.getElementById("progressText");
+  const fill = document.getElementById("progressFill");
+  if (!container || !text || !fill) return;
+
+  function update() {
+    const total = container.querySelectorAll(".icon").length;
+    const done = container.querySelectorAll(".icon.checked").length;
+    const type = localStorage.getItem("currentType") || "killers";
+    const label = type === "killers" ? "Killer" : "Survivor";
+    text.textContent = `${done} / ${total} ${label} Adepts`;
+    fill.style.width = total ? (done / total) * 100 + "%" : "0%";
+
+    document.querySelectorAll(".buttons button").forEach((button) => {
+      button.classList.toggle(
+        "active",
+        button.textContent.trim().toLowerCase() === type,
+      );
+    });
+  }
+
+  new MutationObserver(update).observe(container, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+
+  update();
+})();
 
 function createIcons(type) {
   const container = document.getElementById("iconsContainer");
@@ -2784,8 +3513,13 @@ function createIcons(type) {
     div.className = "icon";
     div.dataset.name = icon.name;
     div.onclick = () => toggleCheck(div, index);
+    div.addEventListener("pointerenter", () => loadPerkImages(div), {
+      once: true,
+    });
 
     const img = document.createElement("img");
+    img.loading = "lazy";
+    img.decoding = "async";
     img.src = icon.src;
     img.alt = icon.name;
     div.appendChild(img);
@@ -2799,10 +3533,13 @@ function createIcons(type) {
     const imagesContainer = document.createElement("div");
     imagesContainer.className = "icon-images";
 
+    perkTooltips[icon.name] = [];
+
     if (icon.hoverImages && icon.hoverImages.length === 3) {
       icon.hoverImages.forEach((src, i) => {
         const img = document.createElement("img");
-        img.src = src;
+        img.src = BLANK_IMG;
+        img.dataset.src = src;
         img.alt = `${icon.name} - Hover ${i + 1}`;
 
         const wrapper = document.createElement("div");
@@ -2855,37 +3592,29 @@ function createIcons(type) {
         }
 
         document.body.appendChild(tooltip);
+        perkTooltips[icon.name].push(tooltip);
         imagesContainer.appendChild(wrapper);
 
-        img.addEventListener("mouseenter", (e) => {
-          const rect = img.getBoundingClientRect();
-
-          tooltip.style.left = rect.right + 10 + "px";
-          tooltip.style.top = rect.top + "px";
-
-          const tooltipRect = tooltip.getBoundingClientRect();
-          const viewportWidth = window.innerWidth;
-          const viewportHeight = window.innerHeight;
-
-          if (tooltipRect.right > viewportWidth) {
-            tooltip.style.left = rect.left - tooltipRect.width - 10 + "px";
-          }
-
-          if (tooltipRect.bottom > viewportHeight) {
-            tooltip.style.top = viewportHeight - tooltipRect.height - 10 + "px";
-          }
-
-          tooltip.classList.add("visible");
-        });
-
-        img.addEventListener("mouseleave", () => {
-          tooltip.classList.remove("visible");
-        });
+        attachPerkTooltip(img, tooltip);
       });
     }
 
     overlay.appendChild(imagesContainer);
     div.appendChild(overlay);
+
+    div.classList.add("has-info");
+
+    const infoBtn = document.createElement("button");
+    infoBtn.className = "info-btn";
+    infoBtn.type = "button";
+    infoBtn.textContent = "i";
+    infoBtn.setAttribute("aria-label", `Info about ${icon.name}`);
+    infoBtn.onclick = (e) => {
+      e.stopPropagation();
+      openCharacterInfo(icon, type);
+    };
+    div.appendChild(infoBtn);
+
     container.appendChild(div);
   });
 
