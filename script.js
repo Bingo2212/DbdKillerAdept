@@ -3467,6 +3467,28 @@ document.addEventListener(
 let currentType = localStorage.getItem("currentType") || "killers";
 
 /* -------------------------------------------------------------------------- */
+/*                                Generic Perks                               */
+/* -------------------------------------------------------------------------- */
+
+const genericPerks = [
+  {
+    name: "Perk Name",
+    role: "Survivor",
+    src: "https://your-perk-icon-link.png",
+    description: `Your description here, with <b>${colorG("10")}</b> values as usual.`,
+    quote: "",
+  },
+];
+
+/* -------------------------------------------------------------------------- */
+/*                               Search Aliases                               */
+/* -------------------------------------------------------------------------- */
+
+const searchAliases = {
+  "The Onryō": ["sadako"],
+};
+
+/* -------------------------------------------------------------------------- */
 /*                           HTML Building Functions                          */
 /* -------------------------------------------------------------------------- */
 

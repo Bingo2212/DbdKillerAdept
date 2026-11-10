@@ -136,6 +136,25 @@
       .toLowerCase();
   }
 
+  function aliasText(name) {
+    return typeof searchAliases !== "undefined" && searchAliases[name]
+      ? searchAliases[name].join(" ")
+      : "";
+  }
+
+  window.filterIcons = function () {
+    const terms = plain(search ? search.value : "")
+      .split(/\s+/)
+      .filter(Boolean);
+    document.querySelectorAll(".icon").forEach((icon) => {
+      const name = icon.dataset.name || "";
+      const haystack = plain(`${name} ${aliasText(name)}`);
+      icon.style.display = terms.every((term) => haystack.includes(term))
+        ? "block"
+        : "none";
+    });
+  };
+
   function collectPerks() {
     const list = [];
     const add = (icons, role) => {
@@ -160,6 +179,18 @@
     };
     add(killerIcons, "Killer");
     add(survivorIcons, "Survivor");
+    if (typeof genericPerks !== "undefined") {
+      genericPerks.forEach((perk) => {
+        list.push({
+          name: perk.name,
+          owner: perk.owner || "General",
+          role: perk.role || "",
+          src: perk.src,
+          description: perk.description || "Perk description goes here.",
+          quote: perk.quote && perk.quote.trim() !== '""' ? perk.quote : "",
+        });
+      });
+    }
     list.sort((a, b) =>
       a.name.localeCompare(b.name, undefined, { sensitivity: "base" }),
     );
@@ -207,7 +238,9 @@
 
       const owner = document.createElement("div");
       owner.className = "perk-card-owner";
-      owner.textContent = `${perk.owner} · ${perk.role}`;
+      owner.textContent = perk.role
+        ? `${perk.owner} · ${perk.role}`
+        : perk.owner;
 
       const description = document.createElement("div");
       description.className = "perk-card-desc";
@@ -229,7 +262,9 @@
       perkNodes.push({
         kind: "perk",
         el: card,
-        text: plain(`${perk.name} ${perk.owner} ${measure.textContent}`),
+        text: plain(
+          `${perk.name} ${aliasText(perk.name)} ${perk.owner} ${aliasText(perk.owner)} ${measure.textContent}`,
+        ),
       });
     });
   }
