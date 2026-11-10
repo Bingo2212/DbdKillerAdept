@@ -3097,7 +3097,7 @@ function getKillerInfo(name) {
     ability: info.ability || "Ability description goes here.",
     lore:
       info.lore ||
-      "these are way too fucking long, im happy if i get it done by 2028 (not the actual lore) (not the actual lore)",
+      "these are way too fucking long, im happy if i get it done by 2028 (not the actual lore)",
   };
 }
 
@@ -3173,10 +3173,10 @@ const survivorInfo = {
     lore: "Caring and impulsive, Cheryl Mason, previously known as Heather, attempted to rebuild her life after the tragic death of her adoptive father, Harry Mason. While she had freed herself from the religious cult that pursued her since birth, she was shackled by the guilt of her father's death. A darkness punished her every night under the guise of abominable nightmares.\n\nTo ease her conscience, she volunteered at a crisis intervention center for troubled youth. Three months later, she aced training and could answer the crisis line without supervision. Yet little could have prepared her for the first call. All she heard was static. The air thickened as black fumes rose from the ground and suddenly she heard the voice of a woman—someone she thought she'd never hear from again. Why do you cling to this corrupt world? You know that only God can save us.\n\nIt couldn't be her—Claudia was dead. Suddenly, the world spun and she dropped on her knees, nauseous. Hot bile traveled up her throat and she retched warm blood on the floor. Then the spinning stopped as swiftly as it began. Cheryl looked up and saw she was somewhere else. A cold, hopeless place.",
   },
   "Felix Richter": {
-    lore: "",
+    lore: "Felix Richter was born to Janos and Ursula Richter in Coburg, Germany, where the Richter family had deep connections and were among the most respected of its physicians. His parents, both members of an ancient society, were always out of the Richter manor at medical conferences or providing humanitarian aid around the world. Travelling exposed young Felix to new cultures, languages, and architecture unlike anything he had ever seen before. He wasn’t sure when the architectural bug bit, but when it did, it bit hard, and he knew that despite his family’s legacy, he would one day design buildings that would inspire the world. By 23, he was considered an architectural prodigy having won the Swiss Architect Medal and the German National Design Award. Yet despite his success, Felix couldn't shake the gnawing feeling that his success had more to do with luck and connections than talent and hard work.\n\nGrowing up, Felix was socially awkward and introverted, preferring his imagination to the company of others. He had few friends so when he wasn't traveling with his parents, Felix was in his father’s library devouring rare books, studying history and architecture, soaking up anything and everything he could on architectural movements throughout the centuries. His father hoped young Felix would learn to be more outgoing and hired every possible specialist to help improve his social skills. When these efforts failed, he threw in the proverbial towel and figured his son would learn when he was ready. He then joined young Felix in the library, where he helped him build elaborate wooden models of buildings while telling him wild stories about his secret club and their ancient battle against a dark and ominous force. Stories. Felix was sure. his father had made up to make his ‘Imperiatti’ group sound cooler than it actually was.\n\nFelix sometimes wondered if his design sensibilities came from his summer trips to Dyer Island, a private island that boasted some of the world's finest homes and designs. Every summer, Felix would accompany his parents to the island, where members of The Imperiatti would encourage their children to network and forge lifelong connections. Felix didn’t mingle well with the other teenagers, but he did make four friends who like himself didn’t quite fit the ‘high-society’ mold. They were often ridiculed by other teens and disparagingly called ‘The Pariahs,’ a name they liked and gladly adopted. Instead of practicing public speaking and engaging in endless debates, The Pariahs spent most of their time exploring the ruins and mysteries of the island until one of their adventures took a turn for the worse.\n\nExploring an abandoned internment camp, they descended into what seemed to be an underground laboratory where they uncovered old, leather journals with illustrations and notes of inhumane experiments conducted on prisoners of the First Opium War held by the British East India Company. As they pushed through a locked door, they found a chamber scattered with human skeletons and dusty vials filled with an unknown serum. Before they could examine the contents, the ground seemed to shake beneath their feet and a hissing sound filled their ears. A strange fog suddenly appeared and giant claws seemed to burst from the ground as dark imagination mingled with reality to terrorize them. Before they understood what was happening, Felix’s father and several other parents came to their rescue, using strange tools and objects to protect them. Felix stared at the scene in shock and disbelief. He wasn’t sure if he was dreaming or living one of his father’s ridiculous, supernatural stories. By the time he realized it wasn’t a dream, it was all over. The Pariahs were safe, but their parents had mysteriously disappeared without a trace.\n\nAfter the shock of his father’s disappearance, Felix searched for any theory that could help him understand the phenomena he had encountered on the island. He exchanged notes with The Pariahs and other people he had met online who had also lost loved ones in a similar way. The tragedy had fostered a strong relationship between The Pariahs and for years they worked together to unravel the mystery of what had happened to their parents. But nothing made sense, and every lead they pursued hit a dead end. With time their efforts dwindled, and the five friends slowly grew apart, each going their separate ways, hoping to forget the nameless darkness that had robbed them of their parents.\n\nOver the years, Felix proved to be an exceptional architect, though he found little inspiration working for others. He realized his father was right. His lack of social skills was holding him back. With dedication and purpose, he improved his diction and decorum and learned how to network or ‘play- act’ as he liked to call it. He created the perfect facade to make himself more likable and popular with potential clients. After working for several architectural firms, he established his firm with his colleague Lauren Golder. Both shared a similar vision and were philosophically opposed to formulaic modernist buildings, often experimenting with unusual materials, shapes and structures.\n\nFelix continued to undermine traditional expectations in favor of the edgy and unconventional devices that set the architectural world abuzz. But even with all the accolades, he couldn't shake the feeling that he was a phony, like an actor who had learned a part instead of a true architect who had inspired the world with an impeccable design. During these moments of insecurity and self-doubt, he would distract himself with endless parties and drown his anxieties in alcohol, wishing his father was still around for some harsh advice and tempered wisdom.\n\nEventually, Felix’s girlfriend announced that he was going to be a father. The news shook him to the core and, wanting to inspire his unborn child as much as his father inspired him, he quickly pulled his life together. What he needed was a project that would challenge him and cement his worth as an architect. As fate would have it, the perfect opportunity presented itself when old friends of his father commissioned his firm ‘Richter and Golder’ to build something new and unconventional on Dyer Island. The challenge excited and terrified Felix, who now drowned his anxieties with articles and books on parenting.\n\nWithin six months, the Dyer Restoration Project was underway, and as Felix surveyed the island, he suddenly heard a familiar voice calling out to him from beyond the shattered Victorian buildings and the crumbling ruins hiding dark stories long hidden and forgotten. Through a strange, gathering fog, he saw a form slowly take shape. His eyes widened, and his lips parted, but no words issued forth. Could it be? Was it possible? No... it couldn't be... it was... impossible... and yet...\n\nWith dawning realization, Felix staggered back as he watched his father emerge from the fog. His legs felt weak, and his rising heartbeat thrashed in his ears. It was him. It was really him. His unborn child would know his grandfather, and he coulc finally show him how much he had accomplished since he disappeared. They stared at one another for a long moment. Then his father gave him a look of disappointment, turned his back on him, and proceeded to walk away. Over his pounding heart, Felix chased after him and was never seen again.",
   },
   "Élodie Rakoto": {
-    lore: "",
+    lore: "Born into a lush Parisian household, Élodie Rakoto grew up in a comfortable home miles away from the verdant island of Madagascar, her parents’ birthplace. Her backpack was always heavy and usually contained no schoolwork. She carried the essentials: a few history books, some printed maps, and a compact shovel. Instead of wasting away with regurgitated facts from her classes, she explored the city to discover the stories behind each statue, neighborhood, and street sign. She collected bits and pieces of Paris, making it her own.\n\nWhen she was fourteen, her parents took her to Dyer Island for a ‘business trip.’ To her grand disappointment, the island was a private site for exclusive members of the Imperiatti. She was forced to attend pretentious and awkward social mixers daily. After a few weeks on the island, she met the Pariahs, like- minded teenagers who had no interest in being pawns for their parents’ political chessboard. On dull, rainy nights she would convince them to sneak out and explore the island unsupervised.\n\nOne foggy evening, they stumbled upon an abandoned internment camp. Felix, one of the Pariahs, didn’t want to go in, but Élodie insisted. Inside, they found a strange underground laboratory in ruins. The Pariahs grew excited, browsing through the strange apparatuses for trophies and mementos. But Élodie noticed something in the far-left corner of the wall: odd scratches in the shape of a circle. She ran her fingernails against the cool concrete—the marks were deep and narrow. A warm whisper suddenly sent her mind adrift—\n\n—Deep, rumbling thunder. Black, glistening waves. An ashen sanded beach. Incomplete. She was compelled to touch the ice- cold sand and draw a circle with a line in the middle.\n\nA sharp thunderclap and lightning whipped the sky. The ground shook as sleek, obsidian claws tore through the concrete floor, ripping the earth open. The building began to collapse and Élodie spotted her mother wielding a bizarre instrument while her father told her to run. Then—\n\nComplete darkness.\n\nÉlodie never saw her parents again.\n\nFor years, this nightmare woke her in the middle of the night, cold, sweating, shaking like a leaf. As a child she suffered from night terrors and often resisted going to bed. To soothe her mind, her grandma would light a tea candle and tell her stories until the wick extinguished in a hot pool of liquified wax. The perfume of the warm vanilla-scented wax would lull Élodie to sleep as she envisioned stories of legendary heroes defeating fear and foes. Élodie had forgotten the stories, but she still remembered her longing for the verdant Malagasy rainforests and colossal mountains that her grandmother described. When Élodie felt cold and numb with grief, she would light a vanilla-scented candle and summon her childhood memories of this distant, idyllic place, raising her spirits to rise above her crippling depression.\n\nFourteen years later, Élodie still searched for the missing pieces of the puzzle. No rational explanation could explain her parents’ disappearance, so she had been looking elsewhere. She researched any and all legends that mentioned a dark force that snatched people at night without a trace. From there, she translated old tales and built a tapestry of narratives from around the world that corroborated the uncanny way her parents had vanished on Dyer's island. She also gathered artifacts made by ancient civilizations who sought to destroy or resurrect the incomprehensible and indescribable Thing that took her parents. There were various names for it, differing from one language to the next: The Abyss, The Infinite, The Hole.\n\nHer findings pushed her further into the dark field of occultism. The Pariahs were long gone. She'd alienated them with her theories. But she refused to give up on her parents.\n\nElodie set out into the cold, misty evening. She turned a corner, leaving Paris’ 13th arrondissement, an eccentric neighborhood with a substantial library dating from the middle ages. She had pressing work to do for Hazra Shah, the Collector, an occult specialist who archived rare artifacts.\n\nHe’d recruited her after she’d salvaged a rare stolen Maori statue of spidery fangs like the claws she'd seen on Dyer's island. For the next five years, Élodie had been procuring occult relics for the Collector. In exchange, he provided large sums of money, equipment, and precise information about obscure manuscripts.\n\nJust as the Collector requested, she had secured the annals of a witch trial convicting a mother birthing conjoined twins in the 17th century. According to legend, an occult incantation was engraved on a set of skulls, all of which the Collector possessed except one—the witch's skull. There were no traces of where the skull was now, but Élodie had found a newspaper article dating back to the same year, mentioning that most remains had been relocated to the catacombs to avoid a pandemic. Élodie was acting on a hunch. Breaking into the catacombs to retrieve a lost skull involved certain risks, but no more than the previous work she'd done for the Collector.\n\nWith a flashlight, she followed the ancient layout of the catacombs and spotted a collapsed wall. A few large stones blocked the way in. She grabbed her portable XRF analyzer and scanned the materials of the wall. Working for the Collector had its perks. The brick mortar had been poorly mixed, showing high traces of sand. The whole thing was brittle, and the ground was moist from the damp evening air. This was her way in.\n\nThe journey beneath was long and treacherous. The air was heavy and moldy. She gasped when her key-chain flashlight hit an endless wall of bleached-white skulls.\n\nSomething cracked behind her. She spun around and collided headfirst with a baseball bat. Pain exploded in her skull and darkness filled her view.\n\nWhen she came to, a man was carrying her over his shoulder, venturing deeper inside the catacombs. He was wearing a dark robe.\n\nThe Black Vale.\n\nShe'd managed to elude them until now. Ruthless and lethal, they went by many names. She'd figured out that they ultimately all worked for the same group, a ring of occult fanatics rumored to perform human sacrifices for what they called The Old One. She had to get out of here fast.\n\nElodie spotted a loose skull on the wall, grabbed it and smashed it on her assaulter's head. Stunned, the man lost his balance and Élodie hit the ground running. As she turned a corner, she suddenly felt a sharp pain to her side.\n\nShe looked down and saw a large blade planted there. Shocked, she removed the knife and warm blood spurted out.\n\nHer heartbeat rang in her ears as her vision blurred.\n\nShe fell to her knees. Summoning all her strength, she drew a circle on the ground with a shaking, blood-red finger and traced a line in the middle.\n\nAn opaque heaviness fell over her shoulders. A familiar scent of vanilla-spiked fruits and lychee nuts coated the air. Thin, tropical rain drizzled down leafy vines. Warmth.\n\nMadagascar.\n\nA ghostly cry erupted from the thick foliage.\n\nElodie looked up and the vines turned into hissing snakes. The soft canopy soil suddenly turned ashen and collapsed under her feet. She sank into something dense and cold that swallowed her like quicksand. She screamed, before being smothered by... the abyss...the infinite... the hole...\n\nShe found what she had been searching for.",
   },
   "Lee Yun-Jin": {
     lore: "",
@@ -3465,6 +3465,273 @@ document.addEventListener(
 );
 
 let currentType = localStorage.getItem("currentType") || "killers";
+
+/* -------------------------------------------------------------------------- */
+/*                                Generic Perks                               */
+/* -------------------------------------------------------------------------- */
+
+const genericPerks = [
+  /* -------------------------------- Survivor G-Perks ------------------------------- */
+
+  {
+    name: "Dark Sense",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_darkSense.png/96px-IconPerks_darkSense.png?ce82d8",
+    description: `Whenever a Generator is completed, when the Killer gets within <b>20</b>m of you, for ${tiers(13, 14, 15)}s:<ul><li>You see the Auras of Pallets and Windows within <b>32</b>m.</li><li>You see the Auras of other Survivors.</li><li>You see the Killer's Aura.</li></ul>`,
+    quote: `"Slow down, don't rush and try not to worry so much! The best way to beat him is to know how he thinks."-Lost Tapes: Murf`,
+  },
+  {
+    name: "Déjà Vu",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_dejaVu.png/96px-IconPerks_dejaVu.png?585913",
+    description: `You see the Auras of the <b>3</b> Generators closest to each other and repair them ${tiers(4, 5, 6)}% faster.`,
+    quote: ``,
+  },
+  {
+    name: "Hope",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_hope.png/96px-IconPerks_hope.png?2226b6",
+    description: `When all Generators are completed, you gain ${tiers(3, 4, 5)}% ${colorC("Haste")}.`,
+    quote: `"Buckle up, fuckos! Let's roll!"-Lost Tapes: Nikki`,
+  },
+  {
+    name: "Kindred",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_kindred.png/96px-IconPerks_kindred.png?6c05d2",
+    description: `While you are hooked, all Survivors see each others' Auras. While the Killer is within ${tiers(14, 15, 16)}m, all Survivors sees the Killer's Aura.<br><br>While another Survivor is hooked, you see the Auras of other Survivors. While the Killer is within ${tiers(14, 15, 16)}m of the hooked Survivor, you see the Killer's Aura.`,
+    quote: `"Be kind to one another. We're all in this together."-Lost Tapes: Sujan`,
+  },
+  {
+    name: "Lightweight",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_lightweight.png/96px-IconPerks_lightweight.png?98fd2f",
+    description: `Your Scratch Marks disappear ${tiers(3, 4, 5)}s faster and appear more spread out.`,
+    quote: `"Take it slow, he knows where you've been... just like I've always said: live slow and die old."-Lost Tapes: Dylan`,
+  },
+  {
+    name: "Lightweight",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_lightweight.png/96px-IconPerks_lightweight.png?98fd2f",
+    description: `Your Scratch Marks disappear ${tiers(3, 4, 5)}s faster and appear more spread out.`,
+    quote: `"Take it slow, he knows where you've been... just like I've always said: live slow and die old."-Lost Tapes: Dylan`,
+  },
+  {
+    name: "No One Left Behind",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_noOneLeftBehind.png/96px-IconPerks_noOneLeftBehind.png?8ed80d",
+    description: `When all Generators are completed:<ul><li>You heal other Survivors ${tiers(80, 90, 100)}% faster.</li><li>You unhook other Survivors ${tiers(80, 90, 100)}% faster.</li><li>Whenever you unhook a Survivor, they gain <b>10</b>% more ${colorC("Haste")}.</li><li>You see the Auras of other Survivors.</li></ul>`,
+    quote: `"Yeah, no shit. But we can outsmart and overthrow him if we work together. Don't be predictable and selfish!"-Lost Tapes: Clyde`,
+  },
+  {
+    name: "Plunderer\'s Instinct",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_plunderersInstinct.png/96px-IconPerks_plunderersInstinct.png?862e42",
+    description: `You see the Aura of Chests and items.<br><br>You unlock Chests ${tiers(150, 175, 200)}% faster.<br><br>Whenever you unlock a Chest you are <b>50</b>% more likely to find an Item of higher rarity.`,
+    quote: `"The pioneers used to loot these babies for hours."-Lost Tapes: Aizeyu`,
+  },
+  {
+    name: "Premonition",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_premonition.png/96px-IconPerks_premonition.png?7dd77e",
+    description: `While not chased by the Killer, whenever you look in the Killer's direction within <b>32</b>m:<ul><li>You are notified.</li><li>You see the Killer's Aura for <b>3</b>s.</li></ul>Cooldown: ${tiers(55, 50, 45)}s.`,
+    quote: `"I have a bad feeling about this!"`,
+  },
+  {
+    name: "Resilience",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_resilience.png/96px-IconPerks_resilience.png?69adfb",
+    description: `While injured:<ul><li>You bless and cleanse Totems ${tiers(7, 8, 9)}% faster.</li><li>You heal ${tiers(7, 8, 9)}% faster.</li><li>You open Exit Gates ${tiers(7, 8, 9)}% faster.</li><li>You repair ${tiers(7, 8, 9)}% faster.</li><li>You sabotage Hooks ${tiers(7, 8, 9)}% faster.</li><li>You unhook Survivors ${tiers(7, 8, 9)}% faster.</li><li>You unlock chests ${tiers(7, 8, 9)}% faster.</li><li>You vault ${tiers(7, 8, 9)}% faster.</li></ul>`,
+    quote: `"Focus, even in these desperate times."`,
+  },
+  {
+    name: "Slippery Meat",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_slipperyMeat.png/96px-IconPerks_slipperyMeat.png?cfb283",
+    description: `Other Survivors unhook you ${tiers(90, 95, 100)}% faster.<br><br>Whenever you are unhooked, you gain <b>5</b>% more Haste.`,
+    quote: ``,
+  },
+  {
+    name: "Small Game",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_smallGame.png/96px-IconPerks_smallGame.png?6ea11d",
+    description: `Within ${tiers(10, 11, 12)}m of a Totem, you see its Aura.`,
+    quote: `"Nope."-Lost Tapes: Andy`,
+  },
+  {
+    name: "Spine Chill",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_spineChill.png/96px-IconPerks_spineChill.png?2fde0c",
+    description: `Whenever the Killer looks at you within <b>40</b>m:<ul><li>You are notified</li><li>You cannot scream for <b>12</b>s.</li><li>You vault <b>10</b>% faster for <b>12</b>s.</li></ul>Cooldown: ${tiers(40, 35, 30)}s`,
+    quote: ``,
+  },
+  {
+    name: "This is not happening",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_thisIsNotHappening.png/96px-IconPerks_thisIsNotHappening.png?fb7a83",
+    description: `Good basic Skill Check zones are ${tiers(150, 175, 200)}% bigger.`,
+    quote: ``,
+  },
+  {
+    name: "We'll Make It",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_wellMakeIt.png/96px-IconPerks_wellMakeIt.png?b127b4",
+    description: `Whenever you unhook a Survivor, for ${tiers(70, 80, 90)}s, you heal other Survivors <b>100</b>% faster.`,
+    quote: `"I'm confident we can all escape in one piece if we help each other."`,
+  },
+
+  /* ----------------------------- Killer G-Perks ----------------------------- */
+
+  {
+    name: "Bitter Murmur",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_bitterMurmur.png/96px-IconPerks_bitterMurmur.png?e60452",
+    description: `Whenever a Generator is completed, you see the Auras of Survivors within <b>20</b>m of it for <b>10</b>s.<br><br>When all Generators are completed, you see the Auras of all Survivors for ${tiers(16, 18, 20)}s.`,
+    quote: ``,
+  },
+  {
+    name: "Deerstalker",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_deerstalker.png/96px-IconPerks_deerstalker.png?65ed31",
+    description: `Every ${tiers(40, 35, 30)}s, the Survivor with the least time in chase sees your Aura for <b>4</b>s.<br><br>While a Survivor sees your Aura, you see their Aura.`,
+    quote: ``,
+  },
+  {
+    name: "Distressing",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_distressing.png/96px-IconPerks_distressing.png?5453b7",
+    description: `Survivors within your Terror Radius repair ${tiers(6, 7, 8)}% slower.<br><br>Your Terror Radius is <b>30</b>% larger.`,
+    quote: `Bask in their fear`,
+  },
+  {
+    name: "Hex: No One Escapes Death",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_hexNoOneEscapesDeath.png/96px-IconPerks_hexNoOneEscapesDeath.png?6ee340",
+    description: `When all Generators are completed, a Dull Totem ignites:<ul><li>Survivors gain ${colorR("Exposed")}.</li><li>You gain ${tiers(2, 3, 4)}% ${colorC("Haste")}.</li></ul>Within <b>4</b>m, Survivors see the Hex Totem's Aura, expanding to <b>24</b>m over <b>30</b>s.`,
+    quote: `"And the beast became faster and more powerful as if The Entity's shadowy whips were lashing at its back."`,
+  },
+  {
+    name: "Hex: Thrill Of The Hunt",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_hexThrillOfTheHunt.png/96px-IconPerks_hexThrillOfTheHunt.png?9eae8e",
+    description: `The first time you hook a Survivor, a Dull Totem ignites.<br><br>When you hook a Survivor, block all Hex Totems for ${tiers(4, 5, 6)}s for each lit Hex Totem.`,
+    quote: ``,
+  },
+  {
+    name: "Insidious",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_insidious.png/96px-IconPerks_insidious.png?dcea4f",
+    description: `After being idle for <b>2</b>s, gain ${colorC("Undetectable")}.<br>Whenever you act, this ends after ${tiers(6, 7, 8)}s.`,
+    quote: ``,
+  },
+  {
+    name: "Iron Grasp",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_ironGrasp.png/96px-IconPerks_ironGrasp.png?f58015",
+    description: `While carrying a Survivor:<ul><li>They wiggle ${tiers(10, 11, 12)}% slower.</li><li>Their wiggle is <b>75</b>% weaker.</ul>`,
+    quote: ``,
+  },
+  {
+    name: "Scourge Hook: Monstrous Shrine",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_scourgeHookMonstrousShrine.png/96px-IconPerks_scourgeHookMonstrousShrine.png?91c64c",
+    description: `When the Trial starts:<ul><li>4 random Hooks become Scourge Hooks.</li><li>The Basement Hooks become Scourge Hooks.</li></ul>While you are at least <b>24</b>m away from a Survivor on a Scourge Hook, any Generator that isn't being repaired regresses at ${tiers(150, 175, 200)}% speed.`,
+    quote: `"Then you will know that there is no escape. When hanging in the depths, you face the dark one."`,
+  },
+  {
+    name: "Shattered Hope",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_shatteredHope.png/96px-IconPerks_shatteredHope.png?5ebf74",
+    description: `Whenever you snuff a Boon Totem, it is destroyed.<br><br>Whenever a Totem is blessed, cleansed or destroyed:<ul><li>Dull Totems are blocked for ${tiers(16, 18, 20)}s.</li><li>Hex Totems are blocked for ${tiers(16, 18, 20)}s.</li><li>See Boon Totem's Auras for ${tiers(16, 18, 20)}s.</li></ul>`,
+    quote: `"Nothing is permanent here. Nothing except our endless perdition."-Unknown, Notebook`,
+  },
+  {
+    name: "Sloppy Butcher",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_sloppyButcher.png/96px-IconPerks_sloppyButcher.png?84dfdf",
+    description: `Whenever you damage a Survivor with a basic-attack:<ul><li>They gain ${colorR("Hemorrhage")} for ${tiers(70, 80, 90)}s.</li><li>They gain ${colorR("Mangled")} for ${tiers(70, 80, 90)}s</li></ul>Survivors with ${colorR("Hemorrhage")} lose healing progress <b>25</b>% faster.`,
+    quote: `"It's in its sadistic nature. There is no swift kill as it delights in the obscene spectacle of our agonizing suffering."`,
+  },
+  {
+    name: "Spies From The Shadows",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_spiesFromTheShadows.png/96px-IconPerks_spiesFromTheShadows.png?e8741c",
+    description: `Whenever a Survivor scares a Crow within ${tiers(36, 38, 40)}m of you, you are alerted. Cooldown: <b>3</b>s.`,
+    quote: `"In the shadows they torment, scarring our minds with each scream."`,
+  },
+  {
+    name: "Whispers",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_whispers.png/96px-IconPerks_whispers.png?25d217",
+    description: `While within ${tiers(28, 26, 24)}m of a Survivor, you randomly hear whispers.<br><br>While more than ${tiers(28, 26, 24)}m away from a Survivor, gain <b>5</b>% ${colorC("Haste")}.`,
+    quote: `"It's unclear as to the motivations of The Fog, but it is undeniable that it often takes the beast's side."-Notebook`,
+  },
+  {
+    name: "Unrelenting",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_unrelenting.png/96px-IconPerks_unrelenting.png?b1306e",
+    description: `Your missed basic-attack cooldown is ${tiers(30, 35, 40)}% shorter.<br><br>Your successful basic-attack cooldown is <b>10</b>% shorter.`,
+    quote: ``,
+  },
+];
+
+/* -------------------------------------------------------------------------- */
+/*                               Search Aliases                               */
+/* -------------------------------------------------------------------------- */
+
+const searchAliases = {
+  /* ----------------------------- Killer Aliases ----------------------------- */
+
+  "The Trapper": ["Evan MacMillan"],
+  "The Wraith": ["Philip Ojomo"],
+  "The Hillbilly": ["Max Thompson Jr."],
+  "The Nurse": ["Sally Smithson"],
+  "The Shape": ["Michael Myers"],
+  "The Hag": ["Lisa Sherwood"],
+  "The Doctor": ["Herman Carter"],
+  "The Cannibal": ["Leatherface", "Bubba"],
+  "The Huntress": ["Anna"],
+  "The Nightmare": ["Freddy Krueger"],
+  "The Pig": ["Amanda Young"],
+  "The Clown": ["Kenneth Chase"],
+  "The Spirit": ["Rin Yamaoka"],
+  "The Legion": [
+    "Frank Morrison",
+    "Susie Lavoie",
+    "Julie Kostenko",
+    "Joey Cadogan",
+  ],
+  "The Plague": ["Adiris"],
+  "The Ghostface": ["Danny Johnson", "Jed Olsen"],
+  "The Oni": ["Kazan Yamaoka"],
+  "The Deathslinger": ["Caleb Quinn"],
+  "The Executioner": ["Pyramid Head"],
+  "The Blight": ["Talbot Grimes"],
+  "The Twins": ["Charlotte Deshayes", "Victor Deshayes"],
+  "The Trickster": ["Hak Ji-woon"],
+  "The Nemesis": ["Nemesis T-Type"],
+  "The Cenobite": ["Pinhead", "Elliot Spencer"],
+  "The Artist": ["Carmina Mora"],
+  "The Onryō": ["Sadako Yamamura"],
+  "The Mastermind": ["Albert Wesker"],
+  "The Knight": ["Tarhos Kovács"],
+  "The Skull Merchant": ["Adriana Imai"],
+  "The Singularity": ["Hux-A7-13"],
+  "The Xenomorph": ["Alien"],
+  "The Good Guy": ["Chucky", "Charles Lee Ray"],
+  "The Unknown": ["The Harmless"],
+  "The Lich": ["Vecna"],
+  "The Dark Lord": ["Count Dracula", "Vlad the Impaler"],
+  "The Houndmaster": ["Portia Maye"],
+  "The Ghoul": ["Ken Kaneki"],
+  "The Animatronic": ["Springtrap", "Frühlingsfalle"],
+  "The Krasue": ["Burong Sukapat"],
+  "The Slasher": ["Jason Voorhees"],
+  "The First": ["Henry Creel"],
+  /* ------------------------------ Perk Aliases ------------------------------ */
+
+  "We'll Make It": ["Well Make It"],
+  "Hex: No One Escapes Death": ["noed"],
+};
 
 /* -------------------------------------------------------------------------- */
 /*                           HTML Building Functions                          */
