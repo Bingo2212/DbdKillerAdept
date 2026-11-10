@@ -3472,11 +3472,109 @@ let currentType = localStorage.getItem("currentType") || "killers";
 
 const genericPerks = [
   {
-    name: "Perk Name",
+    name: "Dark Sense",
     role: "Survivor",
-    src: "https://your-perk-icon-link.png",
-    description: `Your description here, with <b>${colorG("10")}</b> values as usual.`,
-    quote: "",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_darkSense.png/96px-IconPerks_darkSense.png?ce82d8",
+    description: `Whenever a Generator is completed, when the Killer gets within <b>20</b>m of you, for ${tiers(13, 14, 15)}s:<ul><li>You see the Auras of Pallets and Windows within <b>32</b>m.</li><li>You see the Auras of other Survivors.</li><li>You see the Killer's Aura.</li></ul>`,
+    quote: `"Slow down, don't rush and try not to worry so much! The best way to beat him is to know how he thinks."-Lost Tapes: Murf`,
+  },
+  {
+    name: "Déjà Vu",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_dejaVu.png/96px-IconPerks_dejaVu.png?585913",
+    description: `You see the Auras of the <b>3</b> Generators closest to each other and repair them ${tiers(4, 5, 6)}% faster.`,
+    quote: ``,
+  },
+  {
+    name: "Hope",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_hope.png/96px-IconPerks_hope.png?2226b6",
+    description: `When all Generators are completed, you gain ${tiers(3, 4, 5)}% ${colorC("Haste")}.`,
+    quote: `"Buckle up, fuckos! Let's roll!"-Lost Tapes: Nikki`,
+  },
+  {
+    name: "Kindred",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_kindred.png/96px-IconPerks_kindred.png?6c05d2",
+    description: `While you are hooked, all Survivors see each others' Auras. While the Killer is within ${tiers(14, 15, 16)}m, all Survivors sees the Killer's Aura.<br><br>While another Survivor is hooked, you see the Auras of other Survivors. While the Killer is within ${tiers(14, 15, 16)}m of the hooked Survivor, you see the Killer's Aura.`,
+    quote: `"Be kind to one another. We're all in this together."-Lost Tapes: Sujan`,
+  },
+  {
+    name: "Lightweight",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_lightweight.png/96px-IconPerks_lightweight.png?98fd2f",
+    description: `Your Scratch Marks disappear ${tiers(3, 4, 5)}s faster and appear more spread out.`,
+    quote: `"Take it slow, he knows where you've been... just like I've always said: live slow and die old."-Lost Tapes: Dylan`,
+  },
+  {
+    name: "Lightweight",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_lightweight.png/96px-IconPerks_lightweight.png?98fd2f",
+    description: `Your Scratch Marks disappear ${tiers(3, 4, 5)}s faster and appear more spread out.`,
+    quote: `"Take it slow, he knows where you've been... just like I've always said: live slow and die old."-Lost Tapes: Dylan`,
+  },
+  {
+    name: "No One Left Behind",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_noOneLeftBehind.png/96px-IconPerks_noOneLeftBehind.png?8ed80d",
+    description: `When all Generators are completed:<ul><li>You heal other Survivors ${tiers(80, 90, 100)}% faster.</li><li>You unhook other Survivors ${tiers(80, 90, 100)}% faster.</li><li>Whenever you unhook a Survivor, they gain <b>10</b>% more ${colorC("Haste")}.</li><li>You see the Auras of other Survivors.</li></ul>`,
+    quote: `"Yeah, no shit. But we can outsmart and overthrow him if we work together. Don't be predictable and selfish!"-Lost Tapes: Clyde`,
+  },
+  {
+    name: "Plunderer\'s Instinct",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_plunderersInstinct.png/96px-IconPerks_plunderersInstinct.png?862e42",
+    description: `You see the Aura of Chests and items.<br><br>You unlock Chests ${tiers(150, 175, 200)}% faster.<br><br>Whenever you unlock a Chest you are <b>50</b>% more likely to find an Item of higher rarity.`,
+    quote: `"The pioneers used to loot these babies for hours."-Lost Tapes: Aizeyu`,
+  },
+  {
+    name: "Premonition",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_premonition.png/96px-IconPerks_premonition.png?7dd77e",
+    description: `While not chased by the Killer, whenever you look in the Killer's direction within <b>32</b>m:<ul><li>You are notified.</li><li>You see the Killer's Aura for <b>3</b>s.</li></ul>Cooldown: ${tiers(55, 50, 45)}s.`,
+    quote: `"I have a bad feeling about this!"`,
+  },
+  {
+    name: "Resilience",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_resilience.png/96px-IconPerks_resilience.png?69adfb",
+    description: `While injured:<ul><li>You bless and cleanse Totems ${tiers(7, 8, 9)}% faster.</li><li>You heal ${tiers(7, 8, 9)}% faster.</li><li>You open Exit Gates ${tiers(7, 8, 9)}% faster.</li><li>You repair ${tiers(7, 8, 9)}% faster.</li><li>You sabotage Hooks ${tiers(7, 8, 9)}% faster.</li><li>You unhook Survivors ${tiers(7, 8, 9)}% faster.</li><li>You unlock chests ${tiers(7, 8, 9)}% faster.</li><li>You vault ${tiers(7, 8, 9)}% faster.</li></ul>`,
+    quote: `"Focus, even in these desperate times."`,
+  },
+  {
+    name: "Slippery Meat",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_slipperyMeat.png/96px-IconPerks_slipperyMeat.png?cfb283",
+    description: `Other Survivors unhook you ${tiers(90, 95, 100)}% faster.<br><br>Whenever you are unhooked, you gain <b>5</b>% more Haste.`,
+    quote: ``,
+  },
+  {
+    name: "Small Game",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_smallGame.png/96px-IconPerks_smallGame.png?6ea11d",
+    description: `Within ${tiers(10, 11, 12)}m of a Totem, you see its Aura.`,
+    quote: `"Nope."-Lost Tapes: Andy`,
+  },
+  {
+    name: "Spine Chill",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_spineChill.png/96px-IconPerks_spineChill.png?2fde0c",
+    description: `Whenever the Killer looks at you within <b>40</b>m:<ul><li>You are notified</li><li>You cannot scream for <b>12</b>s.</li><li>You vault <b>10</b>% faster for <b>12</b>s.</li></ul>Cooldown: ${tiers(40, 35, 30)}s`,
+    quote: ``,
+  },
+  {
+    name: "This is not happening",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_thisIsNotHappening.png/96px-IconPerks_thisIsNotHappening.png?fb7a83",
+    description: `Good basic Skill Check zones are ${tiers(150, 175, 200)}% bigger.`,
+    quote: ``,
+  },
+  {
+    name: "We'll Make It",
+    role: "Survivor",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_wellMakeIt.png/96px-IconPerks_wellMakeIt.png?b127b4",
+    description: `Whenever you unhook a Survivor, for ${tiers(70, 80, 90)}s, you heal other Survivors <b>100</b>% faster.`,
+    quote: `"I'm confident we can all escape in one piece if we help each other."`,
   },
 ];
 
@@ -3486,6 +3584,7 @@ const genericPerks = [
 
 const searchAliases = {
   "The Onryō": ["sadako"],
+  "We'll Make It": ["Well Make It"],
 };
 
 /* -------------------------------------------------------------------------- */
