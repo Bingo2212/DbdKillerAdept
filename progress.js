@@ -183,7 +183,7 @@
       genericPerks.forEach((perk) => {
         list.push({
           name: perk.name,
-          owner: perk.owner || "General",
+          owner: perk.owner || "Generic",
           role: perk.role || "",
           src: perk.src,
           description: perk.description || "Perk description goes here.",

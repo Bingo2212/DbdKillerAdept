@@ -3471,6 +3471,8 @@ let currentType = localStorage.getItem("currentType") || "killers";
 /* -------------------------------------------------------------------------- */
 
 const genericPerks = [
+  /* -------------------------------- Survivor G-Perks ------------------------------- */
+
   {
     name: "Dark Sense",
     role: "Survivor",
@@ -3576,6 +3578,100 @@ const genericPerks = [
     description: `Whenever you unhook a Survivor, for ${tiers(70, 80, 90)}s, you heal other Survivors <b>100</b>% faster.`,
     quote: `"I'm confident we can all escape in one piece if we help each other."`,
   },
+
+  /* ----------------------------- Killer G-Perks ----------------------------- */
+
+  {
+    name: "Bitter Murmur",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_bitterMurmur.png/96px-IconPerks_bitterMurmur.png?e60452",
+    description: `Whenever a Generator is completed, you see the Auras of Survivors within <b>20</b>m of it for <b>10</b>s.<br><br>When all Generators are completed, you see the Auras of all Survivors for ${tiers(16, 18, 20)}s.`,
+    quote: ``,
+  },
+  {
+    name: "Deerstalker",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_deerstalker.png/96px-IconPerks_deerstalker.png?65ed31",
+    description: `Every ${tiers(40, 35, 30)}s, the Survivor with the least time in chase sees your Aura for <b>4</b>s.<br><br>While a Survivor sees your Aura, you see their Aura.`,
+    quote: ``,
+  },
+  {
+    name: "Distressing",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_distressing.png/96px-IconPerks_distressing.png?5453b7",
+    description: `Survivors within your Terror Radius repair ${tiers(6, 7, 8)}% slower.<br><br>Your Terror Radius is <b>30</b>% larger.`,
+    quote: `Bask in their fear`,
+  },
+  {
+    name: "Hex: No One Escapes Death",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_hexNoOneEscapesDeath.png/96px-IconPerks_hexNoOneEscapesDeath.png?6ee340",
+    description: `When all Generators are completed, a Dull Totem ignites:<ul><li>Survivors gain ${colorR("Exposed")}.</li><li>You gain ${tiers(2, 3, 4)}% ${colorC("Haste")}.</li></ul>Within <b>4</b>m, Survivors see the Hex Totem's Aura, expanding to <b>24</b>m over <b>30</b>s.`,
+    quote: `"And the beast became faster and more powerful as if The Entity's shadowy whips were lashing at its back."`,
+  },
+  {
+    name: "Hex: Thrill Of The Hunt",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_hexThrillOfTheHunt.png/96px-IconPerks_hexThrillOfTheHunt.png?9eae8e",
+    description: `The first time you hook a Survivor, a Dull Totem ignites.<br><br>When you hook a Survivor, block all Hex Totems for ${tiers(4, 5, 6)}s for each lit Hex Totem.`,
+    quote: ``,
+  },
+  {
+    name: "Insidious",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_insidious.png/96px-IconPerks_insidious.png?dcea4f",
+    description: `After being idle for <b>2</b>s, gain ${colorC("Undetectable")}.<br>Whenever you act, this ends after ${tiers(6, 7, 8)}s.`,
+    quote: ``,
+  },
+  {
+    name: "Iron Grasp",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_ironGrasp.png/96px-IconPerks_ironGrasp.png?f58015",
+    description: `While carrying a Survivor:<ul><li>They wiggle ${tiers(10, 11, 12)}% slower.</li><li>Their wiggle is <b>75</b>% weaker.</ul>`,
+    quote: ``,
+  },
+  {
+    name: "Scourge Hook: Monstrous Shrine",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_scourgeHookMonstrousShrine.png/96px-IconPerks_scourgeHookMonstrousShrine.png?91c64c",
+    description: `When the Trial starts:<ul><li>4 random Hooks become Scourge Hooks.</li><li>The Basement Hooks become Scourge Hooks.</li></ul>While you are at least <b>24</b>m away from a Survivor on a Scourge Hook, any Generator that isn't being repaired regresses at ${tiers(150, 175, 200)}% speed.`,
+    quote: `"Then you will know that there is no escape. When hanging in the depths, you face the dark one."`,
+  },
+  {
+    name: "Shattered Hope",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_shatteredHope.png/96px-IconPerks_shatteredHope.png?5ebf74",
+    description: `Whenever you snuff a Boon Totem, it is destroyed.<br><br>Whenever a Totem is blessed, cleansed or destroyed:<ul><li>Dull Totems are blocked for ${tiers(16, 18, 20)}s.</li><li>Hex Totems are blocked for ${tiers(16, 18, 20)}s.</li><li>See Boon Totem's Auras for ${tiers(16, 18, 20)}s.</li></ul>`,
+    quote: `"Nothing is permanent here. Nothing except our endless perdition."-Unknown, Notebook`,
+  },
+  {
+    name: "Sloppy Butcher",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_sloppyButcher.png/96px-IconPerks_sloppyButcher.png?84dfdf",
+    description: `Whenever you damage a Survivor with a basic-attack:<ul><li>They gain ${colorR("Hemorrhage")} for ${tiers(70, 80, 90)}s.</li><li>They gain ${colorR("Mangled")} for ${tiers(70, 80, 90)}s</li></ul>Survivors with ${colorR("Hemorrhage")} lose healing progress <b>25</b>% faster.`,
+    quote: `"It's in its sadistic nature. There is no swift kill as it delights in the obscene spectacle of our agonizing suffering."`,
+  },
+  {
+    name: "Spies From The Shadows",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_spiesFromTheShadows.png/96px-IconPerks_spiesFromTheShadows.png?e8741c",
+    description: `Whenever a Survivor scares a Crow within ${tiers(36, 38, 40)}m of you, you are alerted. Cooldown: <b>3</b>s.`,
+    quote: `"In the shadows they torment, scarring our minds with each scream."`,
+  },
+  {
+    name: "Whispers",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_whispers.png/96px-IconPerks_whispers.png?25d217",
+    description: `While within ${tiers(28, 26, 24)}m of a Survivor, you randomly hear whispers.<br><br>While more than ${tiers(28, 26, 24)}m away from a Survivor, gain <b>5</b>% ${colorC("Haste")}.`,
+    quote: `"It's unclear as to the motivations of The Fog, but it is undeniable that it often takes the beast's side."-Notebook`,
+  },
+  {
+    name: "Unrelenting",
+    role: "Killer",
+    src: "https://deadbydaylight.wiki.gg/images/thumb/IconPerks_unrelenting.png/96px-IconPerks_unrelenting.png?b1306e",
+    description: `Your missed basic-attack cooldown is ${tiers(30, 35, 40)}% shorter.<br><br>Your successful basic-attack cooldown is <b>10</b>% shorter.`,
+    quote: ``,
+  },
 ];
 
 /* -------------------------------------------------------------------------- */
@@ -3585,6 +3681,7 @@ const genericPerks = [
 const searchAliases = {
   "The Onryō": ["sadako"],
   "We'll Make It": ["Well Make It"],
+  "Hex: No One Escapes Death": ["noed"],
 };
 
 /* -------------------------------------------------------------------------- */
