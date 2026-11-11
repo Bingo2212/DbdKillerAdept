@@ -932,14 +932,14 @@ body.perks-mode .perks-wrap {
 }
 
 .perks-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  display: block;
+  column-count: 2;
+  column-gap: 16px;
 }
 
 .perk-letter {
-  grid-column: 1 / -1;
-  margin: 12px 0 0;
+  column-span: all;
+  margin: 24px 0 16px;
   padding-bottom: 6px;
   font-size: 22px;
   color: #f5c542;
@@ -954,15 +954,26 @@ body.perks-mode .perks-wrap {
 .perk-card {
   display: flex;
   gap: 16px;
-  padding: 16px;
-  background: linear-gradient(to bottom, #151515, #0a0a0a);
+  box-sizing: border-box;
+  margin: 0 0 16px;
+  padding: 16px 18px;
+  break-inside: avoid;
+  background: linear-gradient(to bottom, #161616, #0b0b0b);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid rgba(230, 126, 34, 0.7);
+  transition: border-color 0.2s ease;
+}
+
+.perk-card:hover {
+  border-color: rgba(245, 197, 66, 0.5);
+  border-left-color: #f5c542;
 }
 
 .perk-card .img-wrapper {
   flex: 0 0 88px;
   width: 88px;
   height: 88px;
+  cursor: help;
 }
 
 .perk-card .img-wrapper img {
@@ -994,22 +1005,33 @@ body.perks-mode .perks-wrap {
 .perk-card-name {
   margin: 0;
   font-size: 18px;
+  line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .perk-card-owner {
-  margin: 2px 0 10px;
-  font-size: 13px;
+  display: inline-block;
+  margin: 6px 0 10px;
+  padding: 2px 10px;
+  font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #f5c542;
+  background: rgba(245, 197, 66, 0.1);
+  border: 1px solid rgba(245, 197, 66, 0.25);
+  border-radius: 999px;
 }
 
 .perk-card-desc {
   font-size: 15px;
   line-height: 1.5;
   color: #ddd;
+}
+
+.perk-card-desc ul {
+  margin: 6px 0;
+  padding-left: 20px;
 }
 
 .perk-card-quote {
@@ -1031,6 +1053,131 @@ body.perks-mode .perks-wrap {
 
 @media (max-width: 760px) {
   .perks-list {
-    grid-template-columns: minmax(0, 1fr);
+    column-count: 1;
+  }
+}
+
+.tooltip-header {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 12% 120%,
+      rgba(255, 170, 70, 0.55),
+      transparent 60%
+    ),
+    linear-gradient(to right, #e6781c, #c4560b 70%, #a84508);
+}
+
+.tooltip-header::before,
+.tooltip-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-repeat: repeat;
+}
+
+.tooltip-header::before {
+  opacity: 0.75;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='120' viewBox='0 0 800 120'><filter id='n' x='0' y='0' width='100%25' height='100%25'><feTurbulence type='fractalNoise' baseFrequency='0.007 0.014' numOctaves='4' seed='5' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2.2 0 0 0 -1.1'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 800px 120px;
+}
+
+.tooltip-header::after {
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='120' viewBox='0 0 500 120'><filter id='n' x='0' y='0' width='100%25' height='100%25'><feTurbulence type='fractalNoise' baseFrequency='0.012 0.02' numOctaves='4' seed='9' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2.2 0 0 0 -1.1'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 500px 120px;
+}
+
+.perk-tooltip.visible .tooltip-header::before {
+  animation: smokeDriftSlow 24s linear infinite;
+}
+
+.perk-tooltip.visible .tooltip-header::after {
+  animation: smokeDriftFast 14s linear infinite;
+}
+
+@keyframes smokeDriftSlow {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 800px;
+  }
+}
+
+@keyframes smokeDriftFast {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 500px;
+  }
+}
+
+.tooltip-header h3,
+.tooltip-header .divider-container,
+.tooltip-header .character-info {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  box-shadow: none;
+}
+
+.tooltip-header .divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    #000 0%,
+    #000 13%,
+    transparent 16%,
+    transparent 18%,
+    #000 22%,
+    #000 38%,
+    transparent 40%,
+    transparent 45%,
+    #000 48%,
+    #000 61%,
+    transparent 64%,
+    transparent 65%,
+    #000 68%,
+    #000 86%,
+    transparent 89%,
+    transparent 93%,
+    #000 96%,
+    #000 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    #000 0%,
+    #000 13%,
+    transparent 16%,
+    transparent 18%,
+    #000 22%,
+    #000 38%,
+    transparent 40%,
+    transparent 45%,
+    #000 48%,
+    #000 61%,
+    transparent 64%,
+    transparent 65%,
+    #000 68%,
+    #000 86%,
+    transparent 89%,
+    transparent 93%,
+    #000 96%,
+    #000 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .perk-tooltip.visible .tooltip-header::before,
+  .perk-tooltip.visible .tooltip-header::after {
+    animation: none;
   }
 }
