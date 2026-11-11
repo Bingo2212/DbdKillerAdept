@@ -1,4 +1,25 @@
 (function () {
+  function wrapTooltipHeader(tooltip) {
+    if (tooltip.querySelector(":scope > .tooltip-header")) return;
+    const parts = Array.from(tooltip.children).slice(0, 3);
+    if (parts.length < 3 || !parts[0].matches("h3")) return;
+    const header = document.createElement("div");
+    header.className = "tooltip-header";
+    tooltip.insertBefore(header, parts[0]);
+    parts.forEach((part) => header.appendChild(part));
+  }
+
+  document.querySelectorAll(".perk-tooltip").forEach(wrapTooltipHeader);
+  new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (node.nodeType === 1 && node.classList.contains("perk-tooltip")) {
+          wrapTooltipHeader(node);
+        }
+      });
+    });
+  }).observe(document.body, { childList: true });
+
   const preconnect = document.createElement("link");
   preconnect.rel = "preconnect";
   preconnect.href = "https://deadbydaylight.wiki.gg";
@@ -183,7 +204,7 @@
       genericPerks.forEach((perk) => {
         list.push({
           name: perk.name,
-          owner: perk.owner || "Generic",
+          owner: perk.owner || "General",
           role: perk.role || "",
           src: perk.src,
           description: perk.description || "Perk description goes here.",
