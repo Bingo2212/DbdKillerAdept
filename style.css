@@ -1094,11 +1094,11 @@ body.perks-mode .perks-wrap {
 }
 
 .perk-tooltip.visible .tooltip-header::before {
-  animation: smokeDriftSlow 24s linear infinite;
+  animation: smokeDriftSlow 90s linear infinite;
 }
 
 .perk-tooltip.visible .tooltip-header::after {
-  animation: smokeDriftFast 14s linear infinite;
+  animation: smokeDriftFast 60s linear infinite;
 }
 
 @keyframes smokeDriftSlow {
