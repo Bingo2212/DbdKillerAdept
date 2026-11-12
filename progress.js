@@ -176,6 +176,46 @@
     });
   };
 
+  function buildPerkTooltip(perk) {
+    const tooltip = document.createElement("div");
+    tooltip.className = "perk-tooltip";
+
+    const title = document.createElement("h3");
+    title.textContent = perk.name;
+    tooltip.appendChild(title);
+
+    const dividerContainer = document.createElement("div");
+    dividerContainer.className = "divider-container";
+    const divider = document.createElement("div");
+    divider.className = "divider";
+    dividerContainer.appendChild(divider);
+    tooltip.appendChild(dividerContainer);
+
+    const info = document.createElement("div");
+    info.className = "character-info";
+    const characterName = document.createElement("div");
+    characterName.className = "character-name";
+    characterName.textContent = perk.owner;
+    const rarity = document.createElement("div");
+    rarity.className = "rarity";
+    rarity.textContent = perk.owner === "General" ? "GENERAL" : "TEACHABLE";
+    info.append(characterName, rarity);
+    tooltip.appendChild(info);
+
+    const description = document.createElement("p");
+    description.innerHTML = perk.description;
+    tooltip.appendChild(description);
+
+    if (perk.quote) {
+      const quote = document.createElement("div");
+      quote.className = "quote";
+      quote.textContent = perk.quote;
+      tooltip.appendChild(quote);
+    }
+
+    return tooltip;
+  }
+
   function collectPerks() {
     const list = [];
     const add = (icons, role) => {
@@ -249,6 +289,17 @@
       img.src = perk.src;
       img.alt = perk.name;
       wrapper.appendChild(img);
+
+      const showTooltip = () => {
+        wrapper.removeEventListener("mouseenter", showTooltip);
+        if (typeof attachPerkTooltip !== "function") return;
+        const tooltip = buildPerkTooltip(perk);
+        document.body.appendChild(tooltip);
+        wrapTooltipHeader(tooltip);
+        attachPerkTooltip(wrapper, tooltip);
+        wrapper.dispatchEvent(new MouseEvent("mouseenter"));
+      };
+      wrapper.addEventListener("mouseenter", showTooltip);
 
       const body = document.createElement("div");
       body.className = "perk-card-body";
@@ -340,4 +391,133 @@
   }
 
   update();
+})();
+
+(function () {
+  const RESET_DAY = 13;
+  const RESET_HOUR_UTC = 15;
+  const JUST_RESET_MS = 60 * 60 * 1000;
+
+  const ZONES = [
+    ["UTC", "UTC"],
+    ["Los Angeles", "America/Los_Angeles"],
+    ["New York", "America/New_York"],
+    ["London", "Europe/London"],
+    ["Berlin", "Europe/Berlin"],
+    ["Tokyo", "Asia/Tokyo"],
+    ["Sydney", "Australia/Sydney"],
+  ];
+
+  function resetAt(year, month) {
+    return Date.UTC(year, month, RESET_DAY, RESET_HOUR_UTC, 0, 0);
+  }
+
+  function nextReset(now) {
+    const year = now.getUTCFullYear();
+    const month = now.getUTCMonth();
+    let time = resetAt(year, month);
+    if (time <= now.getTime()) time = resetAt(year, month + 1);
+    return time;
+  }
+
+  function previousReset(now) {
+    const year = now.getUTCFullYear();
+    const month = now.getUTCMonth();
+    let time = resetAt(year, month);
+    if (time > now.getTime()) time = resetAt(year, month - 1);
+    return time;
+  }
+
+  function format(time, timeZone) {
+    return new Intl.DateTimeFormat(undefined, {
+      weekday: "short",
+      day: "numeric",
+      month: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+      timeZoneName: "short",
+      timeZone,
+    }).format(time);
+  }
+
+  const root = document.createElement("div");
+  root.className = "reset-timer";
+
+  const panel = document.createElement("div");
+  panel.className = "reset-timer-panel";
+
+  const pill = document.createElement("button");
+  pill.type = "button";
+  pill.className = "reset-timer-pill";
+  pill.setAttribute("aria-expanded", "false");
+
+  const label = document.createElement("span");
+  label.className = "reset-timer-label";
+  label.textContent = "Rank reset in";
+
+  const value = document.createElement("strong");
+  value.className = "reset-timer-value";
+
+  pill.append(label, value);
+  root.append(panel, pill);
+  document.body.appendChild(root);
+
+  pill.addEventListener("click", () => {
+    const open = root.classList.toggle("open");
+    pill.setAttribute("aria-expanded", String(open));
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!root.contains(event.target)) {
+      root.classList.remove("open");
+      pill.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  function renderPanel(target) {
+    const localZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const rows = ZONES.map(
+      ([name, zone]) =>
+        `<div class="reset-timer-row"><span>${name}</span><span>${format(target, zone)}</span></div>`,
+    ).join("");
+    panel.innerHTML = `
+      <div class="reset-timer-head">Next rank reset</div>
+      <div class="reset-timer-row reset-timer-local">
+        <span>Your time (${localZone})</span>
+        <span>${format(target)}</span>
+      </div>
+      ${rows}
+      <div class="reset-timer-note">Resets on the ${RESET_DAY}th of every month at ${RESET_HOUR_UTC}:00 UTC</div>
+    `;
+  }
+
+  const pad = (number) => String(number).padStart(2, "0");
+  let shownTarget = 0;
+
+  function tick() {
+    const now = new Date();
+    const target = nextReset(now);
+
+    if (target !== shownTarget) {
+      shownTarget = target;
+      renderPanel(target);
+    }
+
+    if (now.getTime() - previousReset(now) < JUST_RESET_MS) {
+      label.hidden = true;
+      value.textContent = "Ranks just reset";
+      return;
+    }
+
+    label.hidden = false;
+    const diff = Math.max(0, target - now.getTime());
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const minutes = Math.floor((diff % 3600000) / 60000);
+    const seconds = Math.floor((diff % 60000) / 1000);
+    value.textContent = `${days > 0 ? days + "d " : ""}${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
+  }
+
+  tick();
+  setInterval(tick, 1000);
 })();
