@@ -1181,3 +1181,125 @@ body.perks-mode .perks-wrap {
     animation: none;
   }
 }
+
+.reset-timer {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 60;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.reset-timer-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font: inherit;
+  color: #ccc;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.reset-timer-pill:hover,
+.reset-timer.open .reset-timer-pill {
+  border-color: rgba(245, 197, 66, 0.6);
+}
+
+.reset-timer-value {
+  color: #f5c542;
+  font-variant-numeric: tabular-nums;
+}
+
+.reset-timer-panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 10px);
+  width: 320px;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  background: linear-gradient(to bottom, #161616, #0b0b0b);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s;
+}
+
+.reset-timer-panel::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+.reset-timer:hover .reset-timer-panel,
+.reset-timer.open .reset-timer-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.reset-timer-head {
+  margin-bottom: 10px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #f5c542;
+}
+
+.reset-timer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 5px 0;
+  color: #bbb;
+}
+
+.reset-timer-row span:last-child {
+  color: #fff;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.reset-timer-local {
+  margin-bottom: 6px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reset-timer-local span:first-child {
+  color: #f5c542;
+}
+
+.reset-timer-note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #888;
+}
+
+@media (max-width: 600px) {
+  .reset-timer {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .reset-timer-label {
+    display: none;
+  }
+
+  .reset-timer-panel {
+    width: min(320px, calc(100vw - 24px));
+  }
+}
