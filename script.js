@@ -3701,7 +3701,7 @@ const searchAliases = {
     "Joey Cadogan",
   ],
   "The Plague": ["Adiris"],
-  "The Ghostface": ["Danny Johnson", "Jed Olsen"],
+  "The Ghost Face": ["Danny Johnson", "Jed Olsen"],
   "The Oni": ["Kazan Yamaoka"],
   "The Deathslinger": ["Caleb Quinn"],
   "The Executioner": ["Pyramid Head"],
