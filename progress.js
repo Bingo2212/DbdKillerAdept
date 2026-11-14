@@ -153,20 +153,85 @@
   noResults.insertAdjacentElement("afterend", perksWrap);
 
   const STATUS_EFFECTS = [
-    ["haste", "Haste", "pos"],
-    ["undetectable", "Undetectable", "pos"],
-    ["elusive", "Elusive", "pos"],
-    ["exposed", "Exposed", "neg"],
-    ["exhausted", "Exhausted", "neg"],
-    ["hindered", "Hindered", "neg"],
-    ["oblivious", "Oblivious", "neg"],
-    ["broken", "Broken", "neg"],
-    ["mangled", "Mangled", "neg"],
-    ["hemorrhage", "Hemorrhage", "neg"],
+    [
+      "haste",
+      "Haste",
+      "pos",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_haste.png?22e7fe",
+    ],
+    [
+      "undetectable",
+      "Undetectable",
+      "pos",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_undetectable.png?ee75a2",
+    ],
+    [
+      "elusive",
+      "Elusive",
+      "pos",
+      "https://deadbydaylight.wiki.gg/images/IconStatusEffects_wikiElusive.png?8c7f4e",
+    ],
+    [
+      "endurance",
+      "Endurance",
+      "pos",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_enduranceSurvivor.png?d89c1d",
+    ],
+    [
+      "exposed",
+      "Exposed",
+      "neg",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_exposed.png?7f9680",
+    ],
+    [
+      "exhausted",
+      "Exhausted",
+      "neg",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_exhausted.png?5272a5",
+    ],
+    [
+      "hindered",
+      "Hindered",
+      "neg",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_hindered.png?ae022e",
+    ],
+    [
+      "oblivious",
+      "Oblivious",
+      "neg",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_oblivious.png?a1123f",
+    ],
+    [
+      "broken",
+      "Broken",
+      "neg",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_broken.png?1be759",
+    ],
+    [
+      "mangled",
+      "Mangled",
+      "neg",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_mangled.png?176f47",
+    ],
+    [
+      "hemorrhage",
+      "Hemorrhage",
+      "neg",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_bleeding.png?78b33a",
+    ],
+    [
+      "blindness",
+      "Blindness",
+      "neg",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_blindness.png?a2439f",
+    ],
   ];
   const EFFECT_ALIASES = { hemmorhage: "hemorrhage" };
   const effectInfo = new Map(
-    STATUS_EFFECTS.map(([key, label, kind]) => [key, { label, kind }]),
+    STATUS_EFFECTS.map(([key, label, kind, icon]) => [
+      key,
+      { label, kind, icon },
+    ]),
   );
   const effectSelected = new Set();
   const effectCounts = {};
@@ -204,12 +269,28 @@
   if (search) searchWrap.append(effectButton, effectPopover);
 
   const chipsBox = effectPopover.querySelector(".effect-chips");
-  STATUS_EFFECTS.forEach(([key, label, kind]) => {
+  function effectIcon(icon) {
+    if (!icon) return null;
+    const img = document.createElement("img");
+    img.className = "effect-icon";
+    img.src = icon;
+    img.alt = "";
+    return img;
+  }
+
+  STATUS_EFFECTS.forEach(([key, label, kind, icon]) => {
     const chip = document.createElement("button");
     chip.type = "button";
     chip.className = `effect-chip ${kind}`;
     chip.setAttribute("aria-pressed", "false");
-    chip.innerHTML = `${label} <span class="effect-count"></span>`;
+    const iconEl = effectIcon(icon);
+    if (iconEl) chip.appendChild(iconEl);
+    const labelEl = document.createElement("span");
+    labelEl.className = "effect-label";
+    labelEl.textContent = label;
+    const countEl = document.createElement("span");
+    countEl.className = "effect-count";
+    chip.append(labelEl, countEl);
     chip.addEventListener("click", () => toggleEffect(key));
     chipsBox.appendChild(chip);
     chipButtons.set(key, chip);
@@ -273,7 +354,9 @@
       const pill = document.createElement("button");
       pill.type = "button";
       pill.className = `effect-pill ${info.kind}`;
-      pill.textContent = `${info.label} ×`;
+      const iconEl = effectIcon(info.icon);
+      if (iconEl) pill.appendChild(iconEl);
+      pill.append(`${info.label} ×`);
       pill.addEventListener("click", () => toggleEffect(key));
       effectActive.appendChild(pill);
     });
