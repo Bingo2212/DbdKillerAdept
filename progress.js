@@ -54,7 +54,12 @@
 
   bar.appendChild(typeButtons);
   bar.appendChild(filterButtons);
-  if (search) bar.appendChild(search);
+  const searchWrap = document.createElement("div");
+  searchWrap.className = "search-wrap";
+  if (search) {
+    searchWrap.appendChild(search);
+    bar.appendChild(searchWrap);
+  }
   if (progress) bar.appendChild(progress);
 
   const noResults = document.createElement("p");
@@ -146,6 +151,225 @@
   perksEmpty.hidden = true;
   perksWrap.append(perksCount, perksList, perksEmpty);
   noResults.insertAdjacentElement("afterend", perksWrap);
+
+  const STATUS_EFFECTS = [
+    [
+      "haste",
+      "Haste",
+      "pos",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_haste.png?22e7fe",
+    ],
+    [
+      "undetectable",
+      "Undetectable",
+      "pos",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_undetectable.png?ee75a2",
+    ],
+    [
+      "elusive",
+      "Elusive",
+      "pos",
+      "https://deadbydaylight.wiki.gg/images/IconStatusEffects_wikiElusive.png?8c7f4e",
+    ],
+    [
+      "endurance",
+      "Endurance",
+      "pos",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_enduranceSurvivor.png?d89c1d",
+    ],
+    [
+      "exposed",
+      "Exposed",
+      "neg",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_exposed.png?7f9680",
+    ],
+    [
+      "exhausted",
+      "Exhausted",
+      "neg",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_exhausted.png?5272a5",
+    ],
+    [
+      "hindered",
+      "Hindered",
+      "neg",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_hindered.png?ae022e",
+    ],
+    [
+      "oblivious",
+      "Oblivious",
+      "neg",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_oblivious.png?a1123f",
+    ],
+    [
+      "broken",
+      "Broken",
+      "neg",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_broken.png?1be759",
+    ],
+    [
+      "mangled",
+      "Mangled",
+      "neg",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_mangled.png?176f47",
+    ],
+    [
+      "hemorrhage",
+      "Hemorrhage",
+      "neg",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_bleeding.png?78b33a",
+    ],
+    [
+      "blindness",
+      "Blindness",
+      "neg",
+      "https://deadbydaylight.wiki.gg/images/FulliconStatusEffects_blindness.png?a2439f",
+    ],
+  ];
+  const EFFECT_ALIASES = { hemmorhage: "hemorrhage" };
+  const effectInfo = new Map(
+    STATUS_EFFECTS.map(([key, label, kind, icon]) => [
+      key,
+      { label, kind, icon },
+    ]),
+  );
+  const effectSelected = new Set();
+  const effectCounts = {};
+  const chipButtons = new Map();
+  let effectMode = "any";
+
+  const effectButton = document.createElement("button");
+  effectButton.type = "button";
+  effectButton.className = "effect-button";
+  effectButton.setAttribute("aria-label", "Filter by status effect");
+  effectButton.setAttribute("aria-expanded", "false");
+  effectButton.innerHTML =
+    '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg><span class="effect-badge" hidden></span>';
+
+  const effectPopover = document.createElement("div");
+  effectPopover.className = "effect-popover";
+  effectPopover.innerHTML = `
+    <div class="effect-popover-head">Status effects</div>
+    <div class="effect-chips"></div>
+    <div class="effect-footer">
+      <div class="effect-mode">
+        <span>Match</span>
+        <button type="button" data-mode="any">Any</button>
+        <button type="button" data-mode="all">All</button>
+      </div>
+      <button type="button" class="effect-clear">Clear</button>
+    </div>
+  `;
+
+  const effectActive = document.createElement("div");
+  effectActive.className = "effect-active";
+  effectActive.hidden = true;
+  perksWrap.insertBefore(effectActive, perksCount);
+
+  if (search) searchWrap.append(effectButton, effectPopover);
+
+  const chipsBox = effectPopover.querySelector(".effect-chips");
+  function effectIcon(icon) {
+    if (!icon) return null;
+    const img = document.createElement("img");
+    img.className = "effect-icon";
+    img.src = icon;
+    img.alt = "";
+    return img;
+  }
+
+  STATUS_EFFECTS.forEach(([key, label, kind, icon]) => {
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = `effect-chip ${kind}`;
+    chip.setAttribute("aria-pressed", "false");
+    const iconEl = effectIcon(icon);
+    if (iconEl) chip.appendChild(iconEl);
+    const labelEl = document.createElement("span");
+    labelEl.className = "effect-label";
+    labelEl.textContent = label;
+    const countEl = document.createElement("span");
+    countEl.className = "effect-count";
+    chip.append(labelEl, countEl);
+    chip.addEventListener("click", () => toggleEffect(key));
+    chipsBox.appendChild(chip);
+    chipButtons.set(key, chip);
+  });
+
+  effectPopover.querySelectorAll(".effect-mode button").forEach((button) => {
+    button.addEventListener("click", () => {
+      effectMode = button.dataset.mode;
+      renderEffects();
+      filterPerks();
+    });
+  });
+
+  effectPopover.querySelector(".effect-clear").addEventListener("click", () => {
+    effectSelected.clear();
+    renderEffects();
+    filterPerks();
+  });
+
+  function closeEffectPopover() {
+    effectPopover.classList.remove("open");
+    effectButton.setAttribute("aria-expanded", "false");
+  }
+
+  effectButton.addEventListener("click", () => {
+    const open = effectPopover.classList.toggle("open");
+    effectButton.setAttribute("aria-expanded", String(open));
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!searchWrap.contains(event.target)) closeEffectPopover();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeEffectPopover();
+  });
+
+  function toggleEffect(key) {
+    if (effectSelected.has(key)) effectSelected.delete(key);
+    else effectSelected.add(key);
+    renderEffects();
+    filterPerks();
+  }
+
+  function renderEffects() {
+    chipButtons.forEach((chip, key) => {
+      chip.setAttribute("aria-pressed", String(effectSelected.has(key)));
+    });
+
+    effectPopover.querySelectorAll(".effect-mode button").forEach((button) => {
+      button.classList.toggle("active", button.dataset.mode === effectMode);
+    });
+
+    const badge = effectButton.querySelector(".effect-badge");
+    badge.textContent = effectSelected.size;
+    badge.hidden = effectSelected.size === 0;
+
+    effectActive.innerHTML = "";
+    effectSelected.forEach((key) => {
+      const info = effectInfo.get(key);
+      const pill = document.createElement("button");
+      pill.type = "button";
+      pill.className = `effect-pill ${info.kind}`;
+      const iconEl = effectIcon(info.icon);
+      if (iconEl) pill.appendChild(iconEl);
+      pill.append(`${info.label} ×`);
+      pill.addEventListener("click", () => toggleEffect(key));
+      effectActive.appendChild(pill);
+    });
+    effectActive.hidden = effectSelected.size === 0;
+  }
+
+  function updateEffectCounts() {
+    chipButtons.forEach((chip, key) => {
+      chip.querySelector(".effect-count").textContent = effectCounts[key] || 0;
+    });
+  }
+
+  renderEffects();
 
   let perkNodes = null;
   let perkTotal = 0;
@@ -331,14 +555,28 @@
       perksList.appendChild(card);
 
       measure.innerHTML = perk.description;
+      const effects = new Set();
+      measure.querySelectorAll("span").forEach((span) => {
+        const word = span.textContent
+          .trim()
+          .replace(/[.,;:]+$/, "")
+          .toLowerCase();
+        const key = EFFECT_ALIASES[word] || word;
+        if (effectInfo.has(key)) effects.add(key);
+      });
+      effects.forEach((key) => {
+        effectCounts[key] = (effectCounts[key] || 0) + 1;
+      });
       perkNodes.push({
         kind: "perk",
         el: card,
+        effects,
         text: plain(
           `${perk.name} ${aliasText(perk.name)} ${perk.owner} ${aliasText(perk.owner)} ${measure.textContent}`,
         ),
       });
     });
+    updateEffectCounts();
   }
 
   function filterPerks() {
@@ -361,7 +599,13 @@
         headingHasVisible = false;
         return;
       }
-      const match = terms.every((term) => node.text.includes(term));
+      const selected = Array.from(effectSelected);
+      const effectOk =
+        selected.length === 0 ||
+        (effectMode === "all"
+          ? selected.every((key) => node.effects.has(key))
+          : selected.some((key) => node.effects.has(key)));
+      const match = effectOk && terms.every((term) => node.text.includes(term));
       node.el.hidden = !match;
       if (match) {
         shown += 1;
@@ -370,14 +614,16 @@
     });
     closeHeading();
 
-    perksCount.textContent = terms.length
-      ? `${shown} of ${perkTotal} perks`
-      : `${perkTotal} perks`;
+    perksCount.textContent =
+      terms.length || effectSelected.size
+        ? `${shown} of ${perkTotal} perks`
+        : `${perkTotal} perks`;
     perksEmpty.hidden = shown > 0;
   }
 
   function setPerksMode(on) {
     document.body.classList.toggle("perks-mode", on);
+    if (!on) closeEffectPopover();
     if (search)
       search.placeholder = on
         ? "Search perks and descriptions..."
