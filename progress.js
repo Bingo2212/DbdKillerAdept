@@ -129,14 +129,95 @@
   const perksButton = document.createElement("button");
   perksButton.type = "button";
   perksButton.textContent = "Perks";
-  perksButton.onclick = () => setPerksMode(true);
   typeButtons.appendChild(perksButton);
 
+  const TAB_ORDER = { killers: 0, survivors: 1, perks: 2 };
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let currentTab =
+    localStorage.getItem("currentType") === "survivors"
+      ? "survivors"
+      : "killers";
+  let switching = false;
+
+  function markActive(tab) {
+    typeButtons.querySelectorAll("button").forEach((button) => {
+      button.classList.toggle(
+        "active",
+        button.textContent.trim().toLowerCase() === tab,
+      );
+    });
+  }
+
+  async function switchTab(tab) {
+    if (switching || tab === currentTab) return;
+    switching = true;
+
+    try {
+      const direction = TAB_ORDER[tab] > TAB_ORDER[currentTab] ? 1 : -1;
+      const distance = Math.min(60, window.innerWidth * 0.05) * direction;
+      const animate = !reduceMotion.matches;
+      const leaving = currentTab === "perks" ? perksWrap : container;
+      markActive(tab);
+      document.body.classList.toggle("filters-away", tab === "perks");
+
+      let outgoing = null;
+      if (animate) {
+        outgoing = leaving.animate(
+          [
+            { opacity: 1, transform: "translateX(0)" },
+            { opacity: 0, transform: `translateX(${-distance}px)` },
+          ],
+          { duration: 200, easing: "ease-in", fill: "forwards" },
+        );
+        await outgoing.finished;
+      }
+
+      if (tab === "perks") {
+        setPerksMode(true);
+      } else {
+        if (currentTab === "perks") setPerksMode(false);
+        createIcons(tab);
+      }
+      currentTab = tab;
+      if (outgoing) outgoing.cancel();
+
+      if (animate) {
+        const from = { opacity: 0, transform: `translateX(${distance}px)` };
+        const to = { opacity: 1, transform: "translateX(0)" };
+        const easing = "cubic-bezier(0.2, 0.8, 0.2, 1)";
+
+        if (tab === "perks") {
+          perksWrap.animate([from, to], {
+            duration: 400,
+            easing,
+            fill: "backwards",
+          });
+        } else {
+          container.querySelectorAll(".icon").forEach((card, index) => {
+            card.animate([from, to], {
+              duration: 380,
+              delay: Math.min(index * 14, 420),
+              easing,
+              fill: "backwards",
+            });
+          });
+        }
+      }
+
+      update();
+    } finally {
+      switching = false;
+    }
+  }
+
   typeButtons.querySelectorAll("button").forEach((button) => {
-    if (button !== perksButton) {
-      button.addEventListener("click", () => setPerksMode(false));
+    const name = button.textContent.trim().toLowerCase();
+    if (name === "killers" || name === "survivors") {
+      button.removeAttribute("onclick");
+      button.onclick = () => switchTab(name);
     }
   });
+  perksButton.onclick = () => switchTab("perks");
 
   const defaultPlaceholder = search ? search.placeholder : "";
   const perksWrap = document.createElement("div");
