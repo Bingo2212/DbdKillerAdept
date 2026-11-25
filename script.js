@@ -913,7 +913,7 @@ const survivorIcons = [
 ];
 
 /* -------------------------------------------------------------------------- */
-/*                                    Perks                                   */
+/*                                   Killers                                  */
 /* -------------------------------------------------------------------------- */
 
 const perkData = {
@@ -1727,6 +1727,29 @@ const perkData = {
         '"They built hypercomputers and skyscrapers and quantum networks, but all of those things trembled and fell under the power of Judgement]\'s light." (Witness to Koenrad, ch. 8)',
     },
   },
+  "The Terrifier": {
+    perk1: {
+      name: "Laughingstock",
+      description: `Survivors within <b>12</b>m of a completed Generator:<ul><li>Gain ${colorR("Exhausted")}.</li><li>Gain ${colorR("Oblivious")}.</li></ul>When they leave this range, the effect ends after ${tiers(3, 4, 5)}s.<br><br>You see the Auras of completed Generators.`,
+      quote:
+        '"Are you fucking kidding me? No, you\'re not fine, you are so completely far from fine right now." -Brooke',
+    },
+    perk2: {
+      name: "Kill Spree",
+      description: `When all remaining Survivors have <b>2</b> Hook States and all Generators are completed, you can kill Survivors.<br><br>While killing a Survivor, both Exit Gate Switches are blocked. Whenever you finish Killing a Survivor, this ends after ${tiers(12, 18, 20)}s.`,
+      quote: "He's killing them, one by one by one like cows.\" -Cat Lady",
+    },
+    perk3: {
+      name: "Funny Business",
+      description: `Whenever you damage a Generator, you gain <b>10</b>% ${colorC("Haste")} for <b>10</b>s and one of the following occurs at random:<ul><li>You retain your <b>10</b>% ${colorC("Haste")} for <b>5</b>s longer.</li><li>You get stunned for <b>2</b>s.</li><li>The affected Generator is blocked for <b>30</b>s.</li><li>Confetti! but nothing happens.</li></ul>Cooldown: ${tiers(60, 50, 40)}s.<br><br>The same effect cannot happen twice in a row.`,
+      quote:
+        '"Glass, insects, and razor blades-there\'s no telling what you might find." -Clown Cafe Announcer',
+    },
+  },
+  /* -------------------------------------------------------------------------- */
+  /*                                  Survivors                                 */
+  /* -------------------------------------------------------------------------- */
+
   "Dwight Fairfield": {
     perk1: {
       name: "Bond",
